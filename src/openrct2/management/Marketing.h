@@ -1,26 +1,22 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
 #pragma once
 
+#include "../Cheats.h"
 #include "../common.h"
-#include "../cheats.h"
 #include "../peep/Peep.h"
 
-enum {
+#include <vector>
+
+enum
+{
     ADVERTISING_CAMPAIGN_PARK_ENTRY_FREE,
     ADVERTISING_CAMPAIGN_RIDE_FREE,
     ADVERTISING_CAMPAIGN_PARK_ENTRY_HALF_PRICE,
@@ -30,31 +26,42 @@ enum {
     ADVERTISING_CAMPAIGN_COUNT
 };
 
-enum{
+enum
+{
     VOUCHER_TYPE_PARK_ENTRY_FREE,
     VOUCHER_TYPE_RIDE_FREE,
     VOUCHER_TYPE_PARK_ENTRY_HALF_PRICE,
     VOUCHER_TYPE_FOOD_OR_DRINK_FREE,
 };
 
-#define CAMPAIGN_ACTIVE_FLAG (1 << 7)
+enum
+{
+    CAMPAIGN_ACTIVE_FLAG = (1 << 7)
+};
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+struct MarketingCampaign
+{
+    uint8_t Type{};
+    uint8_t WeeksLeft{};
+    uint8_t Flags{};
+    union
+    {
+        ride_id_t RideId{};
+        uint8_t ShopItemType;
+    };
+};
+
+namespace MarketingCampaignFlags
+{
+    constexpr uint8_t FIRST_WEEK = 1 << 0;
+}
 
 extern const money16 AdvertisingCampaignPricePerWeek[ADVERTISING_CAMPAIGN_COUNT];
-extern uint8 gMarketingCampaignDaysLeft[20];
-extern uint8 gMarketingCampaignRideIndex[22];
+extern std::vector<MarketingCampaign> gMarketingCampaigns;
 
-sint32 marketing_get_campaign_guest_generation_probability(sint32 campaign);
+uint16_t marketing_get_campaign_guest_generation_probability(int32_t campaign);
 void marketing_update();
-void marketing_set_guest_campaign(rct_peep *peep, sint32 campaign);
-void game_command_callback_marketing_start_campaign(sint32 eax, sint32 ebx, sint32 ecx, sint32 edx, sint32 esi, sint32 edi, sint32 ebp);
-void marketing_start_campaign(sint32 type, sint32 rideOrItem, sint32 numWeeks);
-void game_command_start_campaign(sint32* eax, sint32* ebx, sint32* ecx, sint32* edx, sint32* esi, sint32* edi, sint32* ebp);
-bool marketing_is_campaign_type_applicable(sint32 campaignType);
-
-#ifdef __cplusplus
-}
-#endif
+void marketing_set_guest_campaign(Peep* peep, int32_t campaign);
+bool marketing_is_campaign_type_applicable(int32_t campaignType);
+MarketingCampaign* marketing_get_campaign(int32_t campaignType);
+void marketing_new_campaign(const MarketingCampaign& campaign);

@@ -1,70 +1,69 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
+#include <algorithm>
+#include <openrct2-ui/interface/Widget.h>
 #include <openrct2-ui/windows/Window.h>
-
-#include <openrct2/audio/audio.h>
 #include <openrct2/Context.h>
-#include <openrct2/core/Math.hpp>
-#include <openrct2/core/Memory.hpp>
-#include <openrct2/drawing/IDrawingEngine.h>
 #include <openrct2/Editor.h>
-#include <openrct2/interface/widget.h>
-#include <openrct2/localisation/localisation.h>
 #include <openrct2/OpenRCT2.h>
-#include <openrct2/rct1.h>
+#include <openrct2/audio/audio.h>
+#include <openrct2/core/String.hpp>
+#include <openrct2/drawing/IDrawingEngine.h>
+#include <openrct2/localisation/Localisation.h>
+#include <openrct2/rct1/RCT1.h>
+#include <openrct2/ride/TrackDesign.h>
 #include <openrct2/ride/TrackDesignRepository.h>
 #include <openrct2/sprites.h>
 #include <openrct2/windows/Intent.h>
+#include <vector>
 
+// clang-format off
 enum {
     WIDX_BACKGROUND,
     WIDX_TITLE,
     WIDX_CLOSE,
+    WIDX_BACK,
+    WIDX_FILTER_STRING,
+    WIDX_FILTER_CLEAR,
     WIDX_TRACK_LIST,
     WIDX_TRACK_PREVIEW,
     WIDX_ROTATE,
     WIDX_TOGGLE_SCENERY,
-    WIDX_BACK,
 };
 
 validate_global_widx(WC_TRACK_DESIGN_LIST, WIDX_ROTATE);
 
 static rct_widget window_track_list_widgets[] = {
-    { WWT_FRAME,            0,  0,      599,    0,      399,    0xFFFFFFFF,             STR_NONE                                },
-    { WWT_CAPTION,          0,  1,      598,    1,      14,     STR_SELECT_DESIGN,      STR_WINDOW_TITLE_TIP                    },
-    { WWT_CLOSEBOX,         0,  587,    597,    2,      13,     STR_CLOSE_X,            STR_CLOSE_WINDOW_TIP                    },
-    { WWT_SCROLL,           0,  4,      221,    33,     395,    SCROLL_VERTICAL,                        STR_CLICK_ON_DESIGN_TO_BUILD_IT_TIP     },
-    { WWT_FLATBTN,          0,  224,    595,    18,     236,    0xFFFFFFFF,             STR_NONE                                },
-    { WWT_FLATBTN,          0,  574,    597,    374,    397,    SPR_ROTATE_ARROW,       STR_ROTATE_90_TIP                       },
-    { WWT_FLATBTN,          0,  574,    597,    350,    373,    SPR_SCENERY,            STR_TOGGLE_SCENERY_TIP                  },
-    { WWT_13,               0,  4,      221,    18,     29,     STR_SELECT_OTHER_RIDE,  STR_NONE                                },
+    { WWT_FRAME,            0,  0,      599,    0,      430,    0xFFFFFFFF,                 STR_NONE                            },
+    { WWT_CAPTION,          0,  1,      598,    1,      14,     STR_SELECT_DESIGN,          STR_WINDOW_TITLE_TIP                },
+    { WWT_CLOSEBOX,         0,  587,    597,    2,      13,     STR_CLOSE_X,                STR_CLOSE_WINDOW_TIP                },
+    { WWT_TABLE_HEADER,     0,  4,      221,    18,     30,     STR_SELECT_OTHER_RIDE,      STR_NONE                            },
+    { WWT_TEXT_BOX,         1,  4,      127,    32,     44,     STR_NONE,                   STR_NONE                            },
+    { WWT_BUTTON,           0,  130,    221,    32,     44,     STR_OBJECT_SEARCH_CLEAR,    STR_NONE                            },
+    { WWT_SCROLL,           0,  4,      221,    46,     426,    SCROLL_VERTICAL,            STR_CLICK_ON_DESIGN_TO_BUILD_IT_TIP },
+    { WWT_FLATBTN,          0,  224,    595,    18,     236,    0xFFFFFFFF,                 STR_NONE                            },
+    { WWT_FLATBTN,          0,  574,    597,    405,    428,    SPR_ROTATE_ARROW,           STR_ROTATE_90_TIP                   },
+    { WWT_FLATBTN,          0,  574,    597,    381,    404,    SPR_SCENERY,                STR_TOGGLE_SCENERY_TIP              },
     { WIDGETS_END },
 };
 
 static void window_track_list_close(rct_window *w);
 static void window_track_list_mouseup(rct_window *w, rct_widgetindex widgetIndex);
 static void window_track_list_update(rct_window *w);
-static void window_track_list_scrollgetsize(rct_window *w, sint32 scrollIndex, sint32 *width, sint32 *height);
-static void window_track_list_scrollmousedown(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y);
-static void window_track_list_scrollmouseover(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y);
-static void window_track_list_tooltip(rct_window* w, rct_widgetindex widgetIndex, rct_string_id *stringId);
+static void window_track_list_scrollgetsize(rct_window *w, int32_t scrollIndex, int32_t *width, int32_t *height);
+static void window_track_list_scrollmousedown(rct_window *w, int32_t scrollIndex, int32_t x, int32_t y);
+static void window_track_list_scrollmouseover(rct_window *w, int32_t scrollIndex, int32_t x, int32_t y);
+static void window_track_list_textinput(rct_window *w, rct_widgetindex widgetIndex, char *text);
 static void window_track_list_invalidate(rct_window *w);
 static void window_track_list_paint(rct_window *w, rct_drawpixelinfo *dpi);
-static void window_track_list_scrollpaint(rct_window *w, rct_drawpixelinfo *dpi, sint32 scrollIndex);
+static void window_track_list_scrollpaint(rct_window *w, rct_drawpixelinfo *dpi, int32_t scrollIndex);
 
 static rct_window_event_list window_track_list_events = {
     window_track_list_close,
@@ -86,73 +85,81 @@ static rct_window_event_list window_track_list_events = {
     window_track_list_scrollmousedown,
     nullptr,
     window_track_list_scrollmouseover,
+    window_track_list_textinput,
     nullptr,
     nullptr,
     nullptr,
-    window_track_list_tooltip,
     nullptr,
     nullptr,
     window_track_list_invalidate,
     window_track_list_paint,
     window_track_list_scrollpaint
 };
+// clang-format on
 
 #define TRACK_DESIGN_INDEX_UNLOADED UINT16_MAX
 
 ride_list_item _window_track_list_item;
 
-static track_design_file_ref *_trackDesigns = nullptr;
-static size_t _trackDesignsCount = 0;
-static uint16 _loadedTrackDesignIndex;
-static rct_track_td6 *_loadedTrackDesign;
-static uint8 *_trackDesignPreviewPixels;
+static std::vector<track_design_file_ref> _trackDesigns;
+static utf8 _filterString[USER_STRING_MAX_LENGTH];
+static std::vector<uint16_t> _filteredTrackIds;
+static uint16_t _loadedTrackDesignIndex;
+static rct_track_td6* _loadedTrackDesign;
+static std::vector<uint8_t> _trackDesignPreviewPixels;
 
 static void track_list_load_designs(ride_list_item item);
-static bool track_list_load_design_for_preview(utf8 *path);
+static bool track_list_load_design_for_preview(utf8* path);
 
 /**
  *
  *  rct2: 0x006CF1A2
  */
-rct_window * window_track_list_open(ride_list_item item)
+rct_window* window_track_list_open(ride_list_item item)
 {
     window_close_construction_windows();
     _window_track_list_item = item;
+
+    String::Set(_filterString, sizeof(_filterString), "");
     track_list_load_designs(item);
 
-    sint32 x, y;
-    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) {
-        sint32 screenWidth = context_get_width();
-        sint32 screenHeight = context_get_height();
+    int32_t x, y;
+    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+    {
+        int32_t screenWidth = context_get_width();
+        int32_t screenHeight = context_get_height();
         x = screenWidth / 2 - 300;
-        y = Math::Max(TOP_TOOLBAR_HEIGHT + 1, screenHeight / 2 - 200);
-    } else {
+        y = std::max(TOP_TOOLBAR_HEIGHT + 1, screenHeight / 2 - 200);
+    }
+    else
+    {
         x = 0;
         y = TOP_TOOLBAR_HEIGHT + 2;
     }
-    rct_window *w = window_create(
-        x,
-        y,
-        600,
-        400,
-        &window_track_list_events,
-        WC_TRACK_DESIGN_LIST,
-        0
-    );
+
+    rct_window* w = window_create(x, y, 600, 432, &window_track_list_events, WC_TRACK_DESIGN_LIST, 0);
+
+    window_track_list_widgets[WIDX_FILTER_STRING].string = _filterString;
     w->widgets = window_track_list_widgets;
-    w->enabled_widgets = (1 << WIDX_CLOSE) | (1 << WIDX_ROTATE) | (1 << WIDX_TOGGLE_SCENERY) | (1 << WIDX_BACK);
+    w->enabled_widgets = (1ULL << WIDX_CLOSE) | (1ULL << WIDX_BACK) | (1ULL << WIDX_FILTER_STRING) | (1ULL << WIDX_FILTER_CLEAR)
+        | (1ULL << WIDX_ROTATE) | (1ULL << WIDX_TOGGLE_SCENERY);
+
     window_init_scroll_widgets(w);
     w->track_list.track_list_being_updated = false;
     w->track_list.reload_track_designs = false;
+
+    // Start with first track highlighted
     w->selected_list_item = 0;
-    if (_trackDesignsCount != 0 && !(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
+    if (_trackDesigns.size() != 0 && !(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+    {
         w->selected_list_item = 1;
     }
+
     gTrackDesignSceneryToggle = false;
     window_push_others_right(w);
     _currentTrackPieceDirection = 2;
 
-    _trackDesignPreviewPixels = Memory::AllocateArray<uint8>(4 * TRACK_PREVIEW_IMAGE_SIZE);
+    _trackDesignPreviewPixels.resize(4 * TRACK_PREVIEW_IMAGE_SIZE);
 
     _loadedTrackDesign = nullptr;
     _loadedTrackDesignIndex = TRACK_DESIGN_INDEX_UNLOADED;
@@ -160,31 +167,67 @@ rct_window * window_track_list_open(ride_list_item item)
     return w;
 }
 
+static void window_track_list_filter_list()
+{
+    _filteredTrackIds.clear();
+
+    // Nothing to filter, so fill the list with all indices
+    if (String::LengthOf(_filterString) == 0)
+    {
+        for (uint16_t i = 0; i < _trackDesigns.size(); i++)
+            _filteredTrackIds.push_back(i);
+
+        return;
+    }
+
+    // Convert filter to lowercase
+    utf8 filterStringLower[sizeof(_filterString)];
+    String::Set(filterStringLower, sizeof(filterStringLower), _filterString);
+    for (int32_t i = 0; filterStringLower[i] != '\0'; i++)
+        filterStringLower[i] = (utf8)tolower(filterStringLower[i]);
+
+    // Fill the set with indices for tracks that match the filter
+    for (uint16_t i = 0; i < _trackDesigns.size(); i++)
+    {
+        utf8 trackNameLower[USER_STRING_MAX_LENGTH];
+        String::Set(trackNameLower, sizeof(trackNameLower), _trackDesigns[i].name);
+        for (int32_t j = 0; trackNameLower[j] != '\0'; j++)
+            trackNameLower[j] = (utf8)tolower(trackNameLower[j]);
+
+        if (strstr(trackNameLower, filterStringLower) != nullptr)
+        {
+            _filteredTrackIds.push_back(i);
+        }
+    }
+}
+
 /**
  *
  *  rct2: 0x006CFD76
  */
-static void window_track_list_close(rct_window *w)
+static void window_track_list_close(rct_window* w)
 {
     // Dispose track design and preview
     track_design_dispose(_loadedTrackDesign);
     _loadedTrackDesign = nullptr;
-    SafeFree(_trackDesignPreviewPixels);
+    _trackDesignPreviewPixels.clear();
+    _trackDesignPreviewPixels.shrink_to_fit();
 
     // Dispose track list
-    for (size_t i = 0; i < _trackDesignsCount; i++) {
-        free(_trackDesigns[i].name);
-        free(_trackDesigns[i].path);
+    for (auto& trackDesign : _trackDesigns)
+    {
+        free(trackDesign.name);
+        free(trackDesign.path);
     }
-    SafeFree(_trackDesigns);
-    _trackDesignsCount = 0;
+    _trackDesigns.clear();
 
     // If gScreenAge is zero, we're already in the process
     // of loading the track manager, so we shouldn't try
     // to do it again. Otherwise, this window will get
     // another close signal from the track manager load function,
     // try to load the track manager again, and an infinite loop will result.
-    if ((gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) && gScreenAge != 0){
+    if ((gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) && gScreenAge != 0)
+    {
         window_close_by_number(WC_MANAGE_TRACK_DESIGN, w->number);
         window_close_by_number(WC_TRACK_DELETE_PROMPT, w->number);
         Editor::LoadTrackManager();
@@ -195,36 +238,46 @@ static void window_track_list_close(rct_window *w)
  *
  *  rct2: 0x006CFB82
  */
-static void window_track_list_select(rct_window *w, sint32 index)
+static void window_track_list_select(rct_window* w, int32_t listIndex)
 {
     // Displays a message if the ride can't load, fix #4080
-    if (_loadedTrackDesign == nullptr) {
+    if (_loadedTrackDesign == nullptr)
+    {
         context_show_error(STR_CANT_BUILD_PARK_ENTRANCE_HERE, STR_TRACK_LOAD_FAILED_ERROR);
         return;
     }
 
     audio_play_sound(SOUND_CLICK_1, 0, w->x + (w->width / 2));
-    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
-        if (index == 0) {
+    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+    {
+        if (listIndex == 0)
+        {
             window_close(w);
             ride_construct_new(_window_track_list_item);
             return;
         }
-        index--;
+        listIndex--;
     }
 
-    rct_track_td6 *td6 = _loadedTrackDesign;
-    if (td6 != nullptr && (td6->track_flags & TRACK_DESIGN_FLAG_SCENERY_UNAVAILABLE)) {
+    rct_track_td6* td6 = _loadedTrackDesign;
+    if (td6 != nullptr && (td6->track_flags & TRACK_DESIGN_FLAG_SCENERY_UNAVAILABLE))
+    {
         gTrackDesignSceneryToggle = true;
     }
 
-    track_design_file_ref *tdRef = &_trackDesigns[index];
-    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) {
+    uint16_t trackDesignIndex = _filteredTrackIds[listIndex];
+    track_design_file_ref* tdRef = &_trackDesigns[trackDesignIndex];
+    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+    {
         auto intent = Intent(WC_MANAGE_TRACK_DESIGN);
         intent.putExtra(INTENT_EXTRA_TRACK_DESIGN, tdRef);
         context_open_intent(&intent);
-    } else {
-        if (_loadedTrackDesignIndex != TRACK_DESIGN_INDEX_UNLOADED && (_loadedTrackDesign->track_flags & TRACK_DESIGN_FLAG_VEHICLE_UNAVAILABLE)) {
+    }
+    else
+    {
+        if (_loadedTrackDesignIndex != TRACK_DESIGN_INDEX_UNLOADED
+            && (_loadedTrackDesign->track_flags & TRACK_DESIGN_FLAG_VEHICLE_UNAVAILABLE))
+        {
             context_show_error(STR_THIS_DESIGN_WILL_BE_BUILT_WITH_AN_ALTERNATIVE_VEHICLE_TYPE, STR_NONE);
         }
 
@@ -234,16 +287,18 @@ static void window_track_list_select(rct_window *w, sint32 index)
     }
 }
 
-static sint32 window_track_list_get_list_item_index_from_position(sint32 x, sint32 y)
+static int32_t window_track_list_get_list_item_index_from_position(int32_t x, int32_t y)
 {
-    sint32 maxItems = (sint32)_trackDesignsCount;
-    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
+    size_t maxItems = _filteredTrackIds.size();
+    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+    {
         // Extra item: custom design
         maxItems++;
     }
 
-    sint32 index = y / 10;
-    if (index < 0 || index >= maxItems) {
+    int32_t index = y / SCROLLABLE_ROW_HEIGHT;
+    if (index < 0 || (uint32_t)index >= maxItems)
+    {
         index = -1;
     }
     return index;
@@ -253,28 +308,49 @@ static sint32 window_track_list_get_list_item_index_from_position(sint32 x, sint
  *
  *  rct2: 0x006CFA31
  */
-static void window_track_list_mouseup(rct_window *w, rct_widgetindex widgetIndex)
+static void window_track_list_mouseup(rct_window* w, rct_widgetindex widgetIndex)
 {
-    switch (widgetIndex) {
-    case WIDX_CLOSE:
-        window_close(w);
-        break;
-    case WIDX_ROTATE:
-        _currentTrackPieceDirection++;
-        _currentTrackPieceDirection %= 4;
-        window_invalidate(w);
-        break;
-    case WIDX_TOGGLE_SCENERY:
-        gTrackDesignSceneryToggle = !gTrackDesignSceneryToggle;
-        _loadedTrackDesignIndex = TRACK_DESIGN_INDEX_UNLOADED;
-        window_invalidate(w);
-        break;
-    case WIDX_BACK:
-        window_close(w);
-        if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
-            context_open_window(WC_CONSTRUCT_RIDE);
-        }
-        break;
+    switch (widgetIndex)
+    {
+        case WIDX_CLOSE:
+            window_close(w);
+            break;
+        case WIDX_ROTATE:
+            _currentTrackPieceDirection++;
+            _currentTrackPieceDirection %= 4;
+            window_invalidate(w);
+            break;
+        case WIDX_TOGGLE_SCENERY:
+            gTrackDesignSceneryToggle = !gTrackDesignSceneryToggle;
+            _loadedTrackDesignIndex = TRACK_DESIGN_INDEX_UNLOADED;
+            window_invalidate(w);
+            break;
+        case WIDX_BACK:
+            window_close(w);
+            if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+            {
+                context_open_window(WC_CONSTRUCT_RIDE);
+            }
+            break;
+        case WIDX_FILTER_STRING:
+            window_start_textbox(w, widgetIndex, STR_STRING, _filterString, sizeof(_filterString));
+            break;
+        case WIDX_FILTER_CLEAR:
+            // Keep the highlighted item selected
+            if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+            {
+                w->selected_list_item = _filteredTrackIds[w->selected_list_item];
+            }
+            else
+            {
+                if (w->selected_list_item != 0)
+                    w->selected_list_item = _filteredTrackIds[w->selected_list_item - 1] + 1;
+            }
+
+            String::Set(_filterString, sizeof(_filterString), "");
+            window_track_list_filter_list();
+            window_invalidate(w);
+            break;
     }
 }
 
@@ -282,26 +358,29 @@ static void window_track_list_mouseup(rct_window *w, rct_widgetindex widgetIndex
  *
  *  rct2: 0x006CFAB0
  */
-static void window_track_list_scrollgetsize(rct_window *w, sint32 scrollIndex, sint32 *width, sint32 *height)
+static void window_track_list_scrollgetsize(rct_window* w, int32_t scrollIndex, int32_t* width, int32_t* height)
 {
-    size_t numItems = _trackDesignsCount;
-    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
+    size_t numItems = _filteredTrackIds.size();
+    if (!(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+    {
         // Extra item: custom design
         numItems++;
     }
 
-    *height = (sint32)(numItems * 10);
+    *height = (int32_t)(numItems * SCROLLABLE_ROW_HEIGHT);
 }
 
 /**
  *
  *  rct2: 0x006CFB39
  */
-static void window_track_list_scrollmousedown(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y)
+static void window_track_list_scrollmousedown(rct_window* w, int32_t scrollIndex, int32_t x, int32_t y)
 {
-    if (!w->track_list.track_list_being_updated) {
-        sint32 i = window_track_list_get_list_item_index_from_position(x, y);
-        if (i != -1) {
+    if (!w->track_list.track_list_being_updated)
+    {
+        int32_t i = window_track_list_get_list_item_index_from_position(x, y);
+        if (i != -1)
+        {
             window_track_list_select(w, i);
         }
     }
@@ -311,32 +390,50 @@ static void window_track_list_scrollmousedown(rct_window *w, sint32 scrollIndex,
  *
  *  rct2: 0x006CFAD7
  */
-static void window_track_list_scrollmouseover(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y)
+static void window_track_list_scrollmouseover(rct_window* w, int32_t scrollIndex, int32_t x, int32_t y)
 {
-    if (!w->track_list.track_list_being_updated) {
-        sint32 i = window_track_list_get_list_item_index_from_position(x, y);
-        if (i != -1 && w->selected_list_item != i) {
+    if (!w->track_list.track_list_being_updated)
+    {
+        int32_t i = window_track_list_get_list_item_index_from_position(x, y);
+        if (i != -1 && w->selected_list_item != i)
+        {
             w->selected_list_item = i;
             window_invalidate(w);
         }
     }
 }
 
-/**
- *
- *  rct2: 0x006CFD6C
- */
-static void window_track_list_tooltip(rct_window* w, rct_widgetindex widgetIndex, rct_string_id *stringId)
+static void window_track_list_textinput(rct_window* w, rct_widgetindex widgetIndex, char* text)
 {
-    set_format_arg(0, rct_string_id, STR_LIST);
+    if (widgetIndex != WIDX_FILTER_STRING || text == nullptr)
+        return;
+
+    if (String::Equals(_filterString, text))
+        return;
+
+    String::Set(_filterString, sizeof(_filterString), text);
+
+    window_track_list_filter_list();
+
+    w->scrolls->v_top = 0;
+
+    window_invalidate(w);
 }
 
-static void window_track_list_update(rct_window *w)
+static void window_track_list_update(rct_window* w)
 {
-    if (w->track_list.reload_track_designs) {
+    if (gCurrentTextBox.window.classification == w->classification && gCurrentTextBox.window.number == w->number)
+    {
+        window_update_textbox_caret();
+        widget_invalidate(w, WIDX_FILTER_STRING);
+    }
+
+    if (w->track_list.reload_track_designs)
+    {
         track_list_load_designs(_window_track_list_item);
         w->selected_list_item = 0;
         window_invalidate(w);
+        w->track_list.reload_track_designs = false;
     }
 }
 
@@ -344,10 +441,10 @@ static void window_track_list_update(rct_window *w)
  *
  *  rct2: 0x006CF2D6
  */
-static void window_track_list_invalidate(rct_window *w)
+static void window_track_list_invalidate(rct_window* w)
 {
     rct_string_id stringId = STR_NONE;
-    rct_ride_entry * entry = get_ride_entry(_window_track_list_item.entry_index);
+    rct_ride_entry* entry = get_ride_entry(_window_track_list_item.entry_index);
 
     if (entry != nullptr)
     {
@@ -356,25 +453,34 @@ static void window_track_list_invalidate(rct_window *w)
     }
 
     set_format_arg(0, rct_string_id, stringId);
-    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) {
+    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+    {
         window_track_list_widgets[WIDX_TITLE].text = STR_TRACK_DESIGNS;
         window_track_list_widgets[WIDX_TRACK_LIST].tooltip = STR_CLICK_ON_DESIGN_TO_RENAME_OR_DELETE_IT;
-    } else {
+    }
+    else
+    {
         window_track_list_widgets[WIDX_TITLE].text = STR_SELECT_DESIGN;
         window_track_list_widgets[WIDX_TRACK_LIST].tooltip = STR_CLICK_ON_DESIGN_TO_BUILD_IT_TIP;
     }
 
-    if ((gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) || w->selected_list_item != 0) {
+    if ((gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) || w->selected_list_item != 0)
+    {
         w->pressed_widgets |= 1 << WIDX_TRACK_PREVIEW;
         w->disabled_widgets &= ~(1 << WIDX_TRACK_PREVIEW);
         window_track_list_widgets[WIDX_ROTATE].type = WWT_FLATBTN;
         window_track_list_widgets[WIDX_TOGGLE_SCENERY].type = WWT_FLATBTN;
-        if (gTrackDesignSceneryToggle) {
+        if (gTrackDesignSceneryToggle)
+        {
             w->pressed_widgets &= ~(1 << WIDX_TOGGLE_SCENERY);
-        } else {
+        }
+        else
+        {
             w->pressed_widgets |= (1 << WIDX_TOGGLE_SCENERY);
         }
-    } else {
+    }
+    else
+    {
         w->pressed_widgets &= ~(1 << WIDX_TRACK_PREVIEW);
         w->disabled_widgets |= (1 << WIDX_TRACK_PREVIEW);
         window_track_list_widgets[WIDX_ROTATE].type = WWT_EMPTY;
@@ -386,73 +492,90 @@ static void window_track_list_invalidate(rct_window *w)
  *
  *  rct2: 0x006CF387
  */
-static void window_track_list_paint(rct_window *w, rct_drawpixelinfo *dpi)
+static void window_track_list_paint(rct_window* w, rct_drawpixelinfo* dpi)
 {
     window_draw_widgets(w, dpi);
 
-    sint32 trackIndex = w->selected_list_item;
-    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) {
-        if (_trackDesignsCount == 0 || trackIndex == -1) {
+    int32_t listItemIndex = w->selected_list_item;
+    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+    {
+        if (_trackDesigns.empty() || listItemIndex == -1)
             return;
-        }
-    } else if (trackIndex-- == 0) {
-        return;
+    }
+    else
+    {
+        if (listItemIndex == 0)
+            return;
+
+        // Because the first item in the list is "Build a custom design", lower the index by one
+        listItemIndex--;
     }
 
+    int32_t trackIndex = _filteredTrackIds[listItemIndex];
+
     // Track preview
-    sint32 x, y, colour;
-    rct_widget *widget = &window_track_list_widgets[WIDX_TRACK_PREVIEW];
+    int32_t x, y, colour;
+    rct_widget* widget = &window_track_list_widgets[WIDX_TRACK_PREVIEW];
     x = w->x + widget->left + 1;
     y = w->y + widget->top + 1;
     colour = ColourMapA[w->colours[0]].darkest;
     gfx_fill_rect(dpi, x, y, x + 369, y + 216, colour);
 
-    if (_loadedTrackDesignIndex != trackIndex) {
-        utf8 *path = _trackDesigns[trackIndex].path;
-        if (track_list_load_design_for_preview(path)) {
+    if (_loadedTrackDesignIndex != trackIndex)
+    {
+        utf8* path = _trackDesigns[trackIndex].path;
+        if (track_list_load_design_for_preview(path))
+        {
             _loadedTrackDesignIndex = trackIndex;
-        } else {
+        }
+        else
+        {
             _loadedTrackDesignIndex = TRACK_DESIGN_INDEX_UNLOADED;
-            return;
         }
     }
 
-    rct_track_td6 *td6 = _loadedTrackDesign;
-    if (td6 == nullptr) {
+    rct_track_td6* td6 = _loadedTrackDesign;
+    if (td6 == nullptr)
+    {
         return;
     }
 
-    rct_g1_element *substituteElement = &g1Elements[SPR_TEMP];
-    rct_g1_element tmpElement = *substituteElement;
-    substituteElement->offset = _trackDesignPreviewPixels + (_currentTrackPieceDirection * TRACK_PREVIEW_IMAGE_SIZE);
-    substituteElement->width = 370;
-    substituteElement->height = 217;
-    substituteElement->x_offset = 0;
-    substituteElement->y_offset = 0;
-    substituteElement->flags = G1_FLAG_BMP;
-    gfx_draw_sprite(dpi, 0, x, y, 0);
-    *substituteElement = tmpElement;
-
+    int32_t trackPreviewX = x, trackPreviewY = y;
     x = w->x + (widget->left + widget->right) / 2;
+    y = w->y + (widget->top + widget->bottom) / 2;
+
+    rct_g1_element g1temp = {};
+    g1temp.offset = _trackDesignPreviewPixels.data() + (_currentTrackPieceDirection * TRACK_PREVIEW_IMAGE_SIZE);
+    g1temp.width = 370;
+    g1temp.height = 217;
+    g1temp.flags = G1_FLAG_BMP;
+    gfx_set_g1_element(SPR_TEMP, &g1temp);
+    drawing_engine_invalidate_image(SPR_TEMP);
+    gfx_draw_sprite(dpi, SPR_TEMP, trackPreviewX, trackPreviewY, 0);
+
     y = w->y + widget->bottom - 12;
 
     // Warnings
-    if ((td6->track_flags & TRACK_DESIGN_FLAG_VEHICLE_UNAVAILABLE) && !(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)) {
+    if ((td6->track_flags & TRACK_DESIGN_FLAG_VEHICLE_UNAVAILABLE) && !(gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER))
+    {
         // Vehicle design not available
         gfx_draw_string_centred_clipped(dpi, STR_VEHICLE_DESIGN_UNAVAILABLE, nullptr, COLOUR_BLACK, x, y, 368);
-        y -= 10;
+        y -= SCROLLABLE_ROW_HEIGHT;
     }
 
-    if (td6->track_flags & TRACK_DESIGN_FLAG_SCENERY_UNAVAILABLE) {
-        if (!gTrackDesignSceneryToggle) {
+    if (td6->track_flags & TRACK_DESIGN_FLAG_SCENERY_UNAVAILABLE)
+    {
+        if (!gTrackDesignSceneryToggle)
+        {
             // Scenery not available
-            gfx_draw_string_centred_clipped(dpi, STR_DESIGN_INCLUDES_SCENERY_WHICH_IS_UNAVAILABLE, nullptr, COLOUR_BLACK, x, y, 368);
-            y -= 10;
+            gfx_draw_string_centred_clipped(
+                dpi, STR_DESIGN_INCLUDES_SCENERY_WHICH_IS_UNAVAILABLE, nullptr, COLOUR_BLACK, x, y, 368);
+            y -= SCROLLABLE_ROW_HEIGHT;
         }
     }
 
     // Track design name
-    utf8 *trackName = _trackDesigns[trackIndex].name;
+    utf8* trackName = _trackDesigns[trackIndex].name;
     gfx_draw_string_centred_clipped(dpi, STR_TRACK_PREVIEW_NAME_FORMAT, &trackName, COLOUR_BLACK, x, y, 368);
 
     // Information
@@ -462,99 +585,115 @@ static void window_track_list_paint(rct_window *w, rct_drawpixelinfo *dpi)
     // Stats
     fixed32_2dp rating = td6->excitement * 10;
     gfx_draw_string_left(dpi, STR_TRACK_LIST_EXCITEMENT_RATING, &rating, COLOUR_BLACK, x, y);
-    y += 10;
+    y += LIST_ROW_HEIGHT;
 
     rating = td6->intensity * 10;
     gfx_draw_string_left(dpi, STR_TRACK_LIST_INTENSITY_RATING, &rating, COLOUR_BLACK, x, y);
-    y += 10;
+    y += LIST_ROW_HEIGHT;
 
     rating = td6->nausea * 10;
     gfx_draw_string_left(dpi, STR_TRACK_LIST_NAUSEA_RATING, &rating, COLOUR_BLACK, x, y);
-    y += 14;
+    y += LIST_ROW_HEIGHT + 4;
 
-    if (td6->type != RIDE_TYPE_MAZE) {
-        if (td6->type == RIDE_TYPE_MINI_GOLF) {
-            // Holes
-            uint16 holes = td6->holes & 0x1F;
-            gfx_draw_string_left(dpi, STR_HOLES, &holes, COLOUR_BLACK, x, y);
-            y += 10;
-        } else {
-            // Maximum speed
-            uint16 speed = ((td6->max_speed << 16) * 9) >> 18;
-            gfx_draw_string_left(dpi, STR_MAX_SPEED, &speed, COLOUR_BLACK, x, y);
-            y += 10;
+    // Information for tracked rides.
+    if (ride_type_has_flag(td6->type, RIDE_TYPE_FLAG_HAS_TRACK))
+    {
+        if (td6->type != RIDE_TYPE_MAZE)
+        {
+            if (td6->type == RIDE_TYPE_MINI_GOLF)
+            {
+                // Holes
+                uint16_t holes = td6->holes & 0x1F;
+                gfx_draw_string_left(dpi, STR_HOLES, &holes, COLOUR_BLACK, x, y);
+                y += LIST_ROW_HEIGHT;
+            }
+            else
+            {
+                // Maximum speed
+                uint16_t speed = ((td6->max_speed << 16) * 9) >> 18;
+                gfx_draw_string_left(dpi, STR_MAX_SPEED, &speed, COLOUR_BLACK, x, y);
+                y += LIST_ROW_HEIGHT;
 
-            // Average speed
-            speed = ((td6->average_speed << 16) * 9) >> 18;
-            gfx_draw_string_left(dpi, STR_AVERAGE_SPEED, &speed, COLOUR_BLACK, x, y);
-            y += 10;
+                // Average speed
+                speed = ((td6->average_speed << 16) * 9) >> 18;
+                gfx_draw_string_left(dpi, STR_AVERAGE_SPEED, &speed, COLOUR_BLACK, x, y);
+                y += LIST_ROW_HEIGHT;
+            }
+
+            // Ride length
+            set_format_arg(0, rct_string_id, STR_RIDE_LENGTH_ENTRY);
+            set_format_arg(2, uint16_t, td6->ride_length);
+            gfx_draw_string_left_clipped(dpi, STR_TRACK_LIST_RIDE_LENGTH, gCommonFormatArgs, COLOUR_BLACK, x, y, 214);
+            y += LIST_ROW_HEIGHT;
         }
 
-        // Ride length
-        set_format_arg(0, rct_string_id, STR_RIDE_LENGTH_ENTRY);
-        set_format_arg(2, uint16, td6->ride_length);
-        gfx_draw_string_left_clipped(dpi, STR_TRACK_LIST_RIDE_LENGTH, gCommonFormatArgs, COLOUR_BLACK, x, y, 214);
-        y += 10;
-    }
+        if (ride_type_has_flag(td6->type, RIDE_TYPE_FLAG_HAS_G_FORCES))
+        {
+            // Maximum positive vertical Gs
+            int32_t gForces = td6->max_positive_vertical_g * 32;
+            gfx_draw_string_left(dpi, STR_MAX_POSITIVE_VERTICAL_G, &gForces, COLOUR_BLACK, x, y);
+            y += LIST_ROW_HEIGHT;
 
-    if (ride_type_has_flag(td6->type, RIDE_TYPE_FLAG_HAS_G_FORCES)) {
-        // Maximum positive vertical Gs
-        sint32 gForces = td6->max_positive_vertical_g * 32;
-        gfx_draw_string_left(dpi, STR_MAX_POSITIVE_VERTICAL_G, &gForces, COLOUR_BLACK, x, y);
-        y += 10;
+            // Maximum negative vertical Gs
+            gForces = td6->max_negative_vertical_g * 32;
+            gfx_draw_string_left(dpi, STR_MAX_NEGATIVE_VERTICAL_G, &gForces, COLOUR_BLACK, x, y);
+            y += LIST_ROW_HEIGHT;
 
-        // Maximum negative vertical Gs
-        gForces = td6->max_negative_vertical_g * 32;
-        gfx_draw_string_left(dpi, STR_MAX_NEGATIVE_VERTICAL_G, &gForces, COLOUR_BLACK, x, y);
-        y += 10;
+            // Maximum lateral Gs
+            gForces = td6->max_lateral_g * 32;
+            gfx_draw_string_left(dpi, STR_MAX_LATERAL_G, &gForces, COLOUR_BLACK, x, y);
+            y += LIST_ROW_HEIGHT;
 
-        // Maximum lateral Gs
-        gForces = td6->max_lateral_g * 32;
-        gfx_draw_string_left(dpi, STR_MAX_LATERAL_G, &gForces, COLOUR_BLACK, x, y);
-        y += 10;
-
-        // If .TD6
-        if (td6->version_and_colour_scheme / 4 >= 2) {
-            if (td6->total_air_time != 0) {
-                // Total air time
-                sint32 airTime = td6->total_air_time * 25;
-                gfx_draw_string_left(dpi, STR_TOTAL_AIR_TIME, &airTime, COLOUR_BLACK, x, y);
-                y += 10;
+            // If .TD6
+            if (td6->version_and_colour_scheme / 4 >= 2)
+            {
+                if (td6->total_air_time != 0)
+                {
+                    // Total air time
+                    int32_t airTime = td6->total_air_time * 25;
+                    gfx_draw_string_left(dpi, STR_TOTAL_AIR_TIME, &airTime, COLOUR_BLACK, x, y);
+                    y += LIST_ROW_HEIGHT;
+                }
             }
         }
-    }
 
-    if (ride_type_has_flag(td6->type, RIDE_TYPE_FLAG_HAS_DROPS)) {
-        // Drops
-        uint16 drops = td6->drops & 0x3F;
-        gfx_draw_string_left(dpi, STR_DROPS, &drops, COLOUR_BLACK, x, y);
-        y += 10;
+        if (ride_type_has_flag(td6->type, RIDE_TYPE_FLAG_HAS_DROPS))
+        {
+            // Drops
+            uint16_t drops = td6->drops & 0x3F;
+            gfx_draw_string_left(dpi, STR_DROPS, &drops, COLOUR_BLACK, x, y);
+            y += LIST_ROW_HEIGHT;
 
-        // Drop height is multiplied by 0.75
-        uint16 highestDropHeight = (td6->highest_drop_height * 3) / 4;
-        gfx_draw_string_left(dpi, STR_HIGHEST_DROP_HEIGHT, &highestDropHeight, COLOUR_BLACK, x, y);
-        y += 10;
-    }
-
-    if (td6->type != RIDE_TYPE_MINI_GOLF) {
-        uint16 inversions = td6->inversions & 0x1F;
-        if (inversions != 0) {
-            // Inversions
-            gfx_draw_string_left(dpi, STR_INVERSIONS, &inversions, COLOUR_BLACK, x, y);
-            y += 10;
+            // Drop height is multiplied by 0.75
+            uint16_t highestDropHeight = (td6->highest_drop_height * 3) / 4;
+            gfx_draw_string_left(dpi, STR_HIGHEST_DROP_HEIGHT, &highestDropHeight, COLOUR_BLACK, x, y);
+            y += LIST_ROW_HEIGHT;
         }
-    }
-    y += 4;
 
-    if (td6->space_required_x != 0xFF) {
+        if (td6->type != RIDE_TYPE_MINI_GOLF)
+        {
+            uint16_t inversions = td6->inversions & 0x1F;
+            if (inversions != 0)
+            {
+                // Inversions
+                gfx_draw_string_left(dpi, STR_INVERSIONS, &inversions, COLOUR_BLACK, x, y);
+                y += LIST_ROW_HEIGHT;
+            }
+        }
+        y += 4;
+    }
+
+    if (td6->space_required_x != 0xFF)
+    {
         // Space required
-        set_format_arg(0, uint16, td6->space_required_x);
-        set_format_arg(2, uint16, td6->space_required_y);
+        set_format_arg(0, uint16_t, td6->space_required_x);
+        set_format_arg(2, uint16_t, td6->space_required_y);
         gfx_draw_string_left(dpi, STR_TRACK_LIST_SPACE_REQUIRED, gCommonFormatArgs, COLOUR_BLACK, x, y);
-        y += 10;
+        y += LIST_ROW_HEIGHT;
     }
 
-    if (td6->cost != 0) {
+    if (td6->cost != 0)
+    {
         gfx_draw_string_left(dpi, STR_TRACK_LIST_COST_AROUND, &td6->cost, COLOUR_BLACK, x, y);
     }
 }
@@ -563,45 +702,57 @@ static void window_track_list_paint(rct_window *w, rct_drawpixelinfo *dpi)
  *
  *  rct2: 0x006CF8CD
  */
-static void window_track_list_scrollpaint(rct_window *w, rct_drawpixelinfo *dpi, sint32 scrollIndex)
+static void window_track_list_scrollpaint(rct_window* w, rct_drawpixelinfo* dpi, int32_t scrollIndex)
 {
-    uint8 paletteIndex = ColourMapA[w->colours[0]].mid_light;
+    uint8_t paletteIndex = ColourMapA[w->colours[0]].mid_light;
     gfx_clear(dpi, paletteIndex);
 
-    sint32 x = 0;
-    sint32 y = 0;
+    int32_t x = 0;
+    int32_t y = 0;
     size_t listIndex = 0;
-    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER) {
-        if (_trackDesignsCount == 0) {
+    if (gScreenFlags & SCREEN_FLAGS_TRACK_MANAGER)
+    {
+        if (_trackDesigns.empty())
+        {
             // No track designs
             gfx_draw_string_left(dpi, STR_NO_TRACK_DESIGNS_OF_THIS_TYPE, nullptr, COLOUR_BLACK, x, y - 1);
             return;
         }
-    } else {
+    }
+    else
+    {
         // Build custom track item
         rct_string_id stringId;
-        if (listIndex == (size_t)w->selected_list_item) {
+        if (listIndex == (size_t)w->selected_list_item)
+        {
             // Highlight
-            gfx_filter_rect(dpi, x, y, w->width, y + 9, PALETTE_DARKEN_1);
+            gfx_filter_rect(dpi, x, y, w->width, y + SCROLLABLE_ROW_HEIGHT - 1, PALETTE_DARKEN_1);
             stringId = STR_WINDOW_COLOUR_2_STRINGID;
-        } else {
+        }
+        else
+        {
             stringId = STR_BLACK_STRING;
         }
 
         rct_string_id stringId2 = STR_BUILD_CUSTOM_DESIGN;
         gfx_draw_string_left(dpi, stringId, &stringId2, COLOUR_BLACK, x, y - 1);
-        y += 10;
+        y += SCROLLABLE_ROW_HEIGHT;
         listIndex++;
     }
 
-    for (size_t i = 0; i < _trackDesignsCount; i++, listIndex++) {
-        if (y + 10 >= dpi->y && y < dpi->y + dpi->height) {
+    for (auto i : _filteredTrackIds)
+    {
+        if (y + SCROLLABLE_ROW_HEIGHT >= dpi->y && y < dpi->y + dpi->height)
+        {
             rct_string_id stringId;
-            if (listIndex == (size_t)w->selected_list_item) {
+            if (listIndex == (size_t)w->selected_list_item)
+            {
                 // Highlight
-                gfx_filter_rect(dpi, x, y, w->width, y + 9, PALETTE_DARKEN_1);
+                gfx_filter_rect(dpi, x, y, w->width, y + SCROLLABLE_ROW_HEIGHT - 1, PALETTE_DARKEN_1);
                 stringId = STR_WINDOW_COLOUR_2_STRINGID;
-            } else {
+            }
+            else
+            {
                 stringId = STR_BLACK_STRING;
             }
 
@@ -610,39 +761,50 @@ static void window_track_list_scrollpaint(rct_window *w, rct_drawpixelinfo *dpi,
             set_format_arg(2, utf8*, _trackDesigns[i].name);
             gfx_draw_string_left(dpi, stringId, gCommonFormatArgs, COLOUR_BLACK, x, y - 1);
         }
-        y += 10;
+
+        y += SCROLLABLE_ROW_HEIGHT;
+        listIndex++;
     }
 }
 
 static void track_list_load_designs(ride_list_item item)
 {
-    if (!RideGroupManager::RideTypeHasRideGroups(item.type)) {
+    auto repo = OpenRCT2::GetContext()->GetTrackDesignRepository();
+    if (!RideGroupManager::RideTypeHasRideGroups(item.type))
+    {
         char entry[9];
-        const char *entryPtr = nullptr;
-        if (item.type < 0x80) {
-            rct_ride_entry *rideEntry = get_ride_entry(item.entry_index);
-            if ((rideEntry->flags & RIDE_ENTRY_FLAG_SEPARATE_RIDE) && !rideTypeShouldLoseSeparateFlag(rideEntry)) {
+        const char* entryPtr = nullptr;
+        if (item.type < 0x80)
+        {
+            if (RideGroupManager::RideTypeIsIndependent(item.type))
+            {
                 get_ride_entry_name(entry, item.entry_index);
                 entryPtr = entry;
             }
         }
-        _trackDesignsCount = track_repository_get_items_for_ride(&_trackDesigns, item.type, entryPtr);
-    } else {
-        rct_ride_entry *rideEntry = get_ride_entry(item.entry_index);
-        const RideGroup * rideGroup = RideGroupManager::GetRideGroup(item.type, rideEntry);
-        _trackDesignsCount = track_repository_get_items_for_ride_group(&_trackDesigns, item.type, rideGroup);
+
+        _trackDesigns = repo->GetItemsForObjectEntry(item.type, String::ToStd(entryPtr));
     }
+    else
+    {
+        auto rideEntry = get_ride_entry(item.entry_index);
+        auto rideGroup = RideGroupManager::GetRideGroup(item.type, rideEntry);
+        _trackDesigns = repo->GetItemsForRideGroup(item.type, rideGroup);
+    }
+
+    window_track_list_filter_list();
 }
 
-static bool track_list_load_design_for_preview(utf8 *path)
+static bool track_list_load_design_for_preview(utf8* path)
 {
     // Dispose currently loaded track
     track_design_dispose(_loadedTrackDesign);
     _loadedTrackDesign = nullptr;
 
     _loadedTrackDesign = track_design_open(path);
-    if (_loadedTrackDesign != nullptr && drawing_engine_get_type() != DRAWING_ENGINE_OPENGL) {
-        track_design_draw_preview(_loadedTrackDesign, _trackDesignPreviewPixels);
+    if (_loadedTrackDesign != nullptr)
+    {
+        track_design_draw_preview(_loadedTrackDesign, _trackDesignPreviewPixels.data());
         return true;
     }
     return false;

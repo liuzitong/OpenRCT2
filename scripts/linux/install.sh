@@ -9,9 +9,9 @@ fi
 
 cachedir=.cache
 if [[ $(uname -s) == "Darwin" ]]; then
-	liburl=https://openrct2.website/files/orctlibs-osx.zip
+	liburl=https://openrct2.io/files/orctlibs-osx.zip
 else
-	liburl=https://openrct2.website/files/orctlibs.zip
+	liburl=https://openrct2.io/files/orctlibs.zip
 fi
 mkdir -p "$cachedir"
 
@@ -97,6 +97,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
 		brew install jansson sdl2 sdl2_ttf speex --universal
 	fi
 elif [[ $(uname) == "Linux" ]]; then
+	# Clone discord-rpc for Discord's Rich Presence support
+    # Use tagged release to prevent upstream changes from breaking our code
+	git clone https://github.com/IntelOrca/discord-rpc -b fix/134-iothreadholder
+    # Use rapidjson with a hack for GCC 8, while awaiting a fix upstream:
+    # https://github.com/Tencent/rapidjson/issues/1205
+    git clone https://github.com/janisozaur/rapidjson discord-rpc/thirdparty/rapidjson -b patch-1
 	# prevent build.sh from re-doing all the steps again
 	case "$TARGET" in
 		"ubuntu_i686")

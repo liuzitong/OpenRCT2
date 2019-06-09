@@ -1,31 +1,24 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
 #pragma once
 
 #include "../common.h"
-
-#include "../drawing/drawing.h"
+#include "../drawing/Drawing.h"
 
 enum CLIMATE
 {
     CLIMATE_COOL_AND_WET,
     CLIMATE_WARM,
     CLIMATE_HOT_AND_DRY,
-    CLIMATE_COLD
+    CLIMATE_COLD,
+    CLIMATE_COUNT,
 };
 
 enum WEATHER
@@ -38,41 +31,50 @@ enum WEATHER
     WEATHER_THUNDER,
 };
 
-typedef struct WeatherState
+enum WEATHER_EFFECT
 {
-    sint8   TemperatureDelta;
-    sint8   EffectLevel;
-    sint8   GloomLevel;
-    sint8   RainLevel;
-    uint32  SpriteId;
-} WeatherState;
+    WEATHER_EFFECT_NONE,
+    WEATHER_EFFECT_RAIN,
+    WEATHER_EFFECT_STORM,
+};
 
-#ifdef __cplusplus
-extern "C"
+enum RAIN_LEVEL
 {
-#endif
-    extern uint8    gClimate;
-    extern uint8    gClimateCurrentWeather;
-    extern sint8    gClimateCurrentTemperature;
-    extern uint8    gClimateCurrentWeatherEffect;
-    extern uint8    gClimateCurrentWeatherGloom;
-    extern uint8    gClimateCurrentRainLevel;
-    extern uint8    gClimateNextWeather;
-    extern sint8    gClimateNextTemperature;
-    extern uint8    gClimateNextWeatherEffect;
-    extern uint8    gClimateNextWeatherGloom;
-    extern uint8    gClimateNextRainLevel;
-    extern uint16   gClimateUpdateTimer;
-    extern uint16   gClimateLightningFlash;
+    RAIN_LEVEL_NONE,
+    RAIN_LEVEL_LIGHT,
+    RAIN_LEVEL_HEAVY,
+};
 
-    extern const WeatherState       ClimateWeatherData[6];
-    extern const FILTER_PALETTE_ID  ClimateWeatherGloomColours[4];
+struct WeatherState
+{
+    int8_t TemperatureDelta;
+    int8_t EffectLevel;
+    int8_t GloomLevel;
+    int8_t RainLevel;
+    uint32_t SpriteId;
+};
 
-    sint32 climate_celsius_to_fahrenheit(sint32 celsius);
-    void climate_reset(sint32 climate);
-    void climate_update();
-    void climate_update_sound();
-    void climate_force_weather(uint8 weather);
-#ifdef __cplusplus
-}
-#endif
+struct ClimateState
+{
+    uint8_t Weather;
+    int8_t Temperature;
+    uint8_t WeatherEffect;
+    uint8_t WeatherGloom;
+    uint8_t RainLevel;
+};
+
+extern uint8_t gClimate;
+extern ClimateState gClimateCurrent;
+extern ClimateState gClimateNext;
+extern uint16_t gClimateUpdateTimer;
+extern uint16_t gClimateLightningFlash;
+
+int32_t climate_celsius_to_fahrenheit(int32_t celsius);
+void climate_reset(int32_t climate);
+void climate_update();
+void climate_update_sound();
+void climate_force_weather(uint8_t weather);
+
+bool climate_is_raining();
+FILTER_PALETTE_ID climate_get_weather_gloom_palette_id(const ClimateState& state);
+uint32_t climate_get_weather_sprite_id(const ClimateState& state);

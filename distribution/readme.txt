@@ -1,5 +1,5 @@
-Last updated:    2017-08-09
-Release version: 0.1.1
+Last updated:    2019-03-13
+Release version: 0.2.2
 ------------------------------------------------------------------------
 
 
@@ -45,8 +45,7 @@ When you are sure it is not already reported you should:
    tracker for that fork which is most likely another GitHub repository.
  * Make it reproducible for the developers. In other words, create a savegame
    in which you can reproduce the issue once loaded. It is very useful to give
-   us the crash.dmp, crash.sav, crash.log and crash screenshot which are
-   created on crashes.
+   us the dump file as well, and a screenshot.
  * Check whether the bug is already reported on our bug tracker. This includes
    searching for recently closed bug reports as the bug might already be fixed.
 
@@ -67,7 +66,7 @@ following information in your bug report:
 
 3.0) Supported platforms
 ---- -------------------
-OpenRCT2 is currently supported on Windows Vista and above, many distributions of
+OpenRCT2 is currently supported on Windows 7 and above, many distributions of
 Linux, macOS 10.9 or higher, Android, FreeBSD and OpenBSD. OpenRCT2 will only work on
 little-endian architectures.
 Further instructions can be found on GitHub.
@@ -142,15 +141,17 @@ OpenRCT2 is licensed under the GNU General Public Licence version 3.0. For
 the complete licence text, see the file 'licence.txt'. This licence applies
 to all files in this distribution, except as noted below.
 
-Jansson  | MIT licence.
-libcURL  | MIT (or Modified BSD-style) licence.
-libspeex | BSD-style licence.
-libpng   | libpng licence.
-libzip   | BSD 3 clause licence.
-OpenSSL  | OpenSSL Licence
-SDL2     | zlib licence.
-SDL2 TTF | zlib licence.
-zlib     | zlib licence.
+Jansson          | MIT licence.
+libcURL          | MIT (or Modified BSD-style) licence.
+libicu           | Unicode licence.
+libspeex         | BSD-style licence.
+libpng           | libpng licence.
+libzip           | BSD 3 clause licence.
+OpenSSL          | OpenSSL Licence
+SDL2             | zlib licence.
+zlib             | zlib licence.
+Google Test      | BSD 3 clause licence.
+Google Benchmark | Apache 2.0 licence.
 
 Licences for sub-libraries used by the above may vary. For more information, visit the libraries' respective official websites.
 

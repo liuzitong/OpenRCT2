@@ -4,22 +4,22 @@
 STR_0000    :
 STR_0001    :{STRINGID} {COMMA16}
 STR_0002    :أفعوانية حلزونية دائرية
-STR_0003    :أفعوانية حلزونية واقفة
+STR_0003    :أفعوانية حلزونية عمودية
 STR_0004    :أفعوانية دائرة معلقة
 STR_0005    :أفعوانية حلزونية معكوسة
 STR_0006    :أفعوانية حلزونية للصغار
-STR_0007    :قطار سكة حديدة مصغر
-STR_0008    :قطار معلق
-STR_0009    :أفعوانية حلزونية مصغرة
+STR_0007    :قطار سكة حديدية مصغر
+STR_0008    :قطار مُعلق
+STR_0009    :أفعوانية حلزونية مُصغرة
 STR_0010    :تأجير القارب
 STR_0011    :أفعوانية صغيرة خشبية
 STR_0012    :سباق التتابع
 STR_0013    :قيادة السيارة
 STR_0014    :إطلاق السقوط الحر
 STR_0015    :أفعوانية طائرة خشبية
-STR_0016    :برج المراقبة
-STR_0017    :أفعوانية الحلزونية المتكررة
-STR_0018    :المنحد المتسلسل
+STR_0016    :بُرج المراقبة
+STR_0017    :أفعوانية حلزُونية متكررة
+STR_0018    :المنحدر المتسلسل
 STR_0019    :أفعوانية قطار المغارة
 STR_0020    :مصعد هوائي
 STR_0021    :أفعوانية دائرية مميتة
@@ -27,7 +27,7 @@ STR_0022    :متاهة
 STR_0023    :زحليقة دائرية
 STR_0024    :هيا كارتس
 STR_0025    :لوح العوم
-STR_0026    :رحلة النهر
+STR_0026    :رحلة نهرية
 STR_0027    :السيارات المتصادمة
 STR_0028    :سفينة القراصنة
 STR_0029    :سفينة متأرجحة عكسية
@@ -81,7 +81,7 @@ STR_0076    :إفعوانية مائية
 STR_0077    :إفعوانية معكوسة عاملة بالهواء
 STR_0078    :إفعوانية منعطفه حاده معكوسة
 STR_0079    :السجادة السحرية
-STR_0080    :رحلة غواصة
+STR_0080    :رحلة بالغواصة
 STR_0081    :طوافات النهر
 STR_0082    :رحلة غير معروفة (50)
 STR_0083    :مغامرة
@@ -93,464 +93,42 @@ STR_0088    :إفعوانية دافعة معكوسة
 STR_0089    :إفعوانية دائرية مصغرة
 STR_0090    :رحلة مصغرة
 STR_0091    :رحلة غير معروفة (59)
-STR_0092    :LIMأفعوانية مُطلقة بواسطة 
-STR_0093    :
-STR_0094    :
-STR_0095    :
-STR_0096    :
-STR_0097    :
-STR_0098    :
-STR_0099    :
-STR_0100    :
-STR_0101    :
-STR_0102    :
-STR_0103    :
-STR_0104    :
-STR_0105    :
-STR_0106    :
-STR_0107    :
-STR_0108    :
-STR_0109    :
-STR_0110    :
-STR_0111    :
-STR_0112    :
-STR_0113    :
-STR_0114    :
-STR_0115    :
-STR_0116    :
-STR_0117    :
-STR_0118    :
-STR_0119    :
-STR_0120    :
-STR_0121    :
-STR_0122    :
-STR_0123    :
-STR_0124    :
-STR_0125    :
-STR_0126    :
-STR_0127    :
-STR_0128    :
-STR_0129    :
-STR_0130    :
-STR_0131    :
-STR_0132    :
-STR_0133    :
-STR_0134    :
-STR_0135    :
-STR_0136    :
-STR_0137    :
-STR_0138    :
-STR_0139    :
-STR_0140    :
-STR_0141    :
-STR_0142    :
-STR_0143    :
-STR_0144    :
-STR_0145    :
-STR_0146    :
-STR_0147    :
-STR_0148    :
-STR_0149    :
-STR_0150    :
-STR_0151    :
-STR_0152    :
-STR_0153    :
-STR_0154    :
-STR_0155    :
-STR_0156    :
-STR_0157    :
-STR_0158    :
-STR_0159    :
-STR_0160    :
-STR_0161    :
-STR_0162    :
-STR_0163    :
-STR_0164    :
-STR_0165    :
-STR_0166    :
-STR_0167    :
-STR_0168    :
-STR_0169    :
-STR_0170    :
-STR_0171    :
-STR_0172    :
-STR_0173    :
-STR_0174    :
-STR_0175    :
-STR_0176    :
-STR_0177    :
-STR_0178    :
-STR_0179    :
-STR_0180    :
-STR_0181    :
-STR_0182    :
-STR_0183    :
-STR_0184    :
-STR_0185    :
-STR_0186    :
-STR_0187    :
-STR_0188    :
-STR_0189    :
-STR_0190    :
-STR_0191    :
-STR_0192    :
-STR_0193    :
-STR_0194    :
-STR_0195    :
-STR_0196    :
-STR_0197    :
-STR_0198    :
-STR_0199    :
-STR_0200    :
-STR_0201    :
-STR_0202    :
-STR_0203    :
-STR_0204    :
-STR_0205    :
-STR_0206    :
-STR_0207    :
-STR_0208    :
-STR_0209    :
-STR_0210    :
-STR_0211    :
-STR_0212    :
-STR_0213    :
-STR_0214    :
-STR_0215    :
-STR_0216    :
-STR_0217    :
-STR_0218    :
-STR_0219    :
-STR_0220    :
-STR_0221    :
-STR_0222    :
-STR_0223    :
-STR_0224    :
-STR_0225    :
-STR_0226    :
-STR_0227    :
-STR_0228    :
-STR_0229    :
-STR_0230    :
-STR_0231    :
-STR_0232    :
-STR_0233    :
-STR_0234    :
-STR_0235    :
-STR_0236    :
-STR_0237    :
-STR_0238    :
-STR_0239    :
-STR_0240    :
-STR_0241    :
-STR_0242    :
-STR_0243    :
-STR_0244    :
-STR_0245    :
-STR_0246    :
-STR_0247    :
-STR_0248    :
-STR_0249    :
-STR_0250    :
-STR_0251    :
-STR_0252    :
-STR_0253    :
-STR_0254    :
-STR_0255    :
-STR_0256    :
-STR_0257    :
-STR_0258    :
-STR_0259    :
-STR_0260    :
-STR_0261    :
-STR_0262    :
-STR_0263    :
-STR_0264    :
-STR_0265    :
-STR_0266    :
-STR_0267    :
-STR_0268    :
-STR_0269    :
-STR_0270    :
-STR_0271    :
-STR_0272    :
-STR_0273    :
-STR_0274    :
-STR_0275    :
-STR_0276    :
-STR_0277    :
-STR_0278    :
-STR_0279    :
-STR_0280    :
-STR_0281    :
-STR_0282    :
-STR_0283    :
-STR_0284    :
-STR_0285    :
-STR_0286    :
-STR_0287    :
-STR_0288    :
-STR_0289    :
-STR_0290    :
-STR_0291    :
-STR_0292    :
-STR_0293    :
-STR_0294    :
-STR_0295    :
-STR_0296    :
-STR_0297    :
-STR_0298    :
-STR_0299    :
-STR_0300    :
-STR_0301    :
-STR_0302    :
-STR_0303    :
-STR_0304    :
-STR_0305    :
-STR_0306    :
-STR_0307    :
-STR_0308    :
-STR_0309    :
-STR_0310    :
-STR_0311    :
-STR_0312    :
-STR_0313    :
-STR_0314    :
-STR_0315    :
-STR_0316    :
-STR_0317    :
-STR_0318    :
-STR_0319    :
-STR_0320    :
-STR_0321    :
-STR_0322    :
-STR_0323    :
-STR_0324    :
-STR_0325    :
-STR_0326    :
-STR_0327    :
-STR_0328    :
-STR_0329    :
-STR_0330    :
-STR_0331    :
-STR_0332    :
-STR_0333    :
-STR_0334    :
-STR_0335    :
-STR_0336    :
-STR_0337    :
-STR_0338    :
-STR_0339    :
-STR_0340    :
-STR_0341    :
-STR_0342    :
-STR_0343    :
-STR_0344    :
-STR_0345    :
-STR_0346    :
-STR_0347    :
-STR_0348    :
-STR_0349    :
-STR_0350    :
-STR_0351    :
-STR_0352    :
-STR_0353    :
-STR_0354    :
-STR_0355    :
-STR_0356    :
-STR_0357    :
-STR_0358    :
-STR_0359    :
-STR_0360    :
-STR_0361    :
-STR_0362    :
-STR_0363    :
-STR_0364    :
-STR_0365    :
-STR_0366    :
-STR_0367    :
-STR_0368    :
-STR_0369    :
-STR_0370    :
-STR_0371    :
-STR_0372    :
-STR_0373    :
-STR_0374    :
-STR_0375    :
-STR_0376    :
-STR_0377    :
-STR_0378    :
-STR_0379    :
-STR_0380    :
-STR_0381    :
-STR_0382    :
-STR_0383    :
-STR_0384    :
-STR_0385    :
-STR_0386    :
-STR_0387    :
-STR_0388    :
-STR_0389    :
-STR_0390    :
-STR_0391    :
-STR_0392    :
-STR_0393    :
-STR_0394    :
-STR_0395    :
-STR_0396    :
-STR_0397    :
-STR_0398    :
-STR_0399    :
-STR_0400    :
-STR_0401    :
-STR_0402    :
-STR_0403    :
-STR_0404    :
-STR_0405    :
-STR_0406    :
-STR_0407    :
-STR_0408    :
-STR_0409    :
-STR_0410    :
-STR_0411    :
-STR_0412    :
-STR_0413    :
-STR_0414    :
-STR_0415    :
-STR_0416    :
-STR_0417    :
-STR_0418    :
-STR_0419    :
-STR_0420    :
-STR_0421    :
-STR_0422    :
-STR_0423    :
-STR_0424    :
-STR_0425    :
-STR_0426    :
-STR_0427    :
-STR_0428    :
-STR_0429    :
-STR_0430    :
-STR_0431    :
-STR_0432    :
-STR_0433    :
-STR_0434    :
-STR_0435    :
-STR_0436    :
-STR_0437    :
-STR_0438    :
-STR_0439    :
-STR_0440    :
-STR_0441    :
-STR_0442    :
-STR_0443    :
-STR_0444    :
-STR_0445    :
-STR_0446    :
-STR_0447    :
-STR_0448    :
-STR_0449    :
-STR_0450    :
-STR_0451    :
-STR_0452    :
-STR_0453    :
-STR_0454    :
-STR_0455    :
-STR_0456    :
-STR_0457    :
-STR_0458    :
-STR_0459    :
-STR_0460    :
-STR_0461    :
-STR_0462    :
-STR_0463    :
-STR_0464    :
-STR_0465    :
-STR_0466    :
-STR_0467    :
-STR_0468    :
-STR_0469    :
-STR_0470    :
-STR_0471    :
-STR_0472    :
-STR_0473    :
-STR_0474    :
-STR_0475    :
-STR_0476    :
-STR_0477    :
-STR_0478    :
-STR_0479    :
-STR_0480    :
-STR_0481    :
-STR_0482    :
-STR_0483    :
-STR_0484    :
-STR_0485    :
-STR_0486    :
-STR_0487    :
-STR_0488    :
-STR_0489    :
-STR_0490    :
-STR_0491    :
-STR_0492    :
-STR_0493    :
-STR_0494    :
-STR_0495    :
-STR_0496    :
-STR_0497    :
-STR_0498    :
-STR_0499    :
-STR_0500    :
-STR_0501    :
-STR_0502    :
-STR_0503    :
-STR_0504    :
-STR_0505    :
-STR_0506    :
-STR_0507    :
-STR_0508    :
-STR_0509    :
-STR_0510    :
-STR_0511    :
-STR_0512    :أفعوانية دوارة مدمجة مع مرتفع حلزوني و إنخفاضات ملتفه ناعمة.
-STR_0513    :A looping roller coaster where the riders ride in a standing position
-STR_0514    :Trains suspended beneath the roller coaster track swing out to the side around corners
-STR_0515    :A steel roller coaster with trains that are held beneath the track, with many complex and twisting track elements
-STR_0516    :A gentle roller coaster for people who haven't yet got the courage to face the larger rides
-STR_0517    :Passengers ride in miniature trains along a narrow-gauge railway track
-STR_0518    :Passengers travel in electric trains along a monorail track
-STR_0519    :Passengers ride in small cars hanging beneath the single-rail track, swinging freely from side to side around corners
-STR_0520    :A dock platform where guests can drive/row personal watercraft on a body of water
-STR_0521    :A fast and twisting roller coaster with tight turns and steep drops. Intensity is bound to be high.
-STR_0522    :A smaller roller coaster where the riders sit above the track with no car around them
-STR_0523    :Riders travel slowly in powered vehicles along a track-based route
-STR_0524    :Freefall car is pneumatically launched up a tall steel tower and then allowed to freefall down
-STR_0525    :Riders career down a twisting track guided only by the curvature and banking of the semi-circular track
-STR_0526    :Passengers travel in a rotating observation cabin which travels up a tall tower
+STR_0092    :LIM أفعوانية مُطلقة بواسطة
+STR_0512    :أفعوانية دوارة مدمجة مع مرتفع حلزوني و إنخفاضات ملتفة ناعمة.
+STR_0513    :أفعوانية دوارة للأعلي حيث يبقي الركاب في مسار أفقي.
+STR_0514    :تتحرك القطارات المعلقة أسفل مسار الإفعوانية الدوارة إلى الجانب وحول الزوايا
+STR_0515    :إفعوانية دوارة فولاذية مع قطارات يتم عقدها تحت المسار، مع العديد من عناصر المسار المعقدة والملتوية
+STR_0516    :إفعوانية دوارة لطيفة للأشخاص الذين لم تتح لهم الشجاعة لمواجهة الأفعوانيات الكبري
+STR_0517    :يركب الركاب في قطار صغير علي طول مسار ذا مقياس مُصغر
+STR_0518    :يسافر الركاب في قطارات كهربائية على طول مسار وحيد
+STR_0519    :يركب الركاب سيارات صغيرة معلقة أسفل مسار السكة الحديد المفرد، يتأرجح بحرية من جانب إلى آخر حول الزوايا
+STR_0520    :منصة رصيف حيث يمكن للضيوف قيادة/تجديف علي قوارب مائية شخصية على مساحة من المياه
+STR_0521    :أفعوانية دوارة سريعة ومتعرجة مع منحنيات ضيقة ومنحدارات حادة. الشدة مُصممة علي أن تكون عالية.
+STR_0522    :أفعوانية دوارة حيث يجلس الدراجين فوق المسار مع عدم وجود سيارة من حولهم
+STR_0523    :يسافر الراكبون ببطء في السيارات التي تعمل بالطاقة على طول المسار القائم على المسار
+STR_0524    :يتم إطلاق سيارة السقوط الحر بشكل عمودي في برج فولاذي طويل ثم يتم السماح لها بالهبوط الحر
+STR_0525    :يركب الراكبون مسارًا متعرجًا يوجهه فقط الانحنائات والتماليات للمسار شبه الدائري
+STR_0526    :يسافر الركاب في كابينة المشاهدة الدوارة التي تصعد علي طول برج طويل
 STR_0527    :A smooth steel-tracked roller coaster capable of vertical loops
 STR_0528    :Riders travel in inflatable dinghies down a twisting semi-circular or completely enclosed tube track
 STR_0529    :Mine train themed roller coaster trains career along steel roller coaster track made to look like old railway track
 STR_0530    :Cars hang from a steel cable which runs continuously from one end of the ride to the other and back again
 STR_0531    :A compact steel-tracked roller coaster where the train travels through corkscrews and loops
-STR_0532    :Maze is constructed from 6-foot tall hedges or walls, and guests wander around the maze leaving only when they find the exit
-STR_0533    :Wooden building with an internal staircase and an external spiral slide for use with slide mats
-STR_0534    :Self-drive petrol-engined go karts
+STR_0532    :تم بناء المتاهة من السياجات أو الجدران بطول 6 أقدام، يتجول الزوار حول المتاهة ويمكنهم المغادرة فقط عندما يعثورن على المخرج
+STR_0533    :مبنى خشبي مع درج داخلي ومزلفة لولبية خارجية للاستخدام مع المزالق
+STR_0534    :سيارات الكارتينج ذاتية القيادة بمحرك يعمل بالبنزين
 STR_0535    :Log-shaped boats travel along a water channel, splashing down steep slopes to soak the riders
 STR_0536    :Circular boats meander along a wide water channel, splashing through waterfalls and thrilling riders through foaming rapids
 STR_0537    :سيارات قيادة ذاتية تعمل بالكهرباء
 STR_0538    :سفينة قراصنة كبيرة تقوم بأرجحة
-STR_0539    :سفينة متصلة بزراع مع ثقل موازن في الجهة الأخري, وتتأرجح مكونة لفة بدرجة 360
+STR_0539    :سفينة متصلة بزراع مع ثقل موازن في الجهة الأخري، وتتأرجح مكونة لفة بدرجة 360
 STR_0540    :كشك حيث يمكن للضيوف شراء الطعام
-STR_0541    :<removed string - do not use>
 STR_0542    :كشك حيث يمكن للضيوف شراء المشروبات
-STR_0543    :<removed string - do not use>
 STR_0544    :كشك يبيع الهدايا التذكارية
 STR_0545    :Traditional rotating carousel with carved wooden horses
-STR_0546    :<removed string - do not use>
 STR_0547    :كشك حيث يمكن للضيوف شراء خرائط للحديقة والشمسيات
 STR_0548    :مبني الحمامات
-STR_0549    :عجلة كبيرة دواره مع كراسي مفتوحه
+STR_0549    :عجلة كبيرة دواره مع كراسي مفتوحة
 STR_0550    :Riders view a film inside the motion simulator pod while it is twisted and moved around by a hydraulic arm
 STR_0551    :Cinema showing 3D films inside a geodesic sphere shaped building
 STR_0552    :Passengers ride in a gondola suspended by large rotating arms, rotating forwards and backwards head-over-heels
@@ -569,15 +147,12 @@ STR_0564    :Running on wooden track, this coaster is fast, rough, noisy, and gi
 STR_0565    :A simple wooden roller coaster capable of only gentle slopes and turns, where the cars are only kept on the track by side friction wheels and gravity
 STR_0566    :Individual roller coaster cars zip around a tight zig-zag layout of track with sharp corners and short sharp drops
 STR_0567    :Sitting in seats suspended either side of the track, riders are pitched head-over-heels while they plunge down steep drops and travel through various inversions
-STR_0568    :<removed string - do not use>
 STR_0569    :Riding in special harnesses below the track, riders experience the feeling of flight as they swoop through the air
-STR_0570    :<removed string - do not use>
 STR_0571    :Circular cars spin around as they travel along the zig-zagging wooden track
 STR_0572    :Large capacity boats travel along a wide water channel, propelled up slopes by a conveyor belt, accelerating down steep slopes to soak the riders with a giant splash
 STR_0573    :Powered helicopter shaped cars running on a steel track, controlled by the pedalling of the riders
 STR_0574    :Riders are held in special harnesses in a lying-down position, travelling through twisted track and inversions either on their backs or facing the ground
 STR_0575    :Powered trains hanging from a single rail transport people around the park
-STR_0576    :<removed string - do not use>
 STR_0577    :Bogied cars run on wooden tracks, turning around on special reversing sections
 STR_0578    :Cars run along track enclosed by circular hoops, traversing steep drops and heartline twists
 STR_0579    :A gentle game of miniature golf
@@ -593,224 +168,49 @@ STR_0588    :Individual cars run beneath a zig-zagging track with hairpin turns 
 STR_0589    :A large flying-carpet themed car which moves up and down cyclically on the ends of 4 arms
 STR_0590    :Riders ride in a submerged submarine through an underwater course
 STR_0591    :Raft-shaped boats gently meander around a river track
-STR_0592    :<removed string - do not use>
 STR_0593    :Rotating wheel with suspended passenger pods, which first starts spinning and is then tilted up by a supporting arm
-STR_0594    :<removed string - do not use>
-STR_0595    :<removed string - do not use>
-STR_0596    :<removed string - do not use>
-STR_0597    :<removed string - do not use>
 STR_0598    :Inverted roller coaster trains are accelerated out of the station to travel up a vertical spike of track, then reverse back through the station to travel backwards up another vertical spike of track
 STR_0599    :A compact roller coaster with individual cars and smooth twisting drops
 STR_0600    :Powered mine trains career along a smooth and twisted track layout
-STR_0601    :<removed string - do not use>
 STR_0602    :Roller coaster trains are accelerated out of the station by linear induction motors to speed through twisting inversions
-STR_0603    :ضيف {INT32}
-STR_0604    :ضيف {INT32}
-STR_0605    :ضيف {INT32}
-STR_0606    :ضيف {INT32}
-STR_0607    :ضيف {INT32}
-STR_0608    :ضيف {INT32}
-STR_0609    :ضيف {INT32}
-STR_0610    :ضيف {INT32}
-STR_0611    :ضيف {INT32}
-STR_0612    :ضيف {INT32}
-STR_0613    :ضيف {INT32}
-STR_0614    :ضيف {INT32}
-STR_0615    :ضيف {INT32}
-STR_0616    :ضيف {INT32}
-STR_0617    :ضيف {INT32}
-STR_0618    :ضيف {INT32}
-STR_0619    :ضيف {INT32}
-STR_0620    :ضيف {INT32}
-STR_0621    :ضيف {INT32}
-STR_0622    :ضيف {INT32}
-STR_0623    :ضيف {INT32}
-STR_0624    :ضيف {INT32}
-STR_0625    :ضيف {INT32}
-STR_0626    :ضيف {INT32}
-STR_0627    :ضيف {INT32}
-STR_0628    :ضيف {INT32}
-STR_0629    :ضيف {INT32}
-STR_0630    :ضيف {INT32}
-STR_0631    :ضيف {INT32}
-STR_0632    :ضيف {INT32}
-STR_0633    :ضيف {INT32}
-STR_0634    :ضيف {INT32}
-STR_0635    :ضيف {INT32}
-STR_0636    :ضيف {INT32}
-STR_0637    :ضيف {INT32}
-STR_0638    :ضيف {INT32}
-STR_0639    :ضيف {INT32}
-STR_0640    :ضيف {INT32}
-STR_0641    :ضيف {INT32}
-STR_0642    :ضيف {INT32}
-STR_0643    :ضيف {INT32}
-STR_0644    :ضيف {INT32}
-STR_0645    :ضيف {INT32}
-STR_0646    :ضيف {INT32}
-STR_0647    :ضيف {INT32}
-STR_0648    :ضيف {INT32}
-STR_0649    :ضيف {INT32}
-STR_0650    :ضيف {INT32}
-STR_0651    :ضيف {INT32}
-STR_0652    :ضيف {INT32}
-STR_0653    :ضيف {INT32}
-STR_0654    :ضيف {INT32}
-STR_0655    :ضيف {INT32}
-STR_0656    :ضيف {INT32}
-STR_0657    :ضيف {INT32}
-STR_0658    :ضيف {INT32}
-STR_0659    :ضيف {INT32}
-STR_0660    :ضيف {INT32}
-STR_0661    :ضيف {INT32}
-STR_0662    :ضيف {INT32}
-STR_0663    :ضيف {INT32}
-STR_0664    :ضيف {INT32}
-STR_0665    :ضيف {INT32}
-STR_0666    :ضيف {INT32}
-STR_0667    :ضيف {INT32}
-STR_0668    :ضيف {INT32}
-STR_0669    :ضيف {INT32}
-STR_0670    :ضيف {INT32}
-STR_0671    :ضيف {INT32}
-STR_0672    :ضيف {INT32}
-STR_0673    :ضيف {INT32}
-STR_0674    :ضيف {INT32}
-STR_0675    :ضيف {INT32}
-STR_0676    :ضيف {INT32}
-STR_0677    :ضيف {INT32}
-STR_0678    :ضيف {INT32}
-STR_0679    :ضيف {INT32}
-STR_0680    :ضيف {INT32}
-STR_0681    :ضيف {INT32}
-STR_0682    :ضيف {INT32}
-STR_0683    :ضيف {INT32}
-STR_0684    :ضيف {INT32}
-STR_0685    :ضيف {INT32}
-STR_0686    :ضيف {INT32}
-STR_0687    :ضيف {INT32}
-STR_0688    :ضيف {INT32}
-STR_0689    :ضيف {INT32}
-STR_0690    :ضيف {INT32}
-STR_0691    :ضيف {INT32}
-STR_0692    :ضيف {INT32}
-STR_0693    :ضيف {INT32}
-STR_0694    :ضيف {INT32}
-STR_0695    :ضيف {INT32}
-STR_0696    :ضيف {INT32}
-STR_0697    :ضيف {INT32}
-STR_0698    :ضيف {INT32}
-STR_0699    :ضيف {INT32}
-STR_0700    :ضيف {INT32}
-STR_0701    :ضيف {INT32}
-STR_0702    :ضيف {INT32}
-STR_0703    :ضيف {INT32}
-STR_0704    :ضيف {INT32}
-STR_0705    :ضيف {INT32}
-STR_0706    :ضيف {INT32}
-STR_0707    :ضيف {INT32}
-STR_0708    :ضيف {INT32}
-STR_0709    :ضيف {INT32}
-STR_0710    :ضيف {INT32}
-STR_0711    :ضيف {INT32}
-STR_0712    :ضيف {INT32}
-STR_0713    :ضيف {INT32}
-STR_0714    :ضيف {INT32}
-STR_0715    :ضيف {INT32}
-STR_0716    :ضيف {INT32}
-STR_0717    :ضيف {INT32}
-STR_0718    :ضيف {INT32}
-STR_0719    :ضيف {INT32}
-STR_0720    :ضيف {INT32}
-STR_0721    :ضيف {INT32}
-STR_0722    :ضيف {INT32}
-STR_0723    :ضيف {INT32}
-STR_0724    :ضيف {INT32}
-STR_0725    :ضيف {INT32}
-STR_0726    :ضيف {INT32}
-STR_0727    :ضيف {INT32}
-STR_0728    :ضيف {INT32}
-STR_0729    :ضيف {INT32}
-STR_0730    :ضيف {INT32}
-STR_0731    :ضيف {INT32}
-STR_0732    :ضيف {INT32}
-STR_0733    :ضيف {INT32}
-STR_0734    :ضيف {INT32}
-STR_0735    :ضيف {INT32}
-STR_0736    :ضيف {INT32}
-STR_0737    :ضيف {INT32}
-STR_0738    :ضيف {INT32}
-STR_0739    :ضيف {INT32}
-STR_0740    :ضيف {INT32}
-STR_0741    :ضيق {INT32}
-STR_0742    :ضيف {INT32}
-STR_0743    :ضيف {INT32}
-STR_0744    :ضيف {INT32}
-STR_0745    :ضيف {INT32}
-STR_0746    :ضيف {INT32}
-STR_0747    :ضيف {INT32}
-STR_0748    :ضيف {INT32}
-STR_0749    :ضيف {INT32}
-STR_0750    :ضيف {INT32}
-STR_0751    :ضيف {INT32}
-STR_0752    :ضيف {INT32}
-STR_0753    :ضيف {INT32}
-STR_0754    :ضيف {INT32}
-STR_0755    :ضيف {INT32}
-STR_0756    :ضيف {INT32}
-STR_0757    :ضيف {INT32}
-STR_0758    :ضيف {INT32}
-STR_0759    :ضيف {INT32}
-STR_0760    :ضيف {INT32}
-STR_0761    :ضيف {INT32}
-STR_0762    :ضيف {INT32}
-STR_0763    :ضيف {INT32}
-STR_0764    :ضيف {INT32}
-STR_0765    :ضيف {INT32}
-STR_0766    :ضيف {INT32}
-STR_0767    :ضيف {INT32}
+STR_0767    :زائر {INT32}
 STR_0768    :رجل مساعد {INT32}
 STR_0769    :ميكانيكي {INT32}
 STR_0770    :رجل الأمن {INT32}
 STR_0771    :المُرفه {INT32}
-STR_0772    :حديقة غير مسماة{POP16}{POP16}
-STR_0773    :حديقة غير مسماة{POP16}{POP16}
-STR_0774    :حديقة غير مسماة{POP16}{POP16}
-STR_0775    :حديقة غير مسماة{POP16}{POP16}
-STR_0776    :حديقة غير مسماة{POP16}{POP16}
 STR_0777    :خديقة غير مسماة{POP16}{POP16}
 STR_0778    :إشارة
-STR_0779    :الأولي
-STR_0780    :الثانية
-STR_0781    :الثالثة
-STR_0782    :الرابعة
-STR_0783    :الخامسة
-STR_0784    :السادسة
-STR_0785    :السابعة
-STR_0786    :الثامنة
-STR_0787    :التاسعة
-STR_0788    :العاشرة
-STR_0789    :الحادية عشر
-STR_0790    :الثانية عشر
-STR_0791    :الثالثة عشر
-STR_0792    :الرابعة عشر
-STR_0793    :الخامسة عشر
-STR_0794    :السادسة عشر
-STR_0795    :السابعة عشر
-STR_0796    :الثامنة عشر
-STR_0797    :التاسعة عشر
+STR_0779    :الأول
+STR_0780    :الثاني
+STR_0781    :الثالث
+STR_0782    :الرابع
+STR_0783    :الخامس
+STR_0784    :السادس
+STR_0785    :السابع
+STR_0786    :الثامن
+STR_0787    :التاسع
+STR_0788    :العاشر
+STR_0789    :الحادي عشر
+STR_0790    :الثاني عشر
+STR_0791    :الثالث عشر
+STR_0792    :الرابع عشر
+STR_0793    :الخامس عشر
+STR_0794    :السادس عشر
+STR_0795    :السابع عشر
+STR_0796    :الثامن عشر
+STR_0797    :التاسع عشر
 STR_0798    :العشرون
-STR_0799    :الحادية والعشرون
-STR_0800    :الثانية والعشرون
-STR_0801    :الثالثة والعشرون
-STR_0802    :الرابعة والعشرون
-STR_0803    :الخامسة والعشرون
-STR_0804    :السادسة والعشرون
-STR_0805    :السابعة والعشرون
-STR_0806    :الثامنة والعشرون
-STR_0807    :التاسعة والعشرون
+STR_0799    :الحادي والعشرون
+STR_0800    :الثاني والعشرون
+STR_0801    :الثالث والعشرون
+STR_0802    :الرابع والعشرون
+STR_0803    :الخامس والعشرون
+STR_0804    :السادس والعشرون
+STR_0805    :السابع والعشرون
+STR_0806    :الثامن والعشرون
+STR_0807    :التاسع والعشرون
 STR_0808    :الثلاثون
-STR_0809    :الواحد وثلاثون
+STR_0809    :واحد وثلاثون
 STR_0810    :يناير
 STR_0811    :فبراير
 STR_0812    :مارس
@@ -818,14 +218,14 @@ STR_0813    :إبريل
 STR_0814    :مايو
 STR_0815    :يونيو
 STR_0816    :يوليو
-STR_0817    :أغسطسس
+STR_0817    :أغسطس
 STR_0818    :سبتمبر
 STR_0819    :أكتوبر
 STR_0820    :نوفمبر
 STR_0821    :ديسمبر
 STR_0822    :غير قادر علي الوصول لملف بيانات الجرافيك
 STR_0823    :ملف البيانات مفقود أو لا يمكن الوصول إليه
-STR_0824    :{BLACK}{CROSS}
+STR_0824    :{BLACK}❌
 STR_0825    :الأسم المختار مستخدم مسبقاً
 STR_0826    :أسماء كثيرة جداً محددة
 STR_0827    :{CURRENCY2DP} لا نقود كافية - يتطلب 
@@ -833,40 +233,21 @@ STR_0828    :{SMALLFONT}{BLACK}أغلق النافذة
 STR_0829    :{SMALLFONT}{BLACK}عنوان النافذة - إسحب هذا لكي تحرك النافذة
 STR_0830    :{SMALLFONT}{BLACK}تكبير المشهد للداخل
 STR_0831    :{SMALLFONT}{BLACK}تصغير المشهد للخارج
-STR_0832    :{SMALLFONT}{BLACK}تدوير المشهد 90{DEGREE} بأتجاه عقارب الساعة
+STR_0832    :{SMALLFONT}{BLACK}تدوير المشهد 90 ° بإتجاه عقارب الساعة
 STR_0833    :{SMALLFONT}{BLACK}إيقاف اللعبة مؤقتاً
 STR_0834    :{SMALLFONT}{BLACK}إعدادات اللعبة والهارد
-STR_0835    :إطلاق اللعبة فشل
-STR_0836    :غير قادر علي إطلاق اللعبة في وضع التصغير
-STR_0837    :غير قادر علي إطلاق نظام الجرافيك
-STR_0838    :<removed string - do not use>
 STR_0839    :{UINT16} x {UINT16}
 STR_0840    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{UINT16} x {UINT16}
 # The following six strings were used for display resolutions, but have been replaced.
-STR_0841    :<removed string - do not use>
-STR_0842    :<removed string - do not use>
-STR_0843    :<removed string - do not use>
-STR_0844    :<removed string - do not use>
-STR_0845    :<removed string - do not use>
-STR_0846    :<removed string - do not use>
-STR_0847    :عن 'OpenRCT2'
-STR_0848    :محاكي الأفعوانيات 2
-STR_0849    :<removed string - do not use>
-STR_0850    :{WINDOW_COLOUR_2}حقوق النشر {COPYRIGHT} 2002 كريس سوير, كل الحقوق محفوظة
-STR_0851    :{WINDOW_COLOUR_2}تم تصميمها وبرمجتها من خلال كريس ساوير
+STR_0847    :'OpenRCT2' عن
+STR_0850    :{WINDOW_COLOUR_2}حقوق النشر © 2002 كريس سوير، كل الحقوق محفوظة
+STR_0851    :{WINDOW_COLOUR_2}تم تصميمها وبرمجتها بواسطة كريس ساوير
 STR_0852    :{WINDOW_COLOUR_2}الجرافيك بواسطة سايمون بوستر
 STR_0853    :{WINDOW_COLOUR_2}الصوت والموسيقي بواسطة أليستر بريمبل
 STR_0854    :{WINDOW_COLOUR_2}أصوات إضافية سُجلت بواسطة ديفيد إليس
-STR_0855    :{WINDOW_COLOUR_2}Representation by Jacqui Lyons at Marjacq Ltd.
+STR_0855    :{WINDOW_COLOUR_2}إعادة التقديم بواسطة جاكي ليونز في Marjacq Ltd.
 STR_0856    :{WINDOW_COLOUR_2}شكراً إلي:
-STR_0857    :{WINDOW_COLOUR_2}Peter James Adcock, Joe Booth, and John Wardley
-STR_0858    :<removed string - do not use>
-STR_0859    :<removed string - do not use>
-STR_0860    :<removed string - do not use>
-STR_0861    :<removed string - do not use>
-STR_0862    :<removed string - do not use>
-STR_0863    :<removed string - do not use>
-STR_0864    :<removed string - do not use>
+STR_0857    :{WINDOW_COLOUR_2}بيتر جيمس أدكوك، جو بوث، وجون واردلي
 STR_0865    :{STRINGID}
 STR_0866    :{POP16}{STRINGID}
 STR_0867    :{POP16}{POP16}{STRINGID}
@@ -878,26 +259,24 @@ STR_0872    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{STRINGID}
 STR_0873    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{STRINGID}
 STR_0874    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{STRINGID}
 STR_0875    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{STRINGID}
-STR_0876    :{BLACK}{DOWN}
-STR_0877    :منخفض للغاية !
-STR_0878    :مرتفع للغاية !
-STR_0879    :لا يمكن تخفيض الأرض هنا...
-STR_0880    :لا يمكن رفع الأرض هنا...
+STR_0876    :{BLACK}▼
+STR_0877    :!منخفض للغاية
+STR_0878    :!مرتفع للغاية
+STR_0879    :...لا يمكن تخفيض الأرض هنا
+STR_0880    :...لا يمكن رفع الأرض هنا
 STR_0881    :عنصر في الطريق
 STR_0882    :تحميل اللعبة
 STR_0883    :حفظ اللعبة
 STR_0884    :تحميل مشهد
 STR_0885    :حفظ مشهد
-STR_0886    :<removed string - do not use>
 STR_0887    :أخرج من مُعدل المشهد
 STR_0888    :أخرج من مصمم المسار
 STR_0889    :أخرج من المدير مصمم المسار
-STR_0890    :<removed string - do not use>
 STR_0891    :لقطة شاشة
-STR_0892    :لقطة شاشة حفظت للهارد بـ '{STRINGID}'
-STR_0893    :فشل لقطة الشاشة !
-STR_0894    :Landscape data area full !
-STR_0895    :Can't build partly above and partly below ground
+STR_0892    :'{STRINGID}' لقطة شاشة حفظت للهارد بـ
+STR_0893    :!فشل لقطة الشاشة
+STR_0894    :!بيانات منطقة المشهد ممتلئة
+STR_0895    :لا يمكن البناء بجزء في الأعلي وجزء في الأسفل
 STR_0896    :{POP16}{POP16}{STRINGID} البناء
 STR_0897    :الإتجاه
 STR_0898    :{SMALLFONT}{BLACK}Left-hand curve
@@ -910,106 +289,106 @@ STR_0904    :{SMALLFONT}{BLACK}Left-hand curve (large radius)
 STR_0905    :{SMALLFONT}{BLACK}Right-hand curve (large radius)
 STR_0906    :{SMALLFONT}{BLACK}Straight
 STR_0907    :إنحدار
-STR_0908    :Roll/Banking
-STR_0909    :Seat Rot.
+STR_0908    :لفة/صرف
+STR_0909    :.دوران الكرسي
 STR_0910    :{SMALLFONT}{BLACK}Roll for left-hand curve
 STR_0911    :{SMALLFONT}{BLACK}Roll for right-hand curve
-STR_0912    :{SMALLFONT}{BLACK}No roll
-STR_0913    :{SMALLFONT}{BLACK}Move to previous section
-STR_0914    :{SMALLFONT}{BLACK}Move to next section
-STR_0915    :{SMALLFONT}{BLACK}Construct the selected section
-STR_0916    :{SMALLFONT}{BLACK}Remove the highlighted section
-STR_0917    :{SMALLFONT}{BLACK}Vertical drop
-STR_0918    :{SMALLFONT}{BLACK}Steep slope down
-STR_0919    :{SMALLFONT}{BLACK}Slope down
+STR_0912    :{SMALLFONT}{BLACK}لا إلتفاف
+STR_0913    :{SMALLFONT}{BLACK}تحرك إلي الموضع السابق
+STR_0914    :{SMALLFONT}{BLACK}تحرك إلي الموضع التالي
+STR_0915    :{SMALLFONT}{BLACK}بناء الموضع الحالي
+STR_0916    :{SMALLFONT}{BLACK}حذف الموضع المُحدد
+STR_0917    :{SMALLFONT}{BLACK}إسقاط رأسي
+STR_0918    :{SMALLFONT}{BLACK}إنحدار حاد للأسفل
+STR_0919    :{SMALLFONT}{BLACK}إنحدار للأسفل
 STR_0920    :{SMALLFONT}{BLACK}مستوي
-STR_0921    :{SMALLFONT}{BLACK}Slope up
-STR_0922    :{SMALLFONT}{BLACK}Steep slope up
-STR_0923    :{SMALLFONT}{BLACK}Vertical rise
+STR_0921    :{SMALLFONT}{BLACK}إنحدار للأعلي
+STR_0922    :{SMALLFONT}{BLACK}إنحدار حاد للأعلي
+STR_0923    :{SMALLFONT}{BLACK}إرتفاع رأسي
 STR_0924    :{SMALLFONT}{BLACK}Helix down
 STR_0925    :{SMALLFONT}{BLACK}Helix up
-STR_0926    :لا يمكن مسح هذا...
-STR_0927    :لا يمكن بناء هذا هنا...
+STR_0926    :...لا يمكن مسح هذا
+STR_0927    :...لا يمكن بناء هذا هنا
 STR_0928    :{SMALLFONT}{BLACK}Chain lift, to pull cars up slopes
 STR_0929    :'S' Bend (left)
 STR_0930    :'S' Bend (right)
-STR_0931    :Vertical Loop (left)
-STR_0932    :Vertical Loop (right)
-STR_0933    :علي أو خفض الأرض أولاً
+STR_0931    :دوران رأسي (للشمال)
+STR_0932    :دوران رأسي (لليمين)
+STR_0933    :تعلية أو تخفيض الأرض أولاً
 STR_0934    :مدخل الرحلة في الطريق
 STR_0935    :مخرج الرحلة في الطريق
 STR_0936    :مدخل الحديقة في الطريق
-STR_0937    :{SMALLFONT}{BLACK}أظهر الإغدادات
-STR_0938    :{SMALLFONT}{BLACK}Adjust land height and slope
+STR_0937    :{SMALLFONT}{BLACK}أظهر الإعدادات
+STR_0938    :{SMALLFONT}{BLACK}تعديل إرتفاع الأرض والإنحدار
 STR_0939    :Underground/Inside View
 STR_0940    :Hide Base Land
 STR_0941    :Hide Vertical Faces
-STR_0942    :See-Through Rides
-STR_0943    :See-Through Scenery
+STR_0942    :شاهد من خلال الرحلات
+STR_0943    :شاهد من خلال المشاهد
 STR_0944    :حفظ
 STR_0945    :لا تحفظ
 STR_0946    :إلغاء
-STR_0947    :إحفظ هذا قبل التحميل ?
-STR_0948    :إحفظ هذا قبل الخروج ?
-STR_0949    :إحفظ هذا قبل الخروج ?
+STR_0947    :إحفظ هذا قبل التحميل ؟
+STR_0948    :إحفظ هذا قبل الخروج ؟
+STR_0949    :إحفظ هذا قبل الخروج ؟
 STR_0950    :تحميل اللعبة
 STR_0951    :أخرج من اللعبة
 STR_0952    :أخرج من اللعبة
 STR_0953    :تحميل صورة طبيعية
 STR_0954    :
-STR_0955    :{SMALLFONT}{BLACK}Select seat rotation angle for this track section
-STR_0956    :-180{DEGREE}
-STR_0957    :-135{DEGREE}
-STR_0958    :-90{DEGREE}
-STR_0959    :-45{DEGREE}
-STR_0960    :0{DEGREE}
-STR_0961    :+45{DEGREE}
-STR_0962    :+90{DEGREE}
-STR_0963    :+135{DEGREE}
-STR_0964    :+180{DEGREE}
-STR_0965    :+225{DEGREE}
-STR_0966    :+270{DEGREE}
-STR_0967    :+315{DEGREE}
-STR_0968    :+360{DEGREE}
-STR_0969    :+405{DEGREE}
-STR_0970    :+450{DEGREE}
-STR_0971    :+495{DEGREE}
+STR_0955    :{SMALLFONT}{BLACK} تحديد زاوية دوران المقعد في هذا الجزء من المسار
+STR_0956    :-180°
+STR_0957    :-135°
+STR_0958    :-90°
+STR_0959    :-45°
+STR_0960    :0°
+STR_0961    :+45°
+STR_0962    :+90°
+STR_0963    :+135°
+STR_0964    :+180°
+STR_0965    :+225°
+STR_0966    :+270°
+STR_0967    :+315°
+STR_0968    :+360°
+STR_0969    :+405°
+STR_0970    :+450°
+STR_0971    :+495°
 STR_0972    :إلغاء
 STR_0973    :حسناً
 STR_0974    :الرحلات
 STR_0975    :المتاجر والأكشاك
-STR_0976    :Toilets and Information Kiosks
-STR_0977    :New Transport Rides
-STR_0978    :New Gentle Rides
-STR_0979    :New Roller Coasters
-STR_0980    :New Thrill Rides
-STR_0981    :رحلات مائية جديدة
+STR_0976    :أكشاك الحمامات والمعلومات
+STR_0977    :العاب تنقل جديدة
+STR_0978    :العاب لطيفة جديدة
+STR_0979    :أفعوانيات جديدة
+STR_0980    :العاب تشوقية جديدة
+STR_0981    :العاب مائية جديدة
 STR_0982    :متاجر و إكشاك جديدة
-STR_0983    :البحث والتطوير
-STR_0984    :{WINDOW_COLOUR_2}{UP}{BLACK}  {CURRENCY2DP}
-STR_0985    :{WINDOW_COLOUR_2}{DOWN}{BLACK}  {CURRENCY2DP}
+STR_0983    :البحوث والتطوير
+STR_0984    :{WINDOW_COLOUR_2}▲{BLACK}  {CURRENCY2DP}
+STR_0985    :{WINDOW_COLOUR_2}▼{BLACK}  {CURRENCY2DP}
 STR_0986    :{BLACK}{CURRENCY2DP}
 STR_0987    :Too many rides/attractions
 STR_0988    :Can't create new ride/attraction...
 STR_0989    :{STRINGID}
-STR_0990    :{SMALLFONT}{BLACK}Construction
-STR_0991    :Station platform
+STR_0990    :{SMALLFONT}{BLACK}البناء
+STR_0991    :منصة المحطة
 STR_0992    :{SMALLFONT}{BLACK}Demolish entire ride/attraction
 STR_0993    :Demolish ride/attraction
 STR_0994    :تدمير
-STR_0995    :{WINDOW_COLOUR_1}Are you sure you want to completely demolish {STRINGID}?
+STR_0995    :{WINDOW_COLOUR_1}هل أنت متأكد من تدمير {STRINGID}?
 STR_0996    :نظرة عامة
 STR_0997    :{SMALLFONT}{BLACK}أظهر التحديد
 STR_0998    :No more stations allowed on this ride
-STR_0999    :Requires a station platform
+STR_0999    :يتطلب منصة محطة
 STR_1000    :المسار ليس دائرة متصلة
-STR_1001    :المسار غير مناسب  لهذا القطار
-STR_1002    :{POP16}{POP16}{POP16}{STRINGID} لا يمكن فتح...
-STR_1003    :{POP16}{POP16}{POP16}{STRINGID}لا يمكن إختبار...
-STR_1004    :{POP16}{POP16}{POP16}{STRINGID}لا يمكن إغلاق...
-STR_1005    :{POP16}{POP16}{POP16}{STRINGID} لا يمكن بدء البناء في...
+STR_1001    :المسار غير مناسب لهذا القطار
+STR_1002    :{POP16}{POP16}{POP16}{STRINGID}...لا يمكن فتح
+STR_1003    :{POP16}{POP16}{POP16}{STRINGID}...لا يمكن إختبار
+STR_1004    :{POP16}{POP16}{POP16}{STRINGID}...لا يمكن إغلاق
+STR_1005    :{POP16}{POP16}{POP16}{STRINGID}...لا يمكن بدء البناء في
 STR_1006    :يجب أن يُغلق أولاً
-STR_1007    :Unable to create enough vehicles
+STR_1007    :غير قادر علي إنشاء أي مركبات أخري
 STR_1008    :{SMALLFONT}{BLACK}Open, close, or test ride/attraction
 STR_1009    :{SMALLFONT}{BLACK}Open or close all rides/attractions
 STR_1010    :{SMALLFONT}{BLACK}إفتح أو أغلق الحديقة
@@ -1019,57 +398,57 @@ STR_1013    :أغلق الحديقة
 STR_1014    :إفتح الحديقة
 STR_1015    :Unable to operate with more than one station platform in this mode
 STR_1016    :Unable to operate with less than two stations in this mode
-STR_1017    :Can't change operating mode...
-STR_1018    :Can't make changes...
-STR_1019    :Can't make changes...
-STR_1020    :Can't make changes...
+STR_1017    :لايمكن تغير وضع التشغيل...
+STR_1018    :لا يمكن إجراء التغيير...
+STR_1019    :ا يمكن إجراء التغيير...
+STR_1020    :ا يمكن إجراء التغيير...
 STR_1021    :{POP16}{POP16}{POP16}{POP16}{STRINGID}
-STR_1022    :{POP16}{POP16}{POP16}{COMMA16} car per train
-STR_1023    :{POP16}{POP16}{POP16}{COMMA16} cars per train
+STR_1022    :{POP16}{POP16}{POP16}{COMMA16} سيارة لكل قطر
+STR_1023    :{POP16}{POP16}{POP16}{COMMA16} سيارات لكل قطر
 STR_1024    :{COMMA16} سيارة لكل قطار
 STR_1025    :{COMMA16} سيارات لكل قطار
-STR_1026    :Station platform too long!
-STR_1027    :{SMALLFONT}{BLACK}Locate this on Main View
-STR_1028    :قريب من حد الخريطة!
-STR_1029    :Cannot build partly above and partly below water!
-STR_1030    :Can only build this underwater!
-STR_1031    :Can't build this underwater!
-STR_1032    :Can only build this on water!
-STR_1033    :Can only build this above ground!
-STR_1034    :Can only build this on land!
-STR_1035    :Local authority won't allow construction above tree-height!
+STR_1026    :!منصة المحطة بعيدة للغاية
+STR_1027    :{SMALLFONT}{BLACK}ركز علي هذا في المشهد الرئيسي
+STR_1028    :!قريب من حدود الخريطة
+STR_1029    :!لا يمكن البناء جزئياً فوق وجزئياً تحت الماء
+STR_1030    :!يمكن بناء هذا فقط تحت الماء
+STR_1031    :!لا يمكن بناء هذا تحت الماء
+STR_1032    :!يمكن بناء هذا فقط فوق الماء
+STR_1033    :!يمكن بناء هذا فقط فوق الأرض
+STR_1034    :!يمكن بناء هذا فقط علي الأرض
+STR_1035    :!الحكومة المحلية لا تسمح بالبناء فوف مستوي إرتفاع الأشجار
 STR_1036    :تحميل اللعبة
-STR_1037    :Load Landscape
-STR_1038    :Convert saved game to scenario
-STR_1039    :Install new track design
+STR_1037    :تحميل مشهد
+STR_1038    :تحويل اللعبة المحفوظة إلي مشهد
+STR_1039    :تثبيت تصميم المسار الجديد
 STR_1040    :إحفظ اللعبة
 STR_1041    :حفظ السيناريو
-STR_1042    :Save Landscape
-STR_1043    :OpenRCT2 Saved Game
-STR_1044    :OpenRCT2 Scenario File
+STR_1042    :إحفظ المشهد
+STR_1043    :OpenRCT2 ملف حفظ
+STR_1044    :OpenRCT2 ملف مشهد
 STR_1045    :OpenRCT2 Landscape File
 STR_1046    :OpenRCT2 Track Design File
-STR_1047    :حفظ اللعبة فشل!
-STR_1048    :حفظ السيناريو فشل!
-STR_1049    :Landscape save failed!
+STR_1047    :!حفظ اللعبة فشل
+STR_1048    :!حفظ السيناريو فشل
+STR_1049    :!حفظ المشهد فشل
 STR_1050    :فشل في التحميل...{NEWLINE}الملف يحتوي علي بيانات خاطئة!
 STR_1051    :دعم غير مرئي
 STR_1052    :أناس غير مرئيين
 STR_1053    :{SMALLFONT}{BLACK}Rides/attractions in park
 STR_1054    :{SMALLFONT}{BLACK}Name ride/attraction
 STR_1055    :{SMALLFONT}{BLACK}تسمية شخص
-STR_1056    :{SMALLFONT}{BLACK}ـسمية عضو العمل
+STR_1056    :{SMALLFONT}{BLACK}تسمية عضو العمل
 STR_1057    :Ride/attraction name
 STR_1058    :Enter new name for this ride/attraction:
 STR_1059    :Can't rename ride/attraction...
 STR_1060    :Invalid ride/attraction name
 STR_1061    :الوضع العادي
-STR_1062    :Continuous circuit mode
+STR_1062    :وضع الدائرة المغلقة
 STR_1063    :Reverse-Incline launched shuttle mode
 STR_1064    :Powered launch (passing station)
 STR_1065    :Shuttle mode
 STR_1066    :Boat hire mode
-STR_1067    :Upward launch
+STR_1067    :إطلاق علوي
 STR_1068    :Rotating lift mode
 STR_1069    :Station to station mode
 STR_1070    :Single ride per admission
@@ -1077,57 +456,57 @@ STR_1071    :Unlimited rides per admission
 STR_1072    :وضع المتاهة
 STR_1073    :وضع السباق
 STR_1074    :Bumper-car mode
-STR_1075    :Swing mode
+STR_1075    :وضع التأرجح
 STR_1076    :Shop stall mode
-STR_1077    :Rotation mode
-STR_1078    :Forward rotation
-STR_1079    :Backward rotation
-STR_1080    :Film: {ENDQUOTES}Avenging aviators{ENDQUOTES}
-STR_1081    :3D film: {ENDQUOTES}Mouse tails{ENDQUOTES}
+STR_1077    :وضع التدوير
+STR_1078    :تدوير أمامي
+STR_1079    :تدوير خلفي
+STR_1080    :فيلم: ”الطيارين المنتقمين”
+STR_1081    :فيلم ثر دي: ”ذيول الماوس”
 STR_1082    :Space rings mode
-STR_1083    :Beginners mode
+STR_1083    :وضع المبدئين
 STR_1084    :LIM-powered launch
-STR_1085    :Film: {ENDQUOTES}Thrill riders{ENDQUOTES}
-STR_1086    :فيلم ثري دي: {ENDQUOTES}مطاردوا العاصفة{ENDQUOTES}
-STR_1087    :فيلم ثري دي: {ENDQUOTES}غزاة الفضاء{ENDQUOTES}
-STR_1088    :Intense mode
+STR_1085    :فيلم: ”راكبي الإثارة”
+STR_1086    :فيلم ثري دي: ”مطاردوا العاصفة”
+STR_1087    :فيلم ثري دي: ”غزاة الفضاء”
+STR_1088    :الوضع العنيف
 STR_1089    :Berserk mode
-STR_1090    :Haunted house mode
-STR_1091    :Circus show mode
+STR_1090    :وضع المنزل المسكون
+STR_1091    :وضع عرض السيرك
 STR_1092    :Downward launch
 STR_1093    :Crooked house mode
 STR_1094    :Freefall drop mode
 STR_1095    :Continuous circuit block sectioned mode
 STR_1096    :Powered launch (without passing station)
 STR_1097    :Powered launch block sectioned mode
-STR_1098    :Moving to end of {POP16}{STRINGID}
-STR_1099    :Waiting for passengers at {POP16}{STRINGID}
+STR_1098    :{POP16}{STRINGID} يتحرك إلي نهاية
+STR_1099    :{POP16}{STRINGID} ينتظر من أجل الركاب في
 STR_1100    :Waiting to depart {POP16}{STRINGID}
 STR_1101    :Departing {POP16}{STRINGID}
-STR_1102    :يسافر بسرعة {VELOCITY}
-STR_1103    :يصل في خلال {POP16}{STRINGID}
-STR_1104    :Unloading passengers at {POP16}{STRINGID}
-STR_1105    :{VELOCITY}يسافر بسرعة
-STR_1106    :يتحطم!
-STR_1107    :تحطم!
-STR_1108    :{VELOCITY}يسافر بسرعة
+STR_1102    :{VELOCITY} يسافر بسرعة
+STR_1103    :{POP16}{STRINGID} سيصل في خلال
+STR_1104    :{POP16}{STRINGID} يُنزل الركاب في
+STR_1105    :{VELOCITY} يسافر بسرعة
+STR_1106    :!يتحطم
+STR_1107    :!تحطم
+STR_1108    :{VELOCITY} يسافر بسرعة
 STR_1109    :يتارجح
 STR_1110    :يدور
 STR_1111    :يدور
-STR_1112    :Operating
-STR_1113    :Showing film
+STR_1112    :يعمل
+STR_1113    :يُظهر الفيلم
 STR_1114    :يدور
-STR_1115    :Operating
-STR_1116    :Operating
-STR_1117    :Doing circus show
-STR_1118    :Operating
-STR_1119    :Waiting for cable lift
-STR_1120    :{VELOCITY}يسافر بسرعة
+STR_1115    :يعمل
+STR_1116    :يعمل
+STR_1117    :يُجري عرض السيرك
+STR_1118    :يعمل
+STR_1119    :!ينتظر من أجل الرفع بالكابل
+STR_1120    :{VELOCITY}يسافر بسرعة 
 STR_1121    :يتوقف
 STR_1122    :ينتظر الركاب
 STR_1123    :ينتظر ليبدء
 STR_1124    :يبدأ
-STR_1125    :Operating
+STR_1125    :يعمل
 STR_1126    :يتوقف
 STR_1127    :تنزيل الركاب
 STR_1128    :Stopped by block brakes
@@ -1145,7 +524,7 @@ STR_1139    :{SMALLFONT}{BLACK}Select support structure colour
 STR_1140    :{SMALLFONT}{BLACK}Select vehicle colour scheme option
 STR_1141    :{SMALLFONT}{BLACK}Select which vehicle/train to modify
 STR_1142    :{MOVE_X}{SMALLFONT}{STRINGID}
-STR_1143    :{RIGHTGUILLEMET}{MOVE_X}{SMALLFONT}{STRINGID}
+STR_1143    :»{MOVE_X}{SMALLFONT}{STRINGID}
 STR_1144    :Can't build/move entrance for this ride/attraction...
 STR_1145    :Can't build/move exit for this ride/attraction...
 STR_1146    :المدخل لم يُبني بعد
@@ -1159,40 +538,40 @@ STR_1153    :Height Marks on Ride Tracks
 STR_1154    :Height Marks on Land
 STR_1155    :Height Marks on Paths
 STR_1156    :{MOVE_X}{SMALLFONT}{STRINGID}
-STR_1157    :{TICK}{MOVE_X}{SMALLFONT}{STRINGID}
-STR_1158    :لا يمكن مسح هذا...
+STR_1157    :✓{MOVE_X}{SMALLFONT}{STRINGID}
+STR_1158    :...لا يمكن مسح هذا
 STR_1159    :{SMALLFONT}{BLACK}Place scenery, gardens, and other accessories
 STR_1160    :{SMALLFONT}{BLACK}Create/adjust lakes & water
-STR_1161    :لا يمكن وضع هذا هنا...
+STR_1161    :...لا يمكن وضع هذا هنا
 STR_1162    :{OUTLINE}{TOPAZ}{STRINGID}
 STR_1163    :{STRINGID}{NEWLINE}(Right-Click to Modify)
 STR_1164    :{STRINGID}{NEWLINE}(Right-Click to Remove)
 STR_1165    :{STRINGID} - {STRINGID} {COMMA16}
-STR_1166    :لا يمكن تقليل مستوي الماء هنا...
-STR_1167    :لا يمكن تعلية مستوي الماء هنا...
+STR_1166    :...لا يمكن تقليل مستوي الماء هنا
+STR_1167    :...لا يمكن زيادة مستوي الماء هنا
 STR_1168    :الإعدادات
 STR_1169    :(لا شئ)
 STR_1170    :{STRING}
-STR_1171    :{RED}مغلق - - 
+STR_1171    :{RED} مغلق - - 
 STR_1172    :{YELLOW}{STRINGID} - - 
-STR_1173    :{SMALLFONT}{BLACK}Build footpaths and queue lines
+STR_1173    :{SMALLFONT}{BLACK} ابني ممشي وخطوط إنتظار
 STR_1174    :Banner sign in the way
 STR_1175    :Can't build this on sloped footpath
-STR_1176    :Can't build footpath here...
-STR_1177    :Can't remove footpath from here...
+STR_1176    :...لا يمكن بناء ممشي هنا
+STR_1177    :...لا يمكن مسح الممشي من هنا
 STR_1178    :Land slope unsuitable
-STR_1179    :Footpath in the way
-STR_1180    :لا يمكن بناء هذا تحت الماء!
-STR_1181    :خطوات أقدام
+STR_1179    :ممشي في الطريق
+STR_1180    :!لا يمكن بناء هذا تحت الماء
+STR_1181    :ممشي
 STR_1182    :النوع
 STR_1183    :الإتجاة
 STR_1184    :الإنحدار
 STR_1185    :{SMALLFONT}{BLACK}الإتجاه
-STR_1186    :{SMALLFONT}{BLACK}Slope down
+STR_1186    :{SMALLFONT}{BLACK}إنحدار للأسفل
 STR_1187    :{SMALLFONT}{BLACK}المستوي
-STR_1188    :{SMALLFONT}{BLACK}Slope up
-STR_1189    :{SMALLFONT}{BLACK}Construct the selected footpath section
-STR_1190    :{SMALLFONT}{BLACK}Remove previous footpath section
+STR_1188    :{SMALLFONT}{BLACK}إنحدار للأعلي
+STR_1189    :{SMALLFONT}{BLACK}إبني الجزء المُحدد من الممشي
+STR_1190    :{SMALLFONT}{BLACK}إمسح قسم الممشي السابق
 STR_1191    :{BLACK}{STRINGID}
 STR_1192    :{OUTLINE}{RED}{STRINGID}
 STR_1193    :{WINDOW_COLOUR_2}{STRINGID}
@@ -1206,31 +585,31 @@ STR_1200    :{COMMA16} أناس في الرحلة
 STR_1201    :لا أحد في طابور الإنتظار
 STR_1202    :1 شخص في طابور الإنتظار
 STR_1203    :{COMMA16} الناس في صف الإنتظار
-STR_1204    :دقيقة وقت الإنتظار{COMMA16}
-STR_1205    :دقائق وقت الإنتظار{COMMA16}
-STR_1206    :{WINDOW_COLOUR_2}إنتظر لي:
-STR_1207    :{WINDOW_COLOUR_2}Leave if another train arrives at station
-STR_1208    :{WINDOW_COLOUR_2}Leave if another boat arrives at station
+STR_1204    :{COMMA16} دقيقة وقت الإنتظار
+STR_1205    :{COMMA16} دقائق وقت الإنتظار
+STR_1206    :{WINDOW_COLOUR_2}:إنتظر مدة
+STR_1207    :{WINDOW_COLOUR_2}غادر إذا وصل قطار أخر إلي المحطة
+STR_1208    :{WINDOW_COLOUR_2}غادر إذا وصل قارب أخر إلي المحطة
 STR_1209    :{SMALLFONT}{BLACK}Select whether should wait for passengers before departing
 STR_1210    :{SMALLFONT}{BLACK}Select whether should leave if another vehicle arrives at the same station
-STR_1211    :{WINDOW_COLOUR_2}Minimum waiting time:
-STR_1212    :{WINDOW_COLOUR_2}Maximum waiting time:
+STR_1211    :{WINDOW_COLOUR_2}:الحد الأدني لوقت الإنتظار
+STR_1212    :{WINDOW_COLOUR_2}:الحد الأقصي لوقت الإنتظار
 STR_1213    :{SMALLFONT}{BLACK}Select minimum length of time to wait before departing
 STR_1214    :{SMALLFONT}{BLACK}Select maximum length of time to wait before departing
 STR_1215    :{WINDOW_COLOUR_2}Synchronise with adjacent stations
 STR_1216    :{SMALLFONT}{BLACK}Select whether to synchronise departure with all adjacent stations (for 'racing')
-STR_1217    :{COMMA16} ثواني
-STR_1218    :{BLACK}{SMALLUP}
-STR_1219    :{BLACK}{SMALLDOWN}
+STR_1217    :{COMMA16}ثواني
+STR_1218    :{BLACK}➕
+STR_1219    :{BLACK}➖
 STR_1220    :مخرج فقط
 STR_1221    :لا مدخل
 STR_1222    :لا مخرج
-STR_1223    :{SMALLFONT}{BLACK}Transport rides
-STR_1224    :{SMALLFONT}{BLACK}Gentle rides
-STR_1225    :{SMALLFONT}{BLACK}Roller coasters
-STR_1226    :{SMALLFONT}{BLACK}Thrill rides
-STR_1227    :{SMALLFONT}{BLACK}Water rides
-STR_1228    :{SMALLFONT}{BLACK}Shops & stalls
+STR_1223    :{SMALLFONT}{BLACK}العاب النقل
+STR_1224    :{SMALLFONT}{BLACK}الألعاب السهلة
+STR_1225    :{SMALLFONT}{BLACK}الأفعوانيات
+STR_1226    :{SMALLFONT}{BLACK}الألعاب المثيرة
+STR_1227    :{SMALLFONT}{BLACK}الألعاب المائية
+STR_1228    :{SMALLFONT}{BLACK}المتاجر والأكشاك
 STR_1229    :قارب
 STR_1230    :قوارب
 STR_1231    :قطار
@@ -1329,7 +708,7 @@ STR_1323    :Courses
 STR_1324    :{COMMA16} course
 STR_1325    :{COMMA16} courses
 STR_1326    :Course {COMMA16}
-STR_1327    :{SMALLFONT}{BLACK}Rotate objects by 90{DEGREE}
+STR_1327    :{SMALLFONT}{BLACK}Rotate objects by 90°
 STR_1328    :Level land required
 STR_1329    :{WINDOW_COLOUR_2}Launch speed:
 STR_1330    :{SMALLFONT}{BLACK}Maximum speed when leaving station
@@ -1363,8 +742,8 @@ STR_1357    :{WINDOW_COLOUR_2}Holes: {BLACK}{COMMA16}
 STR_1358    :{WINDOW_COLOUR_2}Total 'air' time: {BLACK}{COMMA2DP32}secs
 STR_1359    :{WINDOW_COLOUR_2}Queue time: {BLACK}{COMMA16} minute
 STR_1360    :{WINDOW_COLOUR_2}Queue time: {BLACK}{COMMA16} minutes
-STR_1361    :Can't change speed...
-STR_1362    :Can't change launch speed...
+STR_1361    :لا يمكن تغيير السرعة...
+STR_1362    :لا يمكن تغيير سرعة الإطلاق...
 STR_1363    :Too high for supports!
 STR_1364    :Supports for track above can't be extended any further!
 STR_1365    :In-line Twist (left)
@@ -1406,7 +785,7 @@ STR_1400    :مدخل
 STR_1401    :مخرج
 STR_1402    :{SMALLFONT}{BLACK}Build or move entrance to ride/attraction
 STR_1403    :{SMALLFONT}{BLACK}Build or move exit from ride/attraction
-STR_1404    :{SMALLFONT}{BLACK}Rotate 90{DEGREE}
+STR_1404    :{SMALLFONT}{BLACK}Rotate 90°
 STR_1405    :{SMALLFONT}{BLACK}Mirror image
 STR_1406    :{SMALLFONT}{BLACK}Toggle scenery on/off (if available for this design)
 STR_1407    :{WINDOW_COLOUR_2}Build this...
@@ -1454,10 +833,10 @@ STR_1448    :Watching new ride being constructed
 STR_1449    :{SPRITE} {STRINGID}{NEWLINE}({STRINGID})
 STR_1450    :{INLINE_SPRITE}{09}{20}{00}{00}{SPRITE} {STRINGID}{NEWLINE}({STRINGID})
 STR_1451    :{STRINGID}{NEWLINE}({STRINGID})
-STR_1452    :إسم الضيف
-STR_1453    :أدخل أسم لهذا الضيف:
-STR_1454    :لا يمكن تسمية الضيف...
-STR_1455    :إسم خاطئ للضيف
+STR_1452    :إسم الزائر
+STR_1453    :أدخل أسم لهذا الزائر:
+STR_1454    :لا يمكن تسمية الزائر...
+STR_1455    :إسم خاطئ للزائر
 STR_1456    :{WINDOW_COLOUR_2}النقود المنفقة: {BLACK}{CURRENCY2DP}
 STR_1457    :{WINDOW_COLOUR_2}المال في المحفظة: {BLACK}{CURRENCY2DP}
 STR_1458    :{WINDOW_COLOUR_2}الوقت في الحديقة: {BLACK}{REALTIME}
@@ -1482,131 +861,131 @@ STR_1476    :{WINDOW_COLOUR_2}Intensity rating: {BLACK}Not yet available
 STR_1477    :{WINDOW_COLOUR_2}Intensity rating: {OUTLINE}{RED}{COMMA2DP32}  ({STRINGID})
 STR_1478    :{WINDOW_COLOUR_2}Nausea rating: {BLACK}{COMMA2DP32}  ({STRINGID})
 STR_1479    :{WINDOW_COLOUR_2}Nausea rating: {BLACK}Not yet available
-STR_1480    :{SMALLFONT}{OPENQUOTES}لا يمكنني تحمل كلفة {STRINGID}{ENDQUOTES}
-STR_1481    :{SMALLFONT}{OPENQUOTES}لقد أنفقت كل مالي{ENDQUOTES}
-STR_1482    :{SMALLFONT}{OPENQUOTES}أنا أشعر بالتعب{ENDQUOTES}
-STR_1483    :{SMALLFONT}{OPENQUOTES}أنا أشعر بالتنعب الشديد{ENDQUOTES}
-STR_1484    :{SMALLFONT}{OPENQUOTES}I want to go on something more thrilling than {STRINGID}{ENDQUOTES}
-STR_1485    :{SMALLFONT}{OPENQUOTES}{STRINGID} looks too intense for me{ENDQUOTES}
-STR_1486    :{SMALLFONT}{OPENQUOTES}لقد إنتهيت من {STRINGID} yet{ENDQUOTES}
-STR_1487    :{SMALLFONT}{OPENQUOTES}Just looking at {STRINGID} makes me feel sick{ENDQUOTES}
-STR_1488    :{SMALLFONT}{OPENQUOTES}I'm not paying that much to go on {STRINGID}{ENDQUOTES}
-STR_1489    :{SMALLFONT}{OPENQUOTES}أنا أود الذهاب للمنزل{ENDQUOTES}
-STR_1490    :{SMALLFONT}{OPENQUOTES}{STRINGID} is really good value{ENDQUOTES}
-STR_1491    :{SMALLFONT}{OPENQUOTES}I've already got {STRINGID}{ENDQUOTES}
-STR_1492    :{SMALLFONT}{OPENQUOTES}I can't afford {STRINGID}{ENDQUOTES}
-STR_1493    :{SMALLFONT}{OPENQUOTES}I'm not hungry{ENDQUOTES}
-STR_1494    :{SMALLFONT}{OPENQUOTES}I'm not thirsty{ENDQUOTES}
-STR_1495    :{SMALLFONT}{OPENQUOTES}النجدة! أنا أغرق!{ENDQUOTES}
-STR_1496    :{SMALLFONT}{OPENQUOTES}أنا تائه!{ENDQUOTES}
-STR_1497    :{SMALLFONT}{OPENQUOTES}{STRINGID} was great{ENDQUOTES}
-STR_1498    :{SMALLFONT}{OPENQUOTES}I've been queuing for {STRINGID} for ages{ENDQUOTES}
-STR_1499    :{SMALLFONT}{OPENQUOTES}أنا مرهق{ENDQUOTES}
-STR_1500    :{SMALLFONT}{OPENQUOTES}أنا جائع{ENDQUOTES}
-STR_1501    :{SMALLFONT}{OPENQUOTES}أنا عطشان{ENDQUOTES}
-STR_1502    :{SMALLFONT}{OPENQUOTES}أنا سوف أذهب إلي الحمام{ENDQUOTES}
-STR_1503    :{SMALLFONT}{OPENQUOTES}I can't find {STRINGID}{ENDQUOTES}
-STR_1504    :{SMALLFONT}{OPENQUOTES}I'm not paying that much to use {STRINGID}{ENDQUOTES}
-STR_1505    :{SMALLFONT}{OPENQUOTES}I'm not going on {STRINGID} while it's raining{ENDQUOTES}
-STR_1506    :{SMALLFONT}{OPENQUOTES}The litter here is really bad{ENDQUOTES}
-STR_1507    :{SMALLFONT}{OPENQUOTES}لا يمكنني إيجاد مخرج الحديقة{ENDQUOTES}
-STR_1508    :{SMALLFONT}{OPENQUOTES}I want to get off {STRINGID}{ENDQUOTES}
-STR_1509    :{SMALLFONT}{OPENQUOTES}I want to get out of {STRINGID}{ENDQUOTES}
-STR_1510    :{SMALLFONT}{OPENQUOTES}I'm not going on {STRINGID} - It isn't safe{ENDQUOTES}
-STR_1511    :{SMALLFONT}{OPENQUOTES}This path is disgusting{ENDQUOTES}
-STR_1512    :{SMALLFONT}{OPENQUOTES}It's too crowded here{ENDQUOTES}
-STR_1513    :{SMALLFONT}{OPENQUOTES}The vandalism here is really bad{ENDQUOTES}
-STR_1514    :{SMALLFONT}{OPENQUOTES}Great scenery!{ENDQUOTES}
-STR_1515    :{SMALLFONT}{OPENQUOTES}This park is really clean and tidy{ENDQUOTES}
-STR_1516    :{SMALLFONT}{OPENQUOTES}The jumping fountains are great{ENDQUOTES}
-STR_1517    :{SMALLFONT}{OPENQUOTES}The music is nice here{ENDQUOTES}
-STR_1518    :{SMALLFONT}{OPENQUOTES}This balloon from {STRINGID} is really good value{ENDQUOTES}
-STR_1519    :{SMALLFONT}{OPENQUOTES}This cuddly toy from {STRINGID} is really good value{ENDQUOTES}
-STR_1520    :{SMALLFONT}{OPENQUOTES}This park map from {STRINGID} is really good value{ENDQUOTES}
-STR_1521    :{SMALLFONT}{OPENQUOTES}This on-ride photo from {STRINGID} is really good value{ENDQUOTES}
-STR_1522    :{SMALLFONT}{OPENQUOTES}This umbrella from {STRINGID} is really good value{ENDQUOTES}
-STR_1523    :{SMALLFONT}{OPENQUOTES}This drink from {STRINGID} is really good value{ENDQUOTES}
-STR_1524    :{SMALLFONT}{OPENQUOTES}This burger from {STRINGID} is really good value{ENDQUOTES}
-STR_1525    :{SMALLFONT}{OPENQUOTES}These chips from {STRINGID} are really good value{ENDQUOTES}
-STR_1526    :{SMALLFONT}{OPENQUOTES}This ice cream from {STRINGID} is really good value{ENDQUOTES}
-STR_1527    :{SMALLFONT}{OPENQUOTES}This candyfloss from {STRINGID} is really good value{ENDQUOTES}
+STR_1480    :{SMALLFONT}“لا يمكنني تحمل كلفة {STRINGID}”
+STR_1481    :{SMALLFONT}“لقد أنفقت كل مالي”
+STR_1482    :{SMALLFONT}“أنا أشعر بالتعب”
+STR_1483    :{SMALLFONT}“أنا أشعر بالتنعب الشديد”
+STR_1484    :{SMALLFONT}“I want to go on something more thrilling than {STRINGID}”
+STR_1485    :{SMALLFONT}“{STRINGID} looks too intense for me”
+STR_1486    :{SMALLFONT}“لقد إنتهيت من {STRINGID} yet”
+STR_1487    :{SMALLFONT}“Just looking at {STRINGID} makes me feel sick”
+STR_1488    :{SMALLFONT}“I'm not paying that much to go on {STRINGID}”
+STR_1489    :{SMALLFONT}“أنا أود الذهاب للمنزل”
+STR_1490    :{SMALLFONT}“{STRINGID} is really good value”
+STR_1491    :{SMALLFONT}“I've already got {STRINGID}”
+STR_1492    :{SMALLFONT}“I can't afford {STRINGID}”
+STR_1493    :{SMALLFONT}“I'm not hungry”
+STR_1494    :{SMALLFONT}“I'm not thirsty”
+STR_1495    :{SMALLFONT}“النجدة! أنا أغرق!”
+STR_1496    :{SMALLFONT}“أنا تائه!”
+STR_1497    :{SMALLFONT}“{STRINGID} was great”
+STR_1498    :{SMALLFONT}“I've been queuing for {STRINGID} for ages”
+STR_1499    :{SMALLFONT}“أنا مرهق”
+STR_1500    :{SMALLFONT}“أنا جائع”
+STR_1501    :{SMALLFONT}“أنا عطشان”
+STR_1502    :{SMALLFONT}“أنا سوف أذهب إلي الحمام”
+STR_1503    :{SMALLFONT}“I can't find {STRINGID}”
+STR_1504    :{SMALLFONT}“I'm not paying that much to use {STRINGID}”
+STR_1505    :{SMALLFONT}“I'm not going on {STRINGID} while it's raining”
+STR_1506    :{SMALLFONT}“The litter here is really bad”
+STR_1507    :{SMALLFONT}“لا يمكنني إيجاد مخرج الحديقة”
+STR_1508    :{SMALLFONT}“I want to get off {STRINGID}”
+STR_1509    :{SMALLFONT}“I want to get out of {STRINGID}”
+STR_1510    :{SMALLFONT}“I'm not going on {STRINGID} - It isn't safe”
+STR_1511    :{SMALLFONT}“This path is disgusting”
+STR_1512    :{SMALLFONT}“It's too crowded here”
+STR_1513    :{SMALLFONT}“The vandalism here is really bad”
+STR_1514    :{SMALLFONT}“Great scenery!”
+STR_1515    :{SMALLFONT}“This park is really clean and tidy”
+STR_1516    :{SMALLFONT}“The jumping fountains are great”
+STR_1517    :{SMALLFONT}“The music is nice here”
+STR_1518    :{SMALLFONT}“This balloon from {STRINGID} is really good value”
+STR_1519    :{SMALLFONT}“This cuddly toy from {STRINGID} is really good value”
+STR_1520    :{SMALLFONT}“This park map from {STRINGID} is really good value”
+STR_1521    :{SMALLFONT}“This on-ride photo from {STRINGID} is really good value”
+STR_1522    :{SMALLFONT}“This umbrella from {STRINGID} is really good value”
+STR_1523    :{SMALLFONT}“This drink from {STRINGID} is really good value”
+STR_1524    :{SMALLFONT}“This burger from {STRINGID} is really good value”
+STR_1525    :{SMALLFONT}“These chips from {STRINGID} are really good value”
+STR_1526    :{SMALLFONT}“This ice cream from {STRINGID} is really good value”
+STR_1527    :{SMALLFONT}“This candyfloss from {STRINGID} is really good value”
 STR_1528    :
 STR_1529    :
 STR_1530    :
-STR_1531    :{SMALLFONT}{OPENQUOTES}This pizza from {STRINGID} is really good value{ENDQUOTES}
+STR_1531    :{SMALLFONT}“This pizza from {STRINGID} is really good value”
 STR_1532    :
-STR_1533    :{SMALLFONT}{OPENQUOTES}This popcorn from {STRINGID} is really good value{ENDQUOTES}
-STR_1534    :{SMALLFONT}{OPENQUOTES}This hot dog from {STRINGID} is really good value{ENDQUOTES}
-STR_1535    :{SMALLFONT}{OPENQUOTES}This tentacle from {STRINGID} is really good value{ENDQUOTES}
-STR_1536    :{SMALLFONT}{OPENQUOTES}This hat from {STRINGID} is really good value{ENDQUOTES}
-STR_1537    :{SMALLFONT}{OPENQUOTES}This toffee apple from {STRINGID} is really good value{ENDQUOTES}
-STR_1538    :{SMALLFONT}{OPENQUOTES}This T-shirt from {STRINGID} is really good value{ENDQUOTES}
-STR_1539    :{SMALLFONT}{OPENQUOTES}This doughnut from {STRINGID} is really good value{ENDQUOTES}
-STR_1540    :{SMALLFONT}{OPENQUOTES}This coffee from {STRINGID} is really good value{ENDQUOTES}
+STR_1533    :{SMALLFONT}“This popcorn from {STRINGID} is really good value”
+STR_1534    :{SMALLFONT}“This hot dog from {STRINGID} is really good value”
+STR_1535    :{SMALLFONT}“This tentacle from {STRINGID} is really good value”
+STR_1536    :{SMALLFONT}“This hat from {STRINGID} is really good value”
+STR_1537    :{SMALLFONT}“This toffee apple from {STRINGID} is really good value”
+STR_1538    :{SMALLFONT}“This T-shirt from {STRINGID} is really good value”
+STR_1539    :{SMALLFONT}“This doughnut from {STRINGID} is really good value”
+STR_1540    :{SMALLFONT}“This coffee from {STRINGID} is really good value”
 STR_1541    :
-STR_1542    :{SMALLFONT}{OPENQUOTES}This fried chicken from {STRINGID} is really good value{ENDQUOTES}
-STR_1543    :{SMALLFONT}{OPENQUOTES}This lemonade from {STRINGID} is really good value{ENDQUOTES}
+STR_1542    :{SMALLFONT}“This fried chicken from {STRINGID} is really good value”
+STR_1543    :{SMALLFONT}“This lemonade from {STRINGID} is really good value”
 STR_1544    :
 STR_1545    :
 STR_1546    :
 STR_1547    :
 STR_1548    :
 STR_1549    :
-STR_1550    :{SMALLFONT}{OPENQUOTES}واو!{ENDQUOTES}
-STR_1551    :{SMALLFONT}{OPENQUOTES}I have the strangest feeling someone is watching me{ENDQUOTES}
-STR_1552    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a balloon from {STRINGID}{ENDQUOTES}
-STR_1553    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a cuddly toy from {STRINGID}{ENDQUOTES}
-STR_1554    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a park map from {STRINGID}{ENDQUOTES}
-STR_1555    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an on-ride photo from {STRINGID}{ENDQUOTES}
-STR_1556    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an umbrella from {STRINGID}{ENDQUOTES}
-STR_1557    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a drink from {STRINGID}{ENDQUOTES}
-STR_1558    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a burger from {STRINGID}{ENDQUOTES}
-STR_1559    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for chips from {STRINGID}{ENDQUOTES}
-STR_1560    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an ice cream from {STRINGID}{ENDQUOTES}
-STR_1561    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for candyfloss from {STRINGID}{ENDQUOTES}
+STR_1550    :{SMALLFONT}“واو!”
+STR_1551    :{SMALLFONT}“I have the strangest feeling someone is watching me”
+STR_1552    :{SMALLFONT}“I'm not paying that much for a balloon from {STRINGID}”
+STR_1553    :{SMALLFONT}“I'm not paying that much for a cuddly toy from {STRINGID}”
+STR_1554    :{SMALLFONT}“I'm not paying that much for a park map from {STRINGID}”
+STR_1555    :{SMALLFONT}“I'm not paying that much for an on-ride photo from {STRINGID}”
+STR_1556    :{SMALLFONT}“I'm not paying that much for an umbrella from {STRINGID}”
+STR_1557    :{SMALLFONT}“I'm not paying that much for a drink from {STRINGID}”
+STR_1558    :{SMALLFONT}“I'm not paying that much for a burger from {STRINGID}”
+STR_1559    :{SMALLFONT}“I'm not paying that much for chips from {STRINGID}”
+STR_1560    :{SMALLFONT}“I'm not paying that much for an ice cream from {STRINGID}”
+STR_1561    :{SMALLFONT}“I'm not paying that much for candyfloss from {STRINGID}”
 STR_1562    :
 STR_1563    :
 STR_1564    :
-STR_1565    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for pizza from {STRINGID}{ENDQUOTES}
+STR_1565    :{SMALLFONT}“I'm not paying that much for pizza from {STRINGID}”
 STR_1566    :
-STR_1567    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for popcorn from {STRINGID}{ENDQUOTES}
-STR_1568    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a hot dog from {STRINGID}{ENDQUOTES}
-STR_1569    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for tentacle from {STRINGID}{ENDQUOTES}
-STR_1570    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a hat from {STRINGID}{ENDQUOTES}
-STR_1571    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a toffee apple from {STRINGID}{ENDQUOTES}
-STR_1572    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a T-shirt from {STRINGID}{ENDQUOTES}
-STR_1573    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a doughnut from {STRINGID}{ENDQUOTES}
-STR_1574    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for coffee from {STRINGID}{ENDQUOTES}
+STR_1567    :{SMALLFONT}“I'm not paying that much for popcorn from {STRINGID}”
+STR_1568    :{SMALLFONT}“I'm not paying that much for a hot dog from {STRINGID}”
+STR_1569    :{SMALLFONT}“I'm not paying that much for tentacle from {STRINGID}”
+STR_1570    :{SMALLFONT}“I'm not paying that much for a hat from {STRINGID}”
+STR_1571    :{SMALLFONT}“I'm not paying that much for a toffee apple from {STRINGID}”
+STR_1572    :{SMALLFONT}“I'm not paying that much for a T-shirt from {STRINGID}”
+STR_1573    :{SMALLFONT}“I'm not paying that much for a doughnut from {STRINGID}”
+STR_1574    :{SMALLFONT}“I'm not paying that much for coffee from {STRINGID}”
 STR_1575    :
-STR_1576    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for fried chicken from {STRINGID}{ENDQUOTES}
-STR_1577    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for lemonade from {STRINGID}{ENDQUOTES}
+STR_1576    :{SMALLFONT}“I'm not paying that much for fried chicken from {STRINGID}”
+STR_1577    :{SMALLFONT}“I'm not paying that much for lemonade from {STRINGID}”
 STR_1578    :
 STR_1579    :
 STR_1580    :
 STR_1581    :
 STR_1582    :
 STR_1583    :
-STR_1584    :{SMALLFONT}{OPENQUOTES}This on-ride photo from {STRINGID} is really good value{ENDQUOTES}
-STR_1585    :{SMALLFONT}{OPENQUOTES}This on-ride photo from {STRINGID} is really good value{ENDQUOTES}
-STR_1586    :{SMALLFONT}{OPENQUOTES}This on-ride photo from {STRINGID} is really good value{ENDQUOTES}
-STR_1587    :{SMALLFONT}{OPENQUOTES}This pretzel from {STRINGID} is really good value{ENDQUOTES}
-STR_1588    :{SMALLFONT}{OPENQUOTES}This hot chocolate from {STRINGID} is really good value{ENDQUOTES}
-STR_1589    :{SMALLFONT}{OPENQUOTES}This iced tea from {STRINGID} is really good value{ENDQUOTES}
-STR_1590    :{SMALLFONT}{OPENQUOTES}This funnel cake from {STRINGID} is really good value{ENDQUOTES}
-STR_1591    :{SMALLFONT}{OPENQUOTES}These sunglasses from {STRINGID} are really good value{ENDQUOTES}
-STR_1592    :{SMALLFONT}{OPENQUOTES}These beef noodles from {STRINGID} are really good value{ENDQUOTES}
-STR_1593    :{SMALLFONT}{OPENQUOTES}These fried rice noodles from {STRINGID} are really good value{ENDQUOTES}
-STR_1594    :{SMALLFONT}{OPENQUOTES}This wonton soup from {STRINGID} is really good value{ENDQUOTES}
-STR_1595    :{SMALLFONT}{OPENQUOTES}This meatball soup from {STRINGID} is really good value{ENDQUOTES}
-STR_1596    :{SMALLFONT}{OPENQUOTES}This fruit juice from {STRINGID} is really good value{ENDQUOTES}
-STR_1597    :{SMALLFONT}{OPENQUOTES}This soybean milk from {STRINGID} is really good value{ENDQUOTES}
-STR_1598    :{SMALLFONT}{OPENQUOTES}This sujongkwa from {STRINGID} is really good value{ENDQUOTES}
-STR_1599    :{SMALLFONT}{OPENQUOTES}This sub sandwich from {STRINGID} is really good value{ENDQUOTES}
-STR_1600    :{SMALLFONT}{OPENQUOTES}This cookie from {STRINGID} is really good value{ENDQUOTES}
+STR_1584    :{SMALLFONT}“This on-ride photo from {STRINGID} is really good value”
+STR_1585    :{SMALLFONT}“This on-ride photo from {STRINGID} is really good value”
+STR_1586    :{SMALLFONT}“This on-ride photo from {STRINGID} is really good value”
+STR_1587    :{SMALLFONT}“This pretzel from {STRINGID} is really good value”
+STR_1588    :{SMALLFONT}“This hot chocolate from {STRINGID} is really good value”
+STR_1589    :{SMALLFONT}“This iced tea from {STRINGID} is really good value”
+STR_1590    :{SMALLFONT}“This funnel cake from {STRINGID} is really good value”
+STR_1591    :{SMALLFONT}“These sunglasses from {STRINGID} are really good value”
+STR_1592    :{SMALLFONT}“These beef noodles from {STRINGID} are really good value”
+STR_1593    :{SMALLFONT}“These fried rice noodles from {STRINGID} are really good value”
+STR_1594    :{SMALLFONT}“This wonton soup from {STRINGID} is really good value”
+STR_1595    :{SMALLFONT}“This meatball soup from {STRINGID} is really good value”
+STR_1596    :{SMALLFONT}“This fruit juice from {STRINGID} is really good value”
+STR_1597    :{SMALLFONT}“This soybean milk from {STRINGID} is really good value”
+STR_1598    :{SMALLFONT}“This sujongkwa from {STRINGID} is really good value”
+STR_1599    :{SMALLFONT}“This sub sandwich from {STRINGID} is really good value”
+STR_1600    :{SMALLFONT}“This cookie from {STRINGID} is really good value”
 STR_1601    :
 STR_1602    :
 STR_1603    :
-STR_1604    :{SMALLFONT}{OPENQUOTES}This roast sausage from {STRINGID} are really good value{ENDQUOTES}
+STR_1604    :{SMALLFONT}“This roast sausage from {STRINGID} are really good value”
 STR_1605    :
 STR_1606    :
 STR_1607    :
@@ -1618,27 +997,27 @@ STR_1612    :
 STR_1613    :
 STR_1614    :
 STR_1615    :
-STR_1616    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an on-ride photo from {STRINGID}{ENDQUOTES}
-STR_1617    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an on-ride photo from {STRINGID}{ENDQUOTES}
-STR_1618    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for an on-ride photo from {STRINGID}{ENDQUOTES}
-STR_1619    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a pretzel from {STRINGID}{ENDQUOTES}
-STR_1620    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for hot chocolate from {STRINGID}{ENDQUOTES}
-STR_1621    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for iced tea from {STRINGID}{ENDQUOTES}
-STR_1622    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a funnel cake from {STRINGID}{ENDQUOTES}
-STR_1623    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for sunglasses from {STRINGID}{ENDQUOTES}
-STR_1624    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for beef noodles from {STRINGID}{ENDQUOTES}
-STR_1625    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for fried rice noodles from {STRINGID}{ENDQUOTES}
-STR_1626    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for wonton soup from {STRINGID}{ENDQUOTES}
-STR_1627    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for meatball soup from {STRINGID}{ENDQUOTES}
-STR_1628    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for fruit juice from {STRINGID}{ENDQUOTES}
-STR_1629    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for soybean milk from {STRINGID}{ENDQUOTES}
-STR_1630    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for sujongkwa from {STRINGID}{ENDQUOTES}
-STR_1631    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a sub sandwich from {STRINGID}{ENDQUOTES}
-STR_1632    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a cookie from {STRINGID}{ENDQUOTES}
+STR_1616    :{SMALLFONT}“I'm not paying that much for an on-ride photo from {STRINGID}”
+STR_1617    :{SMALLFONT}“I'm not paying that much for an on-ride photo from {STRINGID}”
+STR_1618    :{SMALLFONT}“I'm not paying that much for an on-ride photo from {STRINGID}”
+STR_1619    :{SMALLFONT}“I'm not paying that much for a pretzel from {STRINGID}”
+STR_1620    :{SMALLFONT}“I'm not paying that much for hot chocolate from {STRINGID}”
+STR_1621    :{SMALLFONT}“I'm not paying that much for iced tea from {STRINGID}”
+STR_1622    :{SMALLFONT}“I'm not paying that much for a funnel cake from {STRINGID}”
+STR_1623    :{SMALLFONT}“I'm not paying that much for sunglasses from {STRINGID}”
+STR_1624    :{SMALLFONT}“I'm not paying that much for beef noodles from {STRINGID}”
+STR_1625    :{SMALLFONT}“I'm not paying that much for fried rice noodles from {STRINGID}”
+STR_1626    :{SMALLFONT}“I'm not paying that much for wonton soup from {STRINGID}”
+STR_1627    :{SMALLFONT}“I'm not paying that much for meatball soup from {STRINGID}”
+STR_1628    :{SMALLFONT}“I'm not paying that much for fruit juice from {STRINGID}”
+STR_1629    :{SMALLFONT}“I'm not paying that much for soybean milk from {STRINGID}”
+STR_1630    :{SMALLFONT}“I'm not paying that much for sujongkwa from {STRINGID}”
+STR_1631    :{SMALLFONT}“I'm not paying that much for a sub sandwich from {STRINGID}”
+STR_1632    :{SMALLFONT}“I'm not paying that much for a cookie from {STRINGID}”
 STR_1633    :
 STR_1634    :
 STR_1635    :
-STR_1636    :{SMALLFONT}{OPENQUOTES}I'm not paying that much for a roast sausage from {STRINGID}{ENDQUOTES}
+STR_1636    :{SMALLFONT}“I'm not paying that much for a roast sausage from {STRINGID}”
 STR_1637    :
 STR_1638    :
 STR_1639    :
@@ -1650,12 +1029,10 @@ STR_1644    :
 STR_1645    :
 STR_1646    :
 STR_1647    :
-STR_1648    :{SMALLFONT}{OPENQUOTES}Help! Put me down!{ENDQUOTES}
-STR_1649    :{SMALLFONT}{OPENQUOTES}I'm running out of cash!{ENDQUOTES}
-STR_1650    :{SMALLFONT}{OPENQUOTES}Wow! A new ride being built!{ENDQUOTES}
-STR_1651    :<removed string - do not use>
-STR_1652    :<removed string - do not use>
-STR_1653    :{SMALLFONT}{OPENQUOTES}...and here we are on {STRINGID}!{ENDQUOTES}
+STR_1648    :{SMALLFONT}“Help! Put me down!”
+STR_1649    :{SMALLFONT}“I'm running out of cash!”
+STR_1650    :{SMALLFONT}“Wow! A new ride being built!”
+STR_1653    :{SMALLFONT}“...and here we are on {STRINGID}!”
 STR_1654    :{WINDOW_COLOUR_2}Recent thoughts:
 STR_1655    :{SMALLFONT}{BLACK}Construct footpath on land
 STR_1656    :{SMALLFONT}{BLACK}Construct bridge or tunnel footpath
@@ -1695,7 +1072,7 @@ STR_1689    :Block brakes
 STR_1690    :{WINDOW_COLOUR_2}{STRINGID}{NEWLINE}{BLACK}{STRINGID}
 STR_1691    :{WINDOW_COLOUR_2}  السعر: {BLACK}{CURRENCY}
 STR_1692    :{WINDOW_COLOUR_2}  السعر: {BLACK}من {CURRENCY}
-STR_1693    :{SMALLFONT}{BLACK}الضيوف
+STR_1693    :{SMALLFONT}{BLACK}الزوار
 STR_1694    :{SMALLFONT}{BLACK}العاملين
 STR_1695    :{SMALLFONT}{BLACK}الدخل و المصروفات
 STR_1696    :{SMALLFONT}{BLACK}معلومات العميل
@@ -1739,20 +1116,17 @@ STR_1733    :الوضع
 STR_1734    :{WINDOW_COLOUR_2}عدد اللفات:
 STR_1735    :{SMALLFONT}{BLACK}Number of laps of circuit
 STR_1736    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{COMMA16}
-STR_1737    :{COMMA16}
 STR_1738    :Can't change number of laps...
-STR_1739    :السياق فاز به الضيف {INT32}
+STR_1739    :السباق فاز به الزائر {INT32}
 STR_1740    :Race won by {STRINGID}
 STR_1741    :لم يبني بعد !
 STR_1742    :{WINDOW_COLOUR_2}Max. people on ride:
 STR_1743    :{SMALLFONT}{BLACK}Maximum number of people allowed on this ride at one time
 STR_1744    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{COMMA16}
-STR_1745    :{COMMA16}
 STR_1746    :لا يمكن تغيير هذا...
 STR_1747    :{WINDOW_COLOUR_2}حد الوقت:
 STR_1748    :{SMALLFONT}{BLACK}Time limit for ride
 STR_1749    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{DURATION}
-STR_1750    :{DURATION}
 STR_1751    :Can't change time limit for ride...
 STR_1752    :{SMALLFONT}{BLACK}Show list of individual guests in park
 STR_1753    :{SMALLFONT}{BLACK}Show summarised list of guests in park
@@ -1774,12 +1148,9 @@ STR_1768    :Can't change number of swings...
 STR_1769    :{WINDOW_COLOUR_2}Number of swings:
 STR_1770    :{SMALLFONT}{BLACK}Number of complete swings
 STR_1771    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{COMMA16}
-STR_1772    :{COMMA16}
 STR_1773    :Only one on-ride photo section allowed per ride
 STR_1774    :Only one cable lift hill allowed per ride
-STR_1775    :مغلق
-STR_1776    :مفعل
-STR_1777    :{WINDOW_COLOUR_2}Ride music
+STR_1777    :موسيقي الرحلة
 STR_1778    :{STRINGID} - - 
 STR_1779    :{INLINE_SPRITE}{254}{19}{00}{00} Panda costume
 STR_1780    :{INLINE_SPRITE}{255}{19}{00}{00} Tiger costume
@@ -1799,7 +1170,6 @@ STR_1793    :Heading to {STRINGID} for an inspection
 STR_1794    :Fixing {STRINGID}
 STR_1795    :Answering radio call
 STR_1796    :Has broken down and requires fixing
-STR_1797    :This option cannot be changed for this ride
 STR_1798    :Whirlpool
 STR_1799    :{POP16}{POP16}{POP16}{POP16}{POP16}{CURRENCY2DP}
 STR_1800    :Safety cut-out
@@ -1874,7 +1244,6 @@ STR_1868    :Can't change number of rotations...
 STR_1869    :{WINDOW_COLOUR_2}Number of rotations:
 STR_1870    :{SMALLFONT}{BLACK}Number of complete rotations
 STR_1871    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{COMMA16}
-STR_1872    :{COMMA16}
 STR_1873    :{WINDOW_COLOUR_2}Income: {BLACK}{CURRENCY2DP} per hour
 STR_1874    :{WINDOW_COLOUR_2}Profit: {BLACK}{CURRENCY2DP} per hour
 STR_1875    :{BLACK} {SPRITE}{BLACK} {STRINGID}
@@ -1896,8 +1265,6 @@ STR_1890    :{SMALLFONT}{BLACK}Select how often a mechanic should check this rid
 STR_1891    :No {STRINGID} in park yet!
 # The following two strings were used to display an error when the disc was missing.
 # This has been replaced in OpenRCT2.
-STR_1892    :<removed string - do not use>
-STR_1893    :<removed string - do not use>
 STR_1894    :{WINDOW_COLOUR_2}{STRINGID} sold: {BLACK}{COMMA32}
 STR_1895    :{SMALLFONT}{BLACK}Build new ride/attraction
 STR_1896    :{WINDOW_COLOUR_2}Expenditure/Income
@@ -1927,7 +1294,6 @@ STR_1919    :Not enough cash available!
 STR_1920    :Can't pay back loan!
 STR_1921    :{SMALLFONT}{BLACK}Start a new game
 STR_1922    :{SMALLFONT}{BLACK}Continue playing a saved game
-STR_1923    :{SMALLFONT}{BLACK}Show tutorial
 STR_1924    :{SMALLFONT}{BLACK}Exit
 STR_1925    :Can't place person here...
 STR_1926    :{SMALLFONT}
@@ -2076,11 +1442,11 @@ STR_2068    :some Fried Chicken
 STR_2069    :some Lemonade
 STR_2070    :an Empty Box
 STR_2071    :an Empty Bottle
-STR_2072    :{OPENQUOTES}{STRINGID}{ENDQUOTES} Balloon
-STR_2073    :{OPENQUOTES}{STRINGID}{ENDQUOTES} Cuddly Toy
+STR_2072    :“{STRINGID}” Balloon
+STR_2073    :“{STRINGID}” Cuddly Toy
 STR_2074    :Map of {STRINGID}
 STR_2075    :On-Ride Photo of {STRINGID}
-STR_2076    :{OPENQUOTES}{STRINGID}{ENDQUOTES} Umbrella
+STR_2076    :“{STRINGID}” Umbrella
 STR_2077    :مشروب
 STR_2078    :برجر
 STR_2079    :Fries
@@ -2094,9 +1460,9 @@ STR_2086    :Voucher for {STRINGID}
 STR_2087    :فشار
 STR_2088    :هوت دوج
 STR_2089    :Tentacle
-STR_2090    :{OPENQUOTES}{STRINGID}{ENDQUOTES} Hat
+STR_2090    :“{STRINGID}” Hat
 STR_2091    :Candy Apple
-STR_2092    :{OPENQUOTES}{STRINGID}{ENDQUOTES} T-Shirt
+STR_2092    :“{STRINGID}” T-Shirt
 STR_2093    :Donut
 STR_2094    :Coffee
 STR_2095    :Empty Cup
@@ -2104,9 +1470,6 @@ STR_2096    :Fried Chicken
 STR_2097    :Lemonade
 STR_2098    :Empty Box
 STR_2099    :Empty Bottle
-STR_2100    :{WINDOW_COLOUR_2}On-Ride Photo price:
-STR_2101    :{WINDOW_COLOUR_2}On-Ride Photo price:
-STR_2102    :{WINDOW_COLOUR_2}On-Ride Photo price:
 STR_2103    :{WINDOW_COLOUR_2}Pretzel price:
 STR_2104    :{WINDOW_COLOUR_2}Hot Chocolate price:
 STR_2105    :{WINDOW_COLOUR_2}Iced Tea price:
@@ -2126,9 +1489,6 @@ STR_2118    :{WINDOW_COLOUR_2}
 STR_2119    :{WINDOW_COLOUR_2}
 STR_2120    :{WINDOW_COLOUR_2}Roast Sausage price:
 STR_2121    :{WINDOW_COLOUR_2}
-STR_2122    :On-Ride Photo
-STR_2123    :On-Ride Photo
-STR_2124    :On-Ride Photo
 STR_2125    :Pretzel
 STR_2126    :Hot Chocolate
 STR_2127    :Iced Tea
@@ -2148,9 +1508,6 @@ STR_2140    :Empty Drink Carton
 STR_2141    :Empty Juice Cup
 STR_2142    :Roast Sausage
 STR_2143    :Empty Bowl
-STR_2144    :On-Ride Photos
-STR_2145    :On-Ride Photos
-STR_2146    :On-Ride Photos
 STR_2147    :Pretzels
 STR_2148    :Hot Chocolates
 STR_2149    :Iced Teas
@@ -2170,9 +1527,6 @@ STR_2162    :Empty Drink Cartons
 STR_2163    :Empty Juice cups
 STR_2164    :Roast Sausages
 STR_2165    :Empty Bowls
-STR_2166    :an On-Ride Photo
-STR_2167    :an On-Ride Photo
-STR_2168    :an On-Ride Photo
 STR_2169    :a Pretzel
 STR_2170    :a Hot Chocolate
 STR_2171    :an Iced Tea
@@ -2192,9 +1546,6 @@ STR_2184    :an Empty Drink Carton
 STR_2185    :an Empty Juice Cup
 STR_2186    :a Roast Sausage
 STR_2187    :an Empty Bowl
-STR_2188    :On-Ride Photo of {STRINGID}
-STR_2189    :On-Ride Photo of {STRINGID}
-STR_2190    :On-Ride Photo of {STRINGID}
 STR_2191    :Pretzel
 STR_2192    :Hot Chocolate
 STR_2193    :Iced Tea
@@ -2220,8 +1571,8 @@ STR_2212    :{SMALLFONT}{BLACK}Show list of security guards in park
 STR_2213    :{SMALLFONT}{BLACK}Show list of entertainers in park
 STR_2214    :Construction not possible while game is paused!
 STR_2215    :{STRINGID}{NEWLINE}({STRINGID})
-STR_2216    :{WINDOW_COLOUR_2}{COMMA16}{DEGREE}C
-STR_2217    :{WINDOW_COLOUR_2}{COMMA16}{DEGREE}F
+STR_2216    :{WINDOW_COLOUR_2}{COMMA16}°C
+STR_2217    :{WINDOW_COLOUR_2}{COMMA16}°F
 STR_2218    :{RED}{STRINGID} on {STRINGID} hasn't returned to the {STRINGID} yet!{NEWLINE}Check whether it is stuck or has stalled
 STR_2219    :{RED}{COMMA16} people have died in an accident on {STRINGID}
 STR_2220    :{WINDOW_COLOUR_2}Park Rating: {BLACK}{COMMA16}
@@ -2294,7 +1645,6 @@ STR_2286    :Designing
 STR_2287    :Completing design
 STR_2288    :Unknown
 STR_2289    :{STRINGID} {STRINGID}
-STR_2290    :<removed string - do not use>
 STR_2291    :Select scenario for new game
 STR_2292    :{WINDOW_COLOUR_2}Rides been on:
 STR_2293    :{BLACK} Nothing
@@ -2321,13 +1671,9 @@ STR_2313    :{WINDOW_COLOUR_2}Nausea rating: {BLACK}{COMMA2DP32} (approx.)
 STR_2314    :{WINDOW_COLOUR_2}Ride length: {BLACK}{STRINGID}
 STR_2315    :{WINDOW_COLOUR_2}Cost: {BLACK}around {CURRENCY}
 STR_2316    :{WINDOW_COLOUR_2}Space required: {BLACK}{COMMA16} x {COMMA16} blocks
-STR_2317    :<removed string - do not use>
-STR_2318    :<removed string - do not use>
-STR_2319    :<removed string - do not use>
-STR_2320    :<removed string - do not use>
 STR_2321    :{WINDOW_COLOUR_2}Number of rides/attractions: {BLACK}{COMMA16}
 STR_2322    :{WINDOW_COLOUR_2}Staff: {BLACK}{COMMA16}
-STR_2323    :{WINDOW_COLOUR_2}Park size: {BLACK}{COMMA32}m{SQUARED}
+STR_2323    :{WINDOW_COLOUR_2}Park size: {BLACK}{COMMA32}m²
 STR_2324    :{WINDOW_COLOUR_2}Park size: {BLACK}{COMMA32}sq.ft.
 STR_2325    :{SMALLFONT}{BLACK}Buy land to extend park
 STR_2326    :{SMALLFONT}{BLACK}Buy construction rights to allow construction above or below land outside the park
@@ -2338,19 +1684,18 @@ STR_2330    :{WINDOW_COLOUR_2}Temperature:
 STR_2331    :{WINDOW_COLOUR_2}Height Labels:
 STR_2332    :Units
 STR_2333    :Sound effects
-STR_2334    :Pounds ({POUND})
+STR_2334    :Pounds (£)
 STR_2335    :Dollars ($)
 STR_2336    :Franc (F)
-STR_2337    :Deutschmark (DM)
-STR_2338    :Yen ({YEN})
+STR_2337    :Deutsche mark (DM)
+STR_2338    :Yen (¥)
 STR_2339    :Peseta (Pts)
 STR_2340    :Lira (L)
-STR_2341    :Guilders (fl.)
+STR_2341    :Guilders (ƒ)
 STR_2342    :Krona (kr)
-STR_2343    :Euros ({EURO})
+STR_2343    :Euros (€)
 STR_2344    :Imperial
 STR_2345    :Metric
-STR_2346    :Display
 STR_2347    :{RED}{STRINGID} has drowned!
 STR_2348    :{SMALLFONT}{BLACK}Show statistics for this staff member
 STR_2349    :{WINDOW_COLOUR_2}Wages: {BLACK}{CURRENCY} per month
@@ -2361,7 +1706,6 @@ STR_2353    :{WINDOW_COLOUR_2}Litter swept: {BLACK}{COMMA16}
 STR_2354    :{WINDOW_COLOUR_2}Bins emptied: {BLACK}{COMMA16}
 STR_2355    :{WINDOW_COLOUR_2}Rides fixed: {BLACK}{COMMA16}
 STR_2356    :{WINDOW_COLOUR_2}Rides inspected: {BLACK}{COMMA16}
-STR_2357    :House
 STR_2358    :Units
 STR_2359    :Real Values
 STR_2360    :Display Resolution:
@@ -2370,8 +1714,8 @@ STR_2362    :{SMALLFONT}{BLACK}Toggle landscape tile edge smoothing on/off
 STR_2363    :Gridlines on Landscape
 STR_2364    :{SMALLFONT}{BLACK}Toggle gridlines on landscape on/off
 STR_2365    :The bank refuses to increase your loan!
-STR_2366    :Celsius ({DEGREE}C)
-STR_2367    :Fahrenheit ({DEGREE}F)
+STR_2366    :Celsius (°C)
+STR_2367    :Fahrenheit (°F)
 STR_2368    :None
 STR_2369    :Low
 STR_2370    :Average
@@ -2426,8 +1770,6 @@ STR_2418    :Free entry to {STRINGID}
 STR_2419    :Free ride on {STRINGID}
 STR_2420    :Half-price entry to {STRINGID}
 STR_2421    :Free {STRINGID}
-STR_2422    :Advertising campaign for {STRINGID}
-STR_2423    :Advertising campaign for {STRINGID}
 STR_2424    :{WINDOW_COLOUR_2}Vouchers for free entry to the park
 STR_2425    :{WINDOW_COLOUR_2}Vouchers for free rides on a particular ride
 STR_2426    :{WINDOW_COLOUR_2}Vouchers for half-price entry to the park
@@ -2441,12 +1783,6 @@ STR_2433    :{BLACK}Vouchers for free {STRINGID}
 STR_2434    :{BLACK}Advertising campaign for {STRINGID}
 STR_2435    :{BLACK}Advertising campaign for {STRINGID}
 STR_2436    :1 week
-STR_2437    :<removed string - do not use>
-STR_2438    :<removed string - do not use>
-STR_2439    :<removed string - do not use>
-STR_2440    :<removed string - do not use>
-STR_2441    :<removed string - do not use>
-STR_2442    :<removed string - do not use>
 STR_2443    :{WINDOW_COLOUR_2}Cost per week: {BLACK}{CURRENCY2DP}
 STR_2444    :{WINDOW_COLOUR_2}Total cost: {BLACK}{CURRENCY2DP}
 STR_2445    :Start this marketing campaign
@@ -2459,8 +1795,6 @@ STR_2451    :{YELLOW}Your advertising campaign for {STRINGID} has finished
 STR_2452    :{WINDOW_COLOUR_2}Cash (less loan): {BLACK}{CURRENCY2DP}
 STR_2453    :{WINDOW_COLOUR_2}Cash (less loan): {RED}{CURRENCY2DP}
 STR_2454    :{SMALLFONT}{BLACK}{CURRENCY2DP} -
-STR_2455    :{SMALLFONT}{BLACK}+{CURRENCY2DP} -
-STR_2456    :{SMALLFONT}{BLACK}{CURRENCY2DP} -
 STR_2457    :{SMALLFONT}{BLACK}Show financial accounts
 STR_2458    :{SMALLFONT}{BLACK}Show graph of cash (less loan) over time
 STR_2459    :{SMALLFONT}{BLACK}Show graph of park value over time
@@ -2489,8 +1823,6 @@ STR_2481    :{SMALLFONT}{BLACK}Show graph of lateral acceleration against time
 STR_2482    :{SMALLFONT}{BLACK}Profit: {CURRENCY} per week,  Park Value: {CURRENCY}
 STR_2483    :{WINDOW_COLOUR_2}Weekly profit: {BLACK}+{CURRENCY2DP}
 STR_2484    :{WINDOW_COLOUR_2}Weekly profit: {RED}{CURRENCY2DP}
-STR_2485    :Controls
-STR_2486    :General
 STR_2487    :Show 'real' names of guests
 STR_2488    :{SMALLFONT}{BLACK}Toggle between showing 'real' names of guests and guest numbers
 STR_2489    :Shortcut keys...
@@ -2687,8 +2019,6 @@ STR_2678    :???
 STR_2679    :???
 STR_2680    :All research complete
 STR_2681    :{MEDIUMFONT}{BLACK}Increases your money by {CURRENCY}
-STR_2682    :<removed string - do not use>
-STR_2683    :<removed string - do not use>
 STR_2684    :{SMALLFONT}{BLACK}Large group of guests arrive
 STR_2685    :Simplex Noise Parameters
 STR_2686    :Low:
@@ -2712,7 +2042,7 @@ STR_2703    :كل 15 دقيقة
 STR_2704    :كل 30 دقيقة
 STR_2705    :كل ساعة
 STR_2706    :أبداً
-STR_2707    :Use system dialog window
+STR_2707    :إستخدم متصفح ملف النظام
 STR_2708    :{WINDOW_COLOUR_1}Are you sure you want to overwrite {STRINGID}?
 STR_2709    :Overwrite
 STR_2710    :Type the name of the file.
@@ -2744,72 +2074,62 @@ STR_2735    :{COMMA16}km/h
 STR_2736    :{MONTH}, Year {COMMA16}
 STR_2737    :{STRINGID} {MONTH}, Year {COMMA16}
 STR_2738    :Title screen music:
-STR_2739    :None
+STR_2739    :لاشئ
 STR_2740    :RollerCoaster Tycoon 1
 STR_2741    :RollerCoaster Tycoon 2
 STR_2742    :css50.dat not found
-STR_2743    :Copy 'data/css17.dat' from your RCT1 installation to 'data/css50.dat' in your RCT2 installation, or make sure the path to RCT1 in the Miscellaneous tab is correct.
+STR_2743    :انسخ 'data/css17.dat' من "محاكي الأفعوانيات الجزء الأول" إلي 'data/css50.dat' في "محاكي الأفعوانيات الجزء الثاني"، أو تأكد من أن المسار لـ"محاكي الأفعوانيات الجزء الأول" صحيح في صفحة متقدم في الإعدادات.
 STR_2744    :[
 STR_2745    :\
 STR_2746    :]
-STR_2747    :{ENDQUOTES}
-STR_2748    :Bar
+STR_2747    :”
 STR_2749    :My new scenario
 # New strings used in the cheats window previously these were ???
-STR_2750    :Move all items to top
-STR_2751    :Move all items to bottom
+STR_2750    :حرك كل العناصر إلي الأعلي
+STR_2751    :حرك كل العناصر إلي الأسفل
 STR_2752    :Clear grass
 STR_2753    :Mowed grass
 STR_2754    :Water plants
 STR_2755    :Fix vandalism
 STR_2756    :Remove litter
-STR_2757    :<removed string - do not use>
-STR_2758    :<removed string - do not use>
-STR_2759    :Zero Clearance
-STR_2760    :+{CURRENCY}
-STR_2761    :<removed string - do not use>
-STR_2762    :<removed string - do not use>
 STR_2763    :???
-STR_2764    :<removed string - do not use>
 STR_2765    :Large Tram
 STR_2766    :Win scenario
-STR_2767    :Freeze Climate
-STR_2768    :Unfreeze Climate
-STR_2769    :Open Park
-STR_2770    :Close Park
-STR_2771    :Slower Gamespeed
-STR_2772    :Faster Gamespeed
-STR_2773    :Windowed
-STR_2774    :Fullscreen
+STR_2767    :جمد الطقس
+STR_2768    :الغا تجميد الطقس
+STR_2769    :افتح الحديقة
+STR_2770    :أغلق الحديقة
+STR_2773    :وضع النافذة
+STR_2774    :وضع الشاشة الكاملة
 STR_2775    :Fullscreen (borderless window)
-STR_2776    :Language:
+STR_2776    :اللغة:
 STR_2777    :{MOVE_X}{SMALLFONT}{STRING}
-STR_2778    :{RIGHTGUILLEMET}{MOVE_X}{SMALLFONT}{STRING}
+STR_2778    :»{MOVE_X}{SMALLFONT}{STRING}
 STR_2779    :Viewport #{COMMA16}
 STR_2780    :Extra viewport
 # End of new strings
 STR_2781    :{STRINGID}:{MOVE_X}{255}{STRINGID}
 STR_2782    :SHIFT +
 STR_2783    :CTRL +
-STR_2784    :Change keyboard shortcut
-STR_2785    :{WINDOW_COLOUR_2}Press new shortcut key for:{NEWLINE}{OPENQUOTES}{STRINGID}{ENDQUOTES}
+STR_2784    :غير إختصار لوحة المفاتيح
+STR_2785    :{WINDOW_COLOUR_2}اضغط علي الإختصار الجديد لـ:{NEWLINE}“{STRINGID}”
 STR_2786    :{SMALLFONT}{BLACK}Click on shortcut description to select new key
 STR_2787    :{WINDOW_COLOUR_2}Park value: {BLACK}{CURRENCY}
 STR_2788    :{WINDOW_COLOUR_2}Congratulations !{NEWLINE}{BLACK}You achieved your objective with a company value of {CURRENCY} !
 STR_2789    :{WINDOW_COLOUR_2}You have failed your objective !
 STR_2790    :Enter name into scenario chart
-STR_2791    :Enter name
+STR_2791    :ادخل أسمًا
 STR_2792    :Please enter your name for the scenario chart:
 STR_2793    :{SMALLFONT}(Completed by {STRINGID})
 STR_2794    :{WINDOW_COLOUR_2}Completed by: {BLACK}{STRINGID}{NEWLINE}{WINDOW_COLOUR_2} with a company value of: {BLACK}{CURRENCY}
-STR_2795    :Sort
+STR_2795    :ترتيب
 STR_2796    :{SMALLFONT}{BLACK}Sort the ride list into order using the information type displayed
 STR_2797    :Scroll view when pointer at screen edge
 STR_2798    :{SMALLFONT}{BLACK}Scroll the view when the mouse pointer is at the screen edge
 STR_2799    :{SMALLFONT}{BLACK}View or change control key assignments
 STR_2800    :{WINDOW_COLOUR_2}Total admissions: {BLACK}{COMMA32}
 STR_2801    :{WINDOW_COLOUR_2}Income from admissions: {BLACK}{CURRENCY2DP}
-STR_2802    :Map
+STR_2802    :خريطة
 STR_2803    :{SMALLFONT}{BLACK}Show these guests highlighted on map
 STR_2804    :{SMALLFONT}{BLACK}Show these staff members highlighted on map
 STR_2805    :{SMALLFONT}{BLACK}Show map of park
@@ -2855,7 +2175,7 @@ STR_2844    :{TOPAZ}Your park has received an award for being 'The park with the
 STR_2845    :{TOPAZ}Your park has received an award for being 'The park with the most dazzling choice of colour schemes'!
 STR_2846    :{TOPAZ}Your park has received an award for being 'The park with the most confusing layout'!
 STR_2847    :{TOPAZ}Your park has received an award for being 'The park with the best gentle rides'!
-STR_2848    :{WINDOW_COLOUR_2}No recent awards
+STR_2848    :{WINDOW_COLOUR_2}لا جوائز حالية
 STR_2849    :New scenario installed successfully
 STR_2850    :New track design installed successfully
 STR_2851    :Scenario already installed
@@ -2863,121 +2183,53 @@ STR_2852    :Track design already installed
 STR_2853    :Forbidden by the local authority!
 STR_2854    :{RED}Guests can't get to the entrance of {STRINGID} !{NEWLINE}Construct a path to the entrance
 STR_2855    :{RED}{STRINGID} has no path leading from its exit !{NEWLINE}Construct a path from the ride exit
-STR_2856    :{WINDOW_COLOUR_2}Tutorial
-STR_2857    :{WINDOW_COLOUR_2}(Press a key or mouse button to take control)
 STR_2858    :Can't start marketing campaign...
-STR_2859    :Another instance of OpenRCT2 is already running
-STR_2860    :<removed string - do not use>
 STR_2861    :{WINDOW_COLOUR_2}Licensed to Infogrames Interactive Inc.
-STR_2862    :Music acknowledgements...
-STR_2863    :Music acknowledgements
-STR_2864    :{WINDOW_COLOUR_2}March - Children of the Regiment:   (Fucik) non copyright
+STR_2862    :معلومات عن الموسيقي...
+STR_2863    :معلومات عن الموسيقي
+STR_2864    :{WINDOW_COLOUR_2}March - Children of the Regiment:   (Fucik) لا حقوق نشر
 STR_2865    :{WINDOW_COLOUR_2}Heyken's Serenade:   (J.Heyken) British Standard Music Coy; GEMA, BRITICO
-STR_2866    :{WINDOW_COLOUR_2}In Continental Mood:   (Composer unknown) Copyright Control
-STR_2867    :{WINDOW_COLOUR_2}Wedding Journey:   (Traditional)
-STR_2868    :{WINDOW_COLOUR_2}Tales from the Vienna Woods:   (Johann Strauss) non copyright
-STR_2869    :{WINDOW_COLOUR_2}Slavonic Dance:   (Traditional)
-STR_2870    :{WINDOW_COLOUR_2}Das Alpenhorn:   (Traditional)
-STR_2871    :{WINDOW_COLOUR_2}The Blond Sailor:   (Traditional)
-STR_2872    :{WINDOW_COLOUR_2}Overture - Poet and Peasant:   (Suppe) non copyright
-STR_2873    :{WINDOW_COLOUR_2}Waltz Medley:   (Johann Strauss) non copyright
-STR_2874    :{WINDOW_COLOUR_2}Bella Bella Bimba:   (Traditional)
+STR_2866    :{WINDOW_COLOUR_2}La Belle Espagnole:   (Robert Vollstedt) لا حقوق نشر
+STR_2867    :{WINDOW_COLOUR_2}Wedding Journey:   (تقليدية)
+STR_2868    :{WINDOW_COLOUR_2}Tales from the Vienna Woods:   (Johann Strauss) لا حقوق نشر
+STR_2869    :{WINDOW_COLOUR_2}Slavonic Dance:   (تقليدية)
+STR_2870    :{WINDOW_COLOUR_2}Das Alpenhorn:   (تقليدية)
+STR_2871    :{WINDOW_COLOUR_2}The Blond Sailor:   (تقليدية)
+STR_2872    :{WINDOW_COLOUR_2}Overture - Poet and Peasant:   (Suppe) لا حقوق نشر
+STR_2873    :{WINDOW_COLOUR_2}Waltz Medley:   (Johann Strauss) لا حقوق نشر
+STR_2874    :{WINDOW_COLOUR_2}Bella Bella Bimba:   (تقليدية)
 STR_2875    :{WINDOW_COLOUR_2}Original recordings (P) 1976 C.J.Mears Organization, used with consent
-STR_2876    :{WINDOW_COLOUR_2}RollerCoaster Tycoon 2 Title Music:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2877    :{WINDOW_COLOUR_2}Dodgems Beat:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2878    :{WINDOW_COLOUR_2}Mid Summer's Heat:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2879    :{WINDOW_COLOUR_2}Pharaoh's Tomb:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2880    :{WINDOW_COLOUR_2}Caesar's March:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2881    :{WINDOW_COLOUR_2}Drifting To Heaven:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2882    :{WINDOW_COLOUR_2}Invaders:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2883    :{WINDOW_COLOUR_2}Eternal Toybox:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2884    :{WINDOW_COLOUR_2}Jungle Juice:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2885    :{WINDOW_COLOUR_2}Ninja's Noodles:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2886    :{WINDOW_COLOUR_2}Voyage to Andromeda:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2887    :{WINDOW_COLOUR_2}Brimble's Beat:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2888    :{WINDOW_COLOUR_2}Atlantis:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2889    :{WINDOW_COLOUR_2}Wild West Kid:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2890    :{WINDOW_COLOUR_2}Vampire's Lair:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2891    :{WINDOW_COLOUR_2}Blockbuster:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2892    :{WINDOW_COLOUR_2}Airtime Rock:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2893    :{WINDOW_COLOUR_2}Searchlight Rag:   (Scott Joplin/Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2894    :{WINDOW_COLOUR_2}Flight of Fantasy:   (Steve Blenkinsopp) copyright {COPYRIGHT} Chris Sawyer
-STR_2895    :{WINDOW_COLOUR_2}Big Rock:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2896    :{WINDOW_COLOUR_2}Hypothermia:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2897    :{WINDOW_COLOUR_2}Last Sleigh Ride:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2898    :{WINDOW_COLOUR_2}Pipes of Glencairn:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2899    :{WINDOW_COLOUR_2}Traffic Jam:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2900    :<removed string - do not use>
-STR_2901    :{WINDOW_COLOUR_2}(Samples courtesy of Spectrasonics {ENDQUOTES}Liquid Grooves{ENDQUOTES})
-STR_2902    :{WINDOW_COLOUR_2}Toccata:   (C.M.Widor, played by Peter James Adcock) recording {COPYRIGHT} Chris Sawyer
-STR_2903    :{WINDOW_COLOUR_2}Space Rock:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2904    :{WINDOW_COLOUR_2}Manic Mechanic:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2905    :{WINDOW_COLOUR_2}Techno Torture:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2906    :{WINDOW_COLOUR_2}Sweat Dreams:   (Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2907    :{WINDOW_COLOUR_2}What shall we do with the Drunken Sailor:   (Anon/Allister Brimble) copyright {COPYRIGHT} Chris Sawyer
-STR_2908    :<removed string - do not use>
-STR_2909    :<removed string - do not use>
-STR_2910    :<removed string - do not use>
-STR_2911    :<removed string - do not use>
-STR_2912    :<removed string - do not use>
-STR_2913    :<removed string - do not use>
-STR_2914    :<removed string - do not use>
-STR_2915    :<removed string - do not use>
-STR_2916    :<removed string - do not use>
-STR_2917    :<removed string - do not use>
-STR_2918    :<removed string - do not use>
-STR_2919    :<removed string - do not use>
-STR_2920    :<removed string - do not use>
-STR_2921    :<removed string - do not use>
-STR_2922    :<removed string - do not use>
-STR_2923    :<removed string - do not use>
-STR_2924    :<removed string - do not use>
-STR_2925    :<removed string - do not use>
-STR_2926    :<removed string - do not use>
-STR_2927    :<removed string - do not use>
-STR_2928    :<removed string - do not use>
-STR_2929    :<removed string - do not use>
-STR_2930    :<removed string - do not use>
-STR_2931    :{WINDOW_COLOUR_2}
-STR_2932    :{WINDOW_COLOUR_2}
-STR_2933    :{WINDOW_COLOUR_2}
-STR_2934    :{WINDOW_COLOUR_2}
-STR_2935    :{WINDOW_COLOUR_2}
-STR_2936    :{WINDOW_COLOUR_2}
-STR_2937    :{WINDOW_COLOUR_2}
-STR_2938    :{WINDOW_COLOUR_2}
-STR_2939    :{WINDOW_COLOUR_2}
-STR_2940    :{WINDOW_COLOUR_2}
-STR_2941    :{WINDOW_COLOUR_2}
-STR_2942    :{WINDOW_COLOUR_2}
-STR_2943    :{WINDOW_COLOUR_2}
-STR_2944    :{WINDOW_COLOUR_2}
-STR_2945    :{WINDOW_COLOUR_2}
-STR_2946    :{WINDOW_COLOUR_2}
-STR_2947    :{WINDOW_COLOUR_2}
-STR_2948    :{WINDOW_COLOUR_2}
-STR_2949    :{WINDOW_COLOUR_2}
-STR_2950    :{WINDOW_COLOUR_2}
-STR_2951    :{WINDOW_COLOUR_2}
-STR_2952    :{WINDOW_COLOUR_2}
-STR_2953    :{WINDOW_COLOUR_2}
-STR_2954    :{WINDOW_COLOUR_2}
-STR_2955    :{WINDOW_COLOUR_2}
-STR_2956    :{WINDOW_COLOUR_2}
-STR_2957    :{WINDOW_COLOUR_2}
-STR_2958    :{WINDOW_COLOUR_2}
-STR_2959    :{WINDOW_COLOUR_2}
-STR_2960    :{WINDOW_COLOUR_2}
-STR_2961    :{WINDOW_COLOUR_2}
-STR_2962    :{WINDOW_COLOUR_2}
-STR_2963    :{WINDOW_COLOUR_2}
-STR_2964    :{WINDOW_COLOUR_2}
-STR_2965    :{WINDOW_COLOUR_2}
-STR_2966    :
-STR_2967    :
-STR_2968    :
-STR_2969    :<removed string - do not use>
-STR_2970    :<removed string - do not use>
+STR_2876    :{WINDOW_COLOUR_2}RollerCoaster Tycoon 2 Title Music:   (Allister Brimble) copyright © Chris Sawyer
+STR_2877    :{WINDOW_COLOUR_2}Dodgems Beat:   (Allister Brimble) copyright © Chris Sawyer
+STR_2878    :{WINDOW_COLOUR_2}Mid Summer's Heat:   (Allister Brimble) copyright © Chris Sawyer
+STR_2879    :{WINDOW_COLOUR_2}Pharaoh's Tomb:   (Allister Brimble) copyright © Chris Sawyer
+STR_2880    :{WINDOW_COLOUR_2}Caesar's March:   (Allister Brimble) copyright © Chris Sawyer
+STR_2881    :{WINDOW_COLOUR_2}Drifting To Heaven:   (Allister Brimble) copyright © Chris Sawyer
+STR_2882    :{WINDOW_COLOUR_2}Invaders:   (Allister Brimble) copyright © Chris Sawyer
+STR_2883    :{WINDOW_COLOUR_2}Eternal Toybox:   (Allister Brimble) copyright © Chris Sawyer
+STR_2884    :{WINDOW_COLOUR_2}Jungle Juice:   (Allister Brimble) copyright © Chris Sawyer
+STR_2885    :{WINDOW_COLOUR_2}Ninja's Noodles:   (Allister Brimble) copyright © Chris Sawyer
+STR_2886    :{WINDOW_COLOUR_2}Voyage to Andromeda:   (Allister Brimble) copyright © Chris Sawyer
+STR_2887    :{WINDOW_COLOUR_2}Brimble's Beat:   (Allister Brimble) copyright © Chris Sawyer
+STR_2888    :{WINDOW_COLOUR_2}Atlantis:   (Allister Brimble) copyright © Chris Sawyer
+STR_2889    :{WINDOW_COLOUR_2}Wild West Kid:   (Allister Brimble) copyright © Chris Sawyer
+STR_2890    :{WINDOW_COLOUR_2}Vampire's Lair:   (Allister Brimble) copyright © Chris Sawyer
+STR_2891    :{WINDOW_COLOUR_2}Blockbuster:   (Allister Brimble) copyright © Chris Sawyer
+STR_2892    :{WINDOW_COLOUR_2}Airtime Rock:   (Allister Brimble) copyright © Chris Sawyer
+STR_2893    :{WINDOW_COLOUR_2}Searchlight Rag:   (Scott Joplin/Allister Brimble) copyright © Chris Sawyer
+STR_2894    :{WINDOW_COLOUR_2}Flight of Fantasy:   (Steve Blenkinsopp) copyright © Chris Sawyer
+STR_2895    :{WINDOW_COLOUR_2}Big Rock:   (Allister Brimble) copyright © Chris Sawyer
+STR_2896    :{WINDOW_COLOUR_2}Hypothermia:   (Allister Brimble) copyright © Chris Sawyer
+STR_2897    :{WINDOW_COLOUR_2}Last Sleigh Ride:   (Allister Brimble) copyright © Chris Sawyer
+STR_2898    :{WINDOW_COLOUR_2}Pipes of Glencairn:   (Allister Brimble) copyright © Chris Sawyer
+STR_2899    :{WINDOW_COLOUR_2}Traffic Jam:   (Allister Brimble) copyright © Chris Sawyer
+STR_2901    :{WINDOW_COLOUR_2}(Samples courtesy of Spectrasonics “Liquid Grooves”)
+STR_2902    :{WINDOW_COLOUR_2}Toccata:   (C.M.Widor, played by Peter James Adcock) recording © Chris Sawyer
+STR_2903    :{WINDOW_COLOUR_2}Space Rock:   (Allister Brimble) copyright © Chris Sawyer
+STR_2904    :{WINDOW_COLOUR_2}Manic Mechanic:   (Allister Brimble) copyright © Chris Sawyer
+STR_2905    :{WINDOW_COLOUR_2}Techno Torture:   (Allister Brimble) copyright © Chris Sawyer
+STR_2906    :{WINDOW_COLOUR_2}Sweat Dreams:   (Allister Brimble) copyright © Chris Sawyer
+STR_2907    :{WINDOW_COLOUR_2}What shall we do with the Drunken Sailor:   (Anon/Allister Brimble) copyright © Chris Sawyer
 STR_2971    :Main colour scheme
 STR_2972    :Alternative colour scheme 1
 STR_2973    :Alternative colour scheme 2
@@ -2998,11 +2250,11 @@ STR_2987    :{SMALLFONT}{BLACK}Set this banner as a 'no-entry' sign for guests
 STR_2988    :{SMALLFONT}{BLACK}Demolish this banner
 STR_2989    :{SMALLFONT}{BLACK}حدد اللون الأساسي
 STR_2990    :{SMALLFONT}{BLACK}حدد لون الكتابة
-STR_2991    :Sign
-STR_2992    :Sign text
-STR_2993    :Enter new text for this sign:
-STR_2994    :{SMALLFONT}{BLACK}Change text on sign
-STR_2995    :{SMALLFONT}{BLACK}Demolish this sign
+STR_2991    :يافطة
+STR_2992    :الكلام علي اليافطة
+STR_2993    :أدخل كلام جديد لكتابته علي اليافطة:
+STR_2994    :{SMALLFONT}{BLACK}تغيير االكلام علي اليافطة
+STR_2995    :{SMALLFONT}{BLACK}تدمير هذه اليافطة
 STR_2996    :{BLACK}ABC
 STR_2997    :{GREY}ABC
 STR_2998    :{WHITE}ABC
@@ -3017,8 +2269,8 @@ STR_3006    :{PALEGOLD}ABC
 STR_3007    :{LIGHTPINK}ABC
 STR_3008    :{PEARLAQUA}ABC
 STR_3009    :{PALESILVER}ABC
-STR_3010    :Unable to load file...
-STR_3011    :File contains invalid data
+STR_3010    :غير قادر علي تحميل الملف...
+STR_3011    :الملف يحتوي علي بيانات خاطئة
 STR_3012    :Dodgems beat style
 STR_3013    :Fairground organ style
 STR_3014    :Roman fanfare style
@@ -3053,7 +2305,6 @@ STR_3042    :Pirates style
 STR_3043    :Rock style 3
 STR_3044    :Candy style
 STR_3045    :{SMALLFONT}{BLACK}Select style of music to play
-STR_3046    :This ride cannot be modified
 STR_3047    :Local authority forbids demolition or modifications to this ride
 STR_3048    :Marketing campaigns forbidden by local authority
 STR_3049    :Golf hole A
@@ -3062,9 +2313,6 @@ STR_3051    :Golf hole C
 STR_3052    :Golf hole D
 STR_3053    :Golf hole E
 STR_3054    :تحميل...
-STR_3055    :White
-STR_3056    :Translucent
-STR_3057    :{WINDOW_COLOUR_2}Construction Marker:
 STR_3058    :Brick walls
 STR_3059    :Hedges
 STR_3060    :Ice blocks
@@ -3074,8 +2322,8 @@ STR_3063    :{SMALLFONT}{BLACK}Water channel (track submerged)
 STR_3064    :Beginner Parks
 STR_3065    :Challenging Parks
 STR_3066    :Expert Parks
-STR_3067    :{OPENQUOTES}Real{ENDQUOTES} Parks
-STR_3068    :Other Parks
+STR_3067    :“Real” Parks
+STR_3068    :حدائق أخري
 STR_3069    :Top Section
 STR_3070    :Slope to Level
 STR_3071    :{WINDOW_COLOUR_2}Same price throughout park
@@ -3085,18 +2333,6 @@ STR_3074    :{RED}WARNING: Your park rating is still below 700 !{NEWLINE}You hav
 STR_3075    :{RED}WARNING: Your park rating is still below 700 !{NEWLINE}You have only 2 weeks to raise the park rating, or your park will be closed down
 STR_3076    :{RED}FINAL WARNING: Your park rating is still below 700 !{NEWLINE}In just 7 days your park will be closed down unless you can raise the rating
 STR_3077    :{RED}CLOSURE NOTICE: Your park has been closed down !
-STR_3078    :Plain entrance
-STR_3079    :Wooden entrance
-STR_3080    :Canvas tent entrance
-STR_3081    :Castle entrance (grey)
-STR_3082    :Castle entrance (brown)
-STR_3083    :Jungle entrance
-STR_3084    :Log cabin entrance
-STR_3085    :Classical/Roman entrance
-STR_3086    :Abstract entrance
-STR_3087    :Snow/Ice entrance
-STR_3088    :Pagoda entrance
-STR_3089    :Space entrance
 STR_3090    :{SMALLFONT}{BLACK}Select style of entrance, exit, and station
 STR_3091    :You are not allowed to remove this section!
 STR_3092    :You are not allowed to move or modify the station for this ride!
@@ -3105,7 +2341,6 @@ STR_3094    :N/A
 STR_3095    :{WINDOW_COLOUR_2}Lift hill chain speed:
 STR_3096    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{VELOCITY}
 STR_3097    :{SMALLFONT}{BLACK}Select lift hill chain speed
-STR_3098    :Can't change lift hill speed...
 STR_3099    :{SMALLFONT}{BLACK}حدد اللون
 STR_3100    :{SMALLFONT}{BLACK}حدد اللون الثاني
 STR_3101    :{SMALLFONT}{BLACK}حدد اللون الثالث
@@ -3152,30 +2387,13 @@ STR_3141    :Multi-circuit per ride not possible with cable lift hill
 STR_3142    :{WINDOW_COLOUR_2}Capacity: {BLACK}{STRINGID}
 STR_3143    :{SMALLFONT}{BLACK}Show people on map
 STR_3144    :{SMALLFONT}{BLACK}Show rides and stalls on map
-STR_3145    :{SMALLFONT}{BLACK}Scroll {STRINGID} left
-STR_3146    :{SMALLFONT}{BLACK}Scroll {STRINGID} right
-STR_3147    :{SMALLFONT}{BLACK}Scroll {STRINGID} left fast
-STR_3148    :{SMALLFONT}{BLACK}Scroll {STRINGID} right fast
-STR_3149    :{SMALLFONT}{BLACK}Scroll {STRINGID} left/right
-STR_3150    :{SMALLFONT}{BLACK}Scroll {STRINGID} up
-STR_3151    :{SMALLFONT}{BLACK}Scroll {STRINGID} down
-STR_3152    :{SMALLFONT}{BLACK}Scroll {STRINGID} up fast
-STR_3153    :{SMALLFONT}{BLACK}Scroll {STRINGID} down fast
-STR_3154    :{SMALLFONT}{BLACK}Scroll {STRINGID} up/down
-STR_3155    :
-STR_3156    :
-STR_3157    :map
 STR_3158    :graph
 STR_3159    :list
 STR_3160    :{SMALLFONT}{BLACK}Select the number of circuits per ride
-STR_3161    :<removed string - do not use>
 STR_3162    :Unable to allocate enough memory
 STR_3163    :Installing new data:
 STR_3164    :{BLACK}{COMMA16} selected (maximum {COMMA16})
-STR_3165    :
-STR_3166    :{BLACK}(ID:
 STR_3167    :{WINDOW_COLOUR_2}Includes: {BLACK}{COMMA16} objects
-STR_3168    :{WINDOW_COLOUR_2}Text: {BLACK}{STRINGID}
 STR_3169    :Data for the following object not found:
 STR_3170    :Not enough space for graphics
 STR_3171    :Too many objects of this type selected
@@ -3330,9 +2548,6 @@ STR_3319    :{WINDOW_COLOUR_2}Scenario Group:
 STR_3320    :Unable to save scenario file...
 STR_3321    :New objects installed successfully
 STR_3322    :{WINDOW_COLOUR_2}Objective: {BLACK}{STRINGID}
-STR_3323    :Missing object data, ID:
-STR_3324    :Requires Add-On Pack: {STRINGID}
-STR_3325    :Requires an Add-On Pack
 STR_3326    :{WINDOW_COLOUR_2}(no image)
 STR_3327    :Starting positions for people not set
 STR_3328    :Can't advance to next editor stage...
@@ -3344,7 +2559,6 @@ STR_3333    :Export plug-in objects with saved games
 STR_3334    :{SMALLFONT}{BLACK}Select whether to save any additional plug-in object data required (add-in data not supplied with the main product) in saved game or scenario files, allowing them to be loaded by someone who doesn't have the additional object data
 STR_3335    :Track Designer - Select Ride Types & Vehicles
 STR_3336    :Track Designs Manager - Select Ride Type
-STR_3337    :<removed string - do not use>
 STR_3338    :{BLACK}Custom-designed layout
 STR_3339    :{BLACK}{COMMA16} design available, or custom-designed layout
 STR_3340    :{BLACK}{COMMA16} designs available, or custom-designed layout
@@ -3369,8 +2583,6 @@ STR_3358    :Can't delete track design...
 STR_3359    :{BLACK}No track designs of this type
 STR_3360    :Warning!
 STR_3361    :Too many track designs of this type - Some will not be listed.
-STR_3362    :<removed string - do not use>
-STR_3363    :<removed string - do not use>
 STR_3364    :Advanced
 STR_3365    :{SMALLFONT}{BLACK}Allow selection of individual items of scenery in addition to scenery groups
 STR_3366    :{BLACK}= Ride
@@ -3392,59 +2604,9 @@ STR_3381    :File is not compatible or contains invalid data
 STR_3382    :File copy failed
 STR_3383    :Select new name for track design
 STR_3384    :An existing track design already has this name - Please select a new name for this design:
-STR_3385    :Beginners Tutorial
-STR_3386    :Custom Rides Tutorial
-STR_3387    :Roller Coaster Building Tutorial
-STR_3388    :Unable to switch to selected mode
 STR_3389    :Unable to select additional item of scenery...
 STR_3390    :Too many items selected
 # Start of tutorial strings. Not used at the moment, so not necessary to translate.
-STR_3391    :{SMALLFONT}{BLACK}Here is our park - Let's have a quick look around...
-STR_3392    :{SMALLFONT}{BLACK}Holding down the RIGHT mouse button and moving the mouse is the quickest way to move the view...
-STR_3393    :{SMALLFONT}{BLACK}To view more of the park, you can zoom the view out using the icon at the top of the screen...
-STR_3394    :{SMALLFONT}{BLACK}You can also rotate the view in 90 degree steps...
-STR_3395    :{SMALLFONT}{BLACK}Building anything at this scale is a bit difficult, so let's zoom the view back in again...
-STR_3396    :{SMALLFONT}{BLACK}Let's build a simple ride to get the park started...
-STR_3397    :{SMALLFONT}{BLACK}The white 'ghost' image shows where the ride will be built. We'll move the pointer to select the position then click to build it...
-STR_3398    :{SMALLFONT}{BLACK}Rides need an entrance and an exit. We'll move the pointer to a square on the edge of the ride and then click to build first the entrance and then the exit...
-STR_3399    :{SMALLFONT}{BLACK}We need to build footpaths to allow guests to reach our new ride...
-STR_3400    :{SMALLFONT}{BLACK}For the path to the ride entrance we'll use a special 'queue line' path...
-STR_3401    :{SMALLFONT}{BLACK}For the exit path, just an 'ordinary' path will do...
-STR_3402    :{SMALLFONT}{BLACK}Right, lets open the ride! To open the ride we click the flag icon on the ride window and select 'open'...
-STR_3403    :{SMALLFONT}{BLACK}But where are the guests?
-STR_3404    :{SMALLFONT}{BLACK}Oh - The park is still closed! Right - Let's open it...
-STR_3405    :{SMALLFONT}{BLACK}While we're waiting for our first guests, let's build some scenery...
-STR_3406    :{SMALLFONT}{BLACK}Here's our empty park. We're going to build a simple custom-designed ride...
-STR_3407    :{SMALLFONT}{BLACK}First we need to choose a starting position...
-STR_3408    :{SMALLFONT}{BLACK}The section of track we've just built is a 'station platform', to allow guests to get on and off the ride...
-STR_3409    :{SMALLFONT}{BLACK}We'll extend the platform a bit by adding a couple more station platform sections...
-STR_3410    :{SMALLFONT}{BLACK}The icons at the top of the construction window let you choose different track pieces to add...
-STR_3411    :{SMALLFONT}{BLACK}We'll select a left-hand curve...
-STR_3412    :{SMALLFONT}{BLACK}The curve hasn't been built yet, but the white ghost image shows where it will be built. Clicking the large 'build this' icon actually builds the track...
-STR_3413    :{SMALLFONT}{BLACK}Now we want to build straight track, so we click the straight track icon...
-STR_3414    :{SMALLFONT}{BLACK}Now that the circuit is complete, we need to build the ride entrance and exit...
-STR_3415    :{SMALLFONT}{BLACK}Let's test our ride to check it works...
-STR_3416    :{SMALLFONT}{BLACK}White it's being tested, we'll build the queue line and exit path...
-STR_3417    :{SMALLFONT}{BLACK}OK - Let's open the park and the ride...
-STR_3418    :{SMALLFONT}{BLACK}Our new ride isn't very exciting - Perhaps we should add some scenery?
-STR_3419    :{SMALLFONT}{BLACK}To build scenery above other scenery or in mid-air, hold down the SHIFT key and move the mouse to select the height...
-STR_3420    :{SMALLFONT}{BLACK}Some types of scenery can be re-painted after it's built...
-STR_3421    :{SMALLFONT}{BLACK}Let's add some music to the ride...
-STR_3422    :{SMALLFONT}{BLACK}Let's build a roller coaster !
-STR_3423    :{SMALLFONT}{BLACK}There are loads of pre-designed coasters, but we're going to build our own custom design...
-STR_3424    :{SMALLFONT}{BLACK}That's the station platform built. Now we need a lift hill...
-STR_3425    :{SMALLFONT}{BLACK}Roller coaster trains aren't powered, so a 'chain lift' is needed to pull the train up the first hill...
-STR_3426    :{SMALLFONT}{BLACK}That's the lift hill complete - Now for the first drop...
-STR_3427    :{SMALLFONT}{BLACK}Those curves are a bad idea - The riders will be flung to the sides by the lateral G forces as the train hurtles around...
-STR_3428    :{SMALLFONT}{BLACK}Banking the curves will improve the ride - Riders will be pushed down into their seats instead of flung to the sides...
-STR_3429    :{SMALLFONT}{BLACK}No - That won't work! Look at the height marks - The second hill is taller than the lift hill...
-STR_3430    :{SMALLFONT}{BLACK}To ensure the train makes it around, each hill should be slightly smaller than the previous one...
-STR_3431    :{SMALLFONT}{BLACK}That's better - Our train should make it up that hill now! Let's try some more twisted track...
-STR_3432    :{SMALLFONT}{BLACK}We need to slow the train before the final curve and station, so let's add some brakes...
-STR_3433    :{SMALLFONT}{BLACK}And finally we'll add 'block brakes', which allow two trains to operate more safely on the circuit...
-STR_3434    :{SMALLFONT}{BLACK}Let's test the ride and see if it works!
-STR_3435    :{SMALLFONT}{BLACK}Great - It worked! Let's add the footpaths and let guests onto our new roller coaster...
-STR_3436    :{SMALLFONT}{BLACK}While waiting for our first riders, we could customise the ride a bit...
 # End of tutorial strings
 STR_3437    :{SMALLFONT}{BLACK}Clear large areas of scenery from landscape
 STR_3438    :Unable to remove all scenery from here...
@@ -3462,7 +2624,6 @@ STR_5120    :Finances
 STR_5121    :Research
 STR_5122    :Select rides by track type (like in RCT1)
 STR_5123    :Renew rides
-STR_5124    :<not used anymore>
 STR_5125    :All destructible
 STR_5126    :Random title music
 STR_5127    :{SMALLFONT}{BLACK}While dragging, paint landscape instead of changing elevation
@@ -3495,7 +2656,6 @@ STR_5153    :تعديل الثيمات...
 STR_5154    :Hardware display
 STR_5155    :Allow testing of unfinished tracks
 STR_5156    :{SMALLFONT}{BLACK}Allows testing of most ride types even when the track is unfinished, does not apply to block sectioned modes
-STR_5157    :<removed string - do not use>
 STR_5158    :أخرج إلي القائمة
 STR_5159    :أخرج من اللعبة
 STR_5160    :{POP16}{MONTH} {PUSH16}{PUSH16}{STRINGID}, Year {POP16}{COMMA16}
@@ -3574,9 +2734,9 @@ STR_5232    :{SMALLFONT}{BLACK}Editors
 STR_5233    :{SMALLFONT}{BLACK}Miscellaneous
 STR_5234    :{SMALLFONT}{BLACK}Prompts
 STR_5235    :{SMALLFONT}{BLACK}Settings
-STR_5236    :Window:
-STR_5237    :Palette:
-STR_5238    :الثيم الحالي:
+STR_5236    :نافذة
+STR_5237    :لوحة
+STR_5238    :الثيم الحالي
 STR_5239    :Duplicate
 STR_5240    :Enter a name for the theme
 STR_5241    :Can't change this theme
@@ -3628,14 +2788,14 @@ STR_5286    :{SMALLFONT}{BLACK}Makes some guests explode
 STR_5287    :Ride is already broken down
 STR_5288    :Ride is closed
 STR_5289    :No breakdowns available for this ride
-STR_5290    :Fix ride
+STR_5290    :إصلاح الرحلة
 STR_5291    :Can't force breakdown
 STR_5292    :{SMALLFONT}{BLACK}Force a breakdown
 STR_5293    :{SMALLFONT}{BLACK}Close ride/attraction
 STR_5294    :{SMALLFONT}{BLACK}Test ride/attraction
 STR_5295    :{SMALLFONT}{BLACK}Open ride/attraction
-STR_5296    :{SMALLFONT}{BLACK}Close park
-STR_5297    :{SMALLFONT}{BLACK}Open park
+STR_5296    :{SMALLFONT}{BLACK}إغلاق الحديقة
+STR_5297    :{SMALLFONT}{BLACK}فتح الحديقة
 STR_5298    :{RED}{STRINGID}
 STR_5299    :{LIGHTPINK}{STRINGID}
 STR_5300    :{SMALLFONT}{BLACK}Quick fire staff
@@ -3648,19 +2808,19 @@ STR_5306    :RollerCoaster Tycoon 1 (AA)
 STR_5307    :RollerCoaster Tycoon 1 (AA + LL)
 STR_5308    :RollerCoaster Tycoon 2
 STR_5309    :OpenRCT2
-STR_5310    :Random
+STR_5310    :عشوائي
 STR_5311    :{SMALLFONT}{BLACK}Debug tools
-STR_5312    :Show console
+STR_5312    :أظهر الكونسول
 STR_5313    :Show tile inspector
 STR_5314    :Tile inspector
-STR_5315    :Grass
-STR_5316    :Sand
-STR_5317    :Dirt
-STR_5318    :Rock
+STR_5315    :عشب
+STR_5316    :رمل
+STR_5317    :تراب
+STR_5318    :صخر
 STR_5319    :Martian
 STR_5320    :Checkerboard
 STR_5321    :Grass clumps
-STR_5322    :Ice
+STR_5322    :ثلج
 STR_5323    :Grid (red)
 STR_5324    :Grid (yellow)
 STR_5325    :Grid (blue)
@@ -3669,53 +2829,51 @@ STR_5327    :Sand (dark)
 STR_5328    :Sand (light)
 STR_5329    :Checkerboard (inverted)
 STR_5330    :Underground view
-STR_5331    :Rock
-STR_5332    :Wood (red)
-STR_5333    :Wood (black)
-STR_5334    :Ice
-STR_5335    :Ride entrance
-STR_5336    :Ride exit
-STR_5337    :Park entrance
-STR_5338    :Element type
+STR_5331    :صخر
+STR_5332    :خشب (أحمر)
+STR_5333    :خشب (أسمر)
+STR_5334    :ثلج
+STR_5335    :مدخل الرحلة
+STR_5336    :مخرج الرحلة
+STR_5337    :مدخل الحديقة
+STR_5338    :نوع العنصر
 STR_5339    :{SMALLFONT}{BLACK}Base height
 STR_5340    :{SMALLFONT}{BLACK}Clearance height
-STR_5341    :<removed string - do not use>
-STR_5342    :<removed string - do not use>
 STR_5343    :Automatically place staff
 STR_5344    :سجل التغيير
-STR_5345    :Financial cheats
-STR_5346    :Guest cheats
-STR_5347    :Park cheats
-STR_5348    :Ride cheats
-STR_5349    :{SMALLFONT}{BLACK}All Rides
-STR_5350    :Max
-STR_5351    :Min
-STR_5352    :{BLACK}Happiness:
-STR_5353    :{BLACK}Energy:
-STR_5354    :{BLACK}Hunger:
-STR_5355    :{BLACK}Thirst:
-STR_5356    :{BLACK}Nausea:
-STR_5357    :{BLACK}Nausea tolerance:
-STR_5358    :{BLACK}Toilet:
-STR_5359    :Remove guests
+STR_5345    :شفرات الأموال
+STR_5346    :شفرات الزوار
+STR_5347    :شفرات الحديقة
+STR_5348    :شفرات الرحلة
+STR_5349    :{SMALLFONT}{BLACK}كل الرحلات
+STR_5350    :الأقصي
+STR_5351    :الأقل
+STR_5352    :{BLACK}السعادة:
+STR_5353    :{BLACK}الطاقة:
+STR_5354    :{BLACK}الجوع:
+STR_5355    :{BLACK}العطش:
+STR_5356    :{BLACK}الإشمئزاز:
+STR_5357    :{BLACK}تسامح الإشمئزاز:
+STR_5358    :{BLACK}الحمام:
+STR_5359    :مسح الزوار
 STR_5360    :{SMALLFONT}{BLACK}Removes all guests from the map
 STR_5361    :Give all guests:
 STR_5362    :{BLACK}Set all guests' preferred ride intensity to:
-STR_5363    :More than 1
-STR_5364    :Less than 15
-STR_5365    :{BLACK}Staff speed:
-STR_5366    :Normal
-STR_5367    :Fast
+STR_5363    :أكثر من 1
+STR_5364    :أقل من 15
+STR_5365    :{BLACK}سرعة العامليين:
+STR_5366    :طبيعي
+STR_5367    :سريع
 STR_5368    :Reset crash status
 STR_5369    :Park parameters...
 STR_5370    :{SMALLFONT}{BLACK}Click this button to modify park{NEWLINE}parameters like restrictions,{NEWLINE}guest generation and money.
 STR_5371    :Object Selection
 STR_5372    :Invert right mouse dragging
-STR_5373    :Name {STRINGID}
-STR_5374    :Date {STRINGID}
-STR_5375    :{UP}
-STR_5376    :{DOWN}
-STR_5377    :{SMALLFONT}{BLACK}Saves
+STR_5373    :الأسم {STRINGID}
+STR_5374    :التاريخ {STRINGID}
+STR_5375    :▲
+STR_5376    :▼
+STR_5377    :{SMALLFONT}{BLACK}المحفوضات
 STR_5378    :{SMALLFONT}{BLACK}Script
 STR_5379    :{SMALLFONT}{BLACK}Skip to next wait command
 STR_5380    :{SMALLFONT}{BLACK}Start playing title sequence
@@ -3742,30 +2900,30 @@ STR_5400    :Can't change this title sequence
 STR_5401    :Create a new title sequence to make changes to
 STR_5402    :Failed to load title sequence
 STR_5403    :There may be no Load or Wait command or a save may be invalid
-STR_5404    :Name already exists
+STR_5404    :الأسم موجود بالفعل
 STR_5405    :Enter a name for the save
 STR_5406    :Enter a name for the title sequence
-STR_5407    :Add
-STR_5408    :Remove
-STR_5409    :Insert
-STR_5410    :Edit
-STR_5411    :Reload
-STR_5412    :Skip to
-STR_5413    :Load
-STR_5414    :Load{MOVE_X}{87}Six Flags Magic Mountain.SC6
-STR_5415    :Load{MOVE_X}{87}{STRING}
-STR_5416    :Load{MOVE_X}{87}No save selected
-STR_5417    :Location
-STR_5418    :Location{MOVE_X}{87}{COMMA16}   {COMMA16}
-STR_5419    :Rotate
-STR_5420    :Rotate{MOVE_X}{87}{COMMA16}
-STR_5421    :Zoom
-STR_5422    :Zoom{MOVE_X}{87}{COMMA16}
-STR_5423    :Wait
-STR_5424    :Wait{MOVE_X}{87}{UINT16}
-STR_5425    :Restart
-STR_5426    :End
-STR_5427    :Coordinates:
+STR_5407    :إضافة
+STR_5408    :مسح
+STR_5409    :إدخال
+STR_5410    :تعديل
+STR_5411    :إعادة تحميل
+STR_5412    :تخطي لـ
+STR_5413    :تحميل
+STR_5414    :تحميل{MOVE_X}{87}Six Flags Magic Mountain.SC6
+STR_5415    :تحميل{MOVE_X}{87}{STRING}
+STR_5416    :تحميل{MOVE_X}{87}لا ملف حفظ محدد
+STR_5417    :الموقع
+STR_5418    :الموقع{MOVE_X}{87}{COMMA16}   {COMMA16}
+STR_5419    :تدوير
+STR_5420    :تدوير{MOVE_X}{87}{COMMA16}
+STR_5421    :تقريب
+STR_5422    :تقريب{MOVE_X}{87}{COMMA16}
+STR_5423    :إنتظر
+STR_5424    :إنتظر{MOVE_X}{87}{UINT16}
+STR_5425    :إعادة تشغيل
+STR_5426    :إنهاء
+STR_5427    :الإحداثيات:
 STR_5428    :Anticlockwise rotations:
 STR_5429    :Zoom level:
 STR_5430    :Milliseconds to wait:
@@ -3784,16 +2942,16 @@ STR_5442    :Force park rating:
 STR_5443    :Speed{MOVE_X}{87}{STRINGID}
 STR_5444    :السرعة:
 STR_5445    :سرعة
-STR_5446    :Get
+STR_5446    :أحصل
 STR_5447    :النوع {STRINGID}
-STR_5448    :Ride / Vehicle {STRINGID}
-STR_5449    :Reduce game speed
-STR_5450    :Increase game speed
-STR_5451    :Open cheats window
+STR_5448    :رحلة / مركبة {STRINGID}
+STR_5449    :تقليل سرعة اللعبة
+STR_5450    :زيادة سرعة اللعبة
+STR_5451    :إفتح نافذة الشفرات
 STR_5452    :Toggle visibility of toolbars
-STR_5453    :Select another ride
-STR_5454    :Uncap FPS
-STR_5455    :Enable sandbox mode
+STR_5453    :تحديد رحلة أخري
+STR_5454    :لا تحديد لمعدل الإطارات
+STR_5455    :تفعيل وضع صندوق الرمل
 STR_5456    :Disable clearance checks
 STR_5457    :Disable support limits
 STR_5458    :Rotate clockwise
@@ -3801,41 +2959,40 @@ STR_5459    :Rotate anti-clockwise
 STR_5460    :Rotate view anti-clockwise
 STR_5461    :Set guests' parameters
 STR_5462    :{CURRENCY}
-STR_5463    :الهدف: تمتع!
+STR_5463    :الهدف: إستمتع!
 STR_5464    :عام
-STR_5465    :Climate
-STR_5466    :Staff
+STR_5465    :الطقس
+STR_5466    :العاملين
 STR_5467    :ALT +
-STR_5468    :Recent messages
+STR_5468    :الرسائل الحالية
 STR_5469    :Scroll map up
 STR_5470    :Scroll map left
 STR_5471    :Scroll map down
 STR_5472    :Scroll map right
-STR_5473    :Cycle day / night
+STR_5473    :دورة الليل / النهار
 STR_5474    :Display text on banners in uppercase
-STR_5475    :{COMMA16} weeks
+STR_5475    :{COMMA16} أسابيع
 STR_5476    :الهاردوير
 STR_5477    :تصيير الخريطة
 STR_5478    :التحكم
-STR_5479    :Toolbar
+STR_5479    :شريط الأدوات
 STR_5480    :Show toolbar buttons for:
 STR_5481    :الثيمات
 STR_5482    :{WINDOW_COLOUR_2}Time since last inspection: {BLACK}1 minute
-STR_5483    :{BLACK}({COMMA16} weeks remaining)
-STR_5484    :{BLACK}({COMMA16} week remaining)
+STR_5483    :{BLACK}({COMMA16} أسابيع باقية)
+STR_5484    :{BLACK}({COMMA16} أسبوع باقً)
 STR_5485    :{SMALLFONT}{STRING}
 STR_5486    :{BLACK}{COMMA16}
-STR_5487    :{SMALLFONT}{BLACK}Show recent messages
-STR_5488    :No entrance (OpenRCT2 only!)
+STR_5487    :{SMALLFONT}{BLACK}أظهر الرسائل الحالية
+STR_5488    :لا مدخل (OpenRCT2 only!)
 STR_5489    :{SMALLFONT}{BLACK}Show only tracked guests
 STR_5490    :Disable audio on focus loss
-STR_5491    :Inventions list
-STR_5492    :Scenario options
+STR_5491    :قائمة الإختراعات
+STR_5492    :إعدادات المشهد
 STR_5493    :أرسل رسالة
-STR_5494    :<not used anymore>
-STR_5495    :Player List
-STR_5496    :اللاعب:
-STR_5497    :Ping:
+STR_5495    :قائمة اللاعبيين
+STR_5496    :اللاعب
+STR_5497    :البنج
 STR_5498    :قائمة السرفر
 STR_5499    :اسم اللاعب:
 STR_5500    :أضف سرفر
@@ -3845,58 +3002,57 @@ STR_5503    :Enter hostname or IP address:
 STR_5504    :{SMALLFONT}{BLACK}Show multiplayer status
 STR_5505    :Unable to connect to server.
 STR_5506    :Guests ignore intensities
-STR_5507    :Handymen mow grass by default
 STR_5508    :Allow loading files with incorrect checksums
 STR_5509    :{SMALLFONT}{BLACK}Allows loading scenarios and saves{NEWLINE}that have an incorrect checksum,{NEWLINE}like the scenarios from the demo{NEWLINE}or damaged saves.
 STR_5510    :جهاز الصوت الإفتراضي
 STR_5511    :(غير معروف)
 STR_5512    :حفظ اللعبة كـ
 STR_5513    :(سريع) حفظ اللعبة
-STR_5514    :Disable vandalism
-STR_5515    :{SMALLFONT}{BLACK}Stops guests from vandalising your park when they're angry
+STR_5514    :تعطيل التخريب
+STR_5515    :{SMALLFONT}{BLACK}أوقف الزوار عن تخريب حديقتك حينما يكونون غاضبون
 STR_5516    :{SMALLFONT}{BLACK}أسود
-STR_5517    :{SMALLFONT}{BLACK}Grey
+STR_5517    :{SMALLFONT}{BLACK}رمادي
 STR_5518    :{SMALLFONT}{BLACK}أبيض
-STR_5519    :{SMALLFONT}{BLACK}Dark purple
-STR_5520    :{SMALLFONT}{BLACK}Light purple
-STR_5521    :{SMALLFONT}{BLACK}Bright purple
-STR_5522    :{SMALLFONT}{BLACK}Dark blue
-STR_5523    :{SMALLFONT}{BLACK}Light blue
-STR_5524    :{SMALLFONT}{BLACK}Icy blue
-STR_5525    :{SMALLFONT}{BLACK}Dark water
-STR_5526    :{SMALLFONT}{BLACK}Light water
-STR_5527    :{SMALLFONT}{BLACK}Saturated green
-STR_5528    :{SMALLFONT}{BLACK}Dark green
-STR_5529    :{SMALLFONT}{BLACK}Moss green
-STR_5530    :{SMALLFONT}{BLACK}Bright green
-STR_5531    :{SMALLFONT}{BLACK}Olive green
-STR_5532    :{SMALLFONT}{BLACK}Dark olive green
-STR_5533    :{SMALLFONT}{BLACK}Bright yellow
-STR_5534    :{SMALLFONT}{BLACK}Yellow
-STR_5535    :{SMALLFONT}{BLACK}Dark yellow
-STR_5536    :{SMALLFONT}{BLACK}Light orange
-STR_5537    :{SMALLFONT}{BLACK}Dark orange
-STR_5538    :{SMALLFONT}{BLACK}Light brown
-STR_5539    :{SMALLFONT}{BLACK}Saturated brown
-STR_5540    :{SMALLFONT}{BLACK}Dark brown
-STR_5541    :{SMALLFONT}{BLACK}Salmon pink
-STR_5542    :{SMALLFONT}{BLACK}Bordeaux red
-STR_5543    :{SMALLFONT}{BLACK}Saturated red
-STR_5544    :{SMALLFONT}{BLACK}Bright red
-STR_5545    :{SMALLFONT}{BLACK}Dark pink
-STR_5546    :{SMALLFONT}{BLACK}Bright pink
-STR_5547    :{SMALLFONT}{BLACK}Light pink
+STR_5519    :{SMALLFONT}{BLACK}أرجواني غامق
+STR_5520    :{SMALLFONT}{BLACK}أرجواني مبيض
+STR_5521    :{SMALLFONT}{BLACK}أرجواني فاتح
+STR_5522    :{SMALLFONT}{BLACK}أزرق غامق
+STR_5523    :{SMALLFONT}{BLACK}أزرق فاتح
+STR_5524    :{SMALLFONT}{BLACK}أزرق ثلجي
+STR_5525    :{SMALLFONT}{BLACK}مائي غامق
+STR_5526    :{SMALLFONT}{BLACK}مائي خفيف
+STR_5527    :{SMALLFONT}{BLACK}أخضر مشبع
+STR_5528    :{SMALLFONT}{BLACK}أخضر غامق
+STR_5529    :{SMALLFONT}{BLACK}أخضر طحلبي
+STR_5530    :{SMALLFONT}{BLACK}أخضر فاتح
+STR_5531    :{SMALLFONT}{BLACK}أخضر زيتوني
+STR_5532    :{SMALLFONT}{BLACK}أخضر زيتوني غامق
+STR_5533    :{SMALLFONT}{BLACK}أصفر فاتح
+STR_5534    :{SMALLFONT}{BLACK}أصفر
+STR_5535    :{SMALLFONT}{BLACK}أصفر غامق
+STR_5536    :{SMALLFONT}{BLACK}برتقالي فاتح
+STR_5537    :{SMALLFONT}{BLACK}برتقالي غامق
+STR_5538    :{SMALLFONT}{BLACK}بني فاتح
+STR_5539    :{SMALLFONT}{BLACK}بني مشبع
+STR_5540    :{SMALLFONT}{BLACK}بني غامق
+STR_5541    :{SMALLFONT}{BLACK}وردي سلموني
+STR_5542    :{SMALLFONT}{BLACK}بوردو الأحمر
+STR_5543    :{SMALLFONT}{BLACK}أحمر مشبع
+STR_5544    :{SMALLFONT}{BLACK}أحمر فاتح
+STR_5545    :{SMALLFONT}{BLACK}وردي غامق
+STR_5546    :{SMALLFONT}{BLACK}وردي مشرق
+STR_5547    :{SMALLFONT}{BLACK}وردي فاتح
 STR_5548    :Show all operating modes
-STR_5549    :Year/Month/Day
+STR_5549    :السنة/الشهر/اليوم
 STR_5550    :{POP16}{POP16}Year {COMMA16}, {PUSH16}{PUSH16}{MONTH} {PUSH16}{PUSH16}{STRINGID}
-STR_5551    :Year/Day/Month
+STR_5551    :السنة/اليوم/الشهر
 STR_5552    :{POP16}{POP16}Year {COMMA16}, {PUSH16}{PUSH16}{PUSH16}{STRINGID} {MONTH}
 STR_5553    :Pause game when Steam overlay is open
-STR_5554    :{SMALLFONT}{BLACK}Enable mountain tool
+STR_5554    :{SMALLFONT}{BLACK}تفعيل أدوات الجبال
 STR_5555    :Show vehicles from other track types
-STR_5556    :{SMALLFONT}{BLACK}Kick player
+STR_5556    :{SMALLFONT}{BLACK}طرد اللاعب
 STR_5557    :Stay connected after desynchronisation (Multiplayer)
-STR_5558    :A restart is required for this setting to take effect
+STR_5558    :إعادة التشغيل مطلوبة لتطبيق هذا التغيير
 STR_5559    :10 min. inspections
 STR_5560    :{SMALLFONT}{BLACK}Sets the inspection time to 'Every 10 minutes' on all rides
 STR_5561    :فشل في تحميل اللغه
@@ -3905,46 +3061,46 @@ STR_5563    :This feature is currently unstable, take extra caution.
 STR_5564    :Insert Corrupt Element
 STR_5565    :{SMALLFONT}{BLACK}Inserts a corrupt map element at top of tile. This will hide any element above the corrupt element.
 STR_5566    :كلمة السر:
-STR_5567    :Advertise
+STR_5567    :إعلان
 STR_5568    :كلمة السر مطلوبة
 STR_5569    :هذا السرفر يتطلب كلمة السر
-STR_5570    :Fetch Servers
+STR_5570    :تحديث السرفرات
 STR_5571    :إنضم للعبة
 STR_5572    :أضف إلي المفضلة
 STR_5573    :إمسح من المفضلة
 STR_5574    :أسم السرفر:
 STR_5575    :حد اللاعبين:
 STR_5576    :المنفذ:
-STR_5577    :South Korean Won (W)
-STR_5578    :الروبية الروسية (R)
-STR_5579    :Window scale factor:
-STR_5580    :Czech koruna (Kc)
-STR_5581    :Show FPS
+STR_5577    :يوان شمال كوريا (W)
+STR_5578    :الروبية الروسية (₽)
+STR_5579    :معدل تكبير النافذه:
+STR_5580    :كرونة تشيكية (Kč)
+STR_5581    :أظهر معدل الإطارات
 STR_5582    :Trap mouse cursor in window
-STR_5583    :{COMMA1DP16}ms{POWERNEGATIVEONE}
+STR_5583    :{COMMA1DP16}m/s
 STR_5584    :SI
 STR_5585    :{SMALLFONT}{BLACK}Unlocks ride operation limits, allowing for things like {VELOCITY} lift hills
 STR_5586    :Automatically open shops and stalls
 STR_5587    :{SMALLFONT}{BLACK}Shops and stalls will be automatically opened after building them
 STR_5588    :{SMALLFONT}{BLACK}Play with other players
-STR_5589    :Notification Settings
-STR_5590    :Park awards
-STR_5591    :Marketing campaign has finished
-STR_5592    :Park warnings
+STR_5589    :إعدادات الإشعارات
+STR_5590    :جوائز الحديقة
+STR_5591    :حملة التسويق قد إنتهت
+STR_5592    :تحذيرات الحديقة
 STR_5593    :Park rating warnings
-STR_5594    :Ride has broken down
-STR_5595    :Ride has crashed
-STR_5596    :Ride warnings
+STR_5594    :الرحلة قد تفككت
+STR_5595    :الرحلة قد تحطمت
+STR_5596    :تحذيرات الرحلة
 STR_5597    :Ride / scenery researched
-STR_5598    :Guest warnings
-STR_5599    :الضيف تائة
-STR_5600    :الضيف قد غادر الحديقة
-STR_5601    :Guest is queuing for ride
-STR_5602    :Guest is on ride
-STR_5603    :Guest has left ride
-STR_5604    :Guest has bought item
-STR_5605    :Guest has used facility
-STR_5606    :Guest has died
+STR_5598    :تحذيرات الزائر
+STR_5599    :الزائر تائة
+STR_5600    :الزائر قد غادر الحديقة
+STR_5601    :الزائر يقف في طابور إنتظار الرحلة
+STR_5602    :الزائر في الرحلة
+STR_5603    :الزائر قد ترك الرحلة
+STR_5604    :الزائر قد إشتري عنصر
+STR_5605    :الزائر قد إستخدم المؤسسة
+STR_5606    :الزائر مات
 STR_5607    :{SMALLFONT}{BLACK}Forcefully remove selected map element.
 STR_5608    :BH
 STR_5609    :CH
@@ -3963,12 +3119,12 @@ STR_5621    :Loopy Landscapes
 STR_5622    :RollerCoaster Tycoon 2
 STR_5623    :Wacky Worlds
 STR_5624    :Time Twister
-STR_5625    :{OPENQUOTES}Real{ENDQUOTES} Parks
+STR_5625    :“Real” Parks
 STR_5626    :Other Parks
 STR_5627    :Group scenario list by:
 STR_5628    :اللعبة المصدر
 STR_5629    :مستوي الصعوبة
-STR_5630    :Enable unlocking of scenarios
+STR_5630    :تفعيل الإفراج التدريجي
 STR_5631    :Original DLC Parks
 STR_5632    :Build your own...
 STR_5633    :CMD +
@@ -3980,20 +3136,20 @@ STR_5638    :Permission denied
 STR_5639    :{SMALLFONT}{BLACK}أظهر قائمة اللاعبين
 STR_5640    :{SMALLFONT}{BLACK}إدارة المجموعات
 STR_5641    :المجموعة الإفتراضية:
-STR_5642    :مجموعة:
+STR_5642    :مجموعة
 STR_5643    :أضف مجموعة
 STR_5644    :إمسح مجموعة
 STR_5645    :الشات
 STR_5646    :Terraform
 STR_5647    :Toggle Pause
-STR_5648    :Set Water Level
-STR_5649    :Create Ride
-STR_5650    :Remove Ride
-STR_5651    :Build Ride
-STR_5652    :Ride Properties
+STR_5648    :حدد مستوي الماء
+STR_5649    :أنشئ الرحلة
+STR_5650    :حذف الرحلة
+STR_5651    :بناء الرحلة
+STR_5652    :خصائص الرحلة
 STR_5653    :Scenery
-STR_5654    :Path
-STR_5655    :ضيف
+STR_5654    :المسار
+STR_5655    :زائر
 STR_5656    :العاملين
 STR_5657    :خصائص الحديقة
 STR_5658    :تمويل الحديقة
@@ -4007,8 +3163,8 @@ STR_5665    :Toggle Scenery Cluster
 STR_5666    :Passwordless Login
 STR_5701    :{WINDOW_COLOUR_2}Last action: {BLACK}{STRINGID}
 STR_5702    :{SMALLFONT}{BLACK}Locate player's most recent action
-STR_5703    :لا يمكن طرد المُضيف
-STR_5704    :Last Action:
+STR_5703    :لا يمكن طرد المُزائر
+STR_5704    :أخر فعل
 STR_5705    :Can't set to this group
 STR_5706    :Can't remove group that players belong to
 STR_5707    :This group cannot be modified
@@ -4024,21 +3180,18 @@ STR_5716    :غير مسموح به في وضع اللعب الجماعي
 # For identifying client network version in server list window
 STR_5717    :نسخة الشبكة: {STRING}
 STR_5718    :{SMALLFONT}{BLACK}نسخة الشبكة: {STRING}
-STR_5719    :مشمش
-STR_5720    :مغيم جزئياً
-STR_5721    :مغيمه
-STR_5722    :مطر
-STR_5723    :مطر شديد
-STR_5724    :عاصفة برق
+STR_5719    :مشمس
+STR_5720    :غائم جزئيًا
+STR_5721    :غائم
+STR_5722    :ممطر
+STR_5723    :عاصفة مطرية
+STR_5724    :عاصفة برقية
 STR_5725    :{BLACK}طبق الجو الأتي بالقوة:
 STR_5726    :{SMALLFONT}{BLACK}يُحدد الجو الحالي في الحديقة
-STR_5727    :جودة التكبير
+STR_5727    :جودة التكبير:
 STR_5728    :Requires hardware display option
 STR_5729    :{SMALLFONT}{BLACK}Requires hardware display option
-STR_5730    :Nearest neighbour
-STR_5731    :Linear
-STR_5732    :Anisotropic
-STR_5733    :Use NN scaling at integer scales
+STR_5731    :حدي
 # tooltip for tab in options window
 STR_5734    :{SMALLFONT}{BLACK}Rendering
 STR_5735    :حالة الشبكة
@@ -4068,27 +3221,27 @@ STR_5758    :{OUTLINE}{GREEN}{STRING} قد إنظم للعبة
 STR_5759    :يُحمل الخريطة ... ({INT32} / {INT32}) كيلو يايت
 STR_5760    :دولار هونج كونج (HK$)
 STR_5761    :دولار تيوان الجديدة (NT$)
-STR_5762    :الين الصيني (CN{YEN})
+STR_5762    :الين الصيني (CN¥)
 STR_5763    :كل الملفات
-STR_5764    :Invalid ride type
-STR_5765    :Cannot edit rides of invalid type
+STR_5764    :نوع رحلة غير صحيح
+STR_5765    :لا يمكن تعديل رحلة من النوع الغير صحيح
 STR_5766    :<available string id>
 STR_5767    :الدخل
 STR_5768    :العملاء الكلين
 STR_5769    :الربح الكلي
 STR_5770    :العملاء كل ساعة
-STR_5771    :Running cost
+STR_5771    :تكاليف التشغيل
 STR_5772    :العمر
-STR_5773    :Total customers: {COMMA32}
-STR_5774    :Total profit: {CURRENCY2DP}
-STR_5775    :Customers: {COMMA32} per hour
-STR_5776    :Built: This Year
-STR_5777    :Built: Last Year
-STR_5778    :Built: {COMMA16} Years Ago
-STR_5779    :Income: {CURRENCY2DP} per hour
-STR_5780    :Running cost: {CURRENCY2DP} per hour
-STR_5781    :Running cost: Unknown
-STR_5782    :You are now connected. Press '{STRING}' to chat.
+STR_5773    :الزبائن الكلين: {COMMA32}
+STR_5774    :الربح الكلي: {CURRENCY2DP}
+STR_5775    :الزبائن: {COMMA32} في الساعة
+STR_5776    :بُنيت: هذا العام
+STR_5777    :بُنيت: السنة السابقة
+STR_5778    :بُنيت: {COMMA16} عاماً سبق
+STR_5779    :الدخل: {CURRENCY2DP} في الساعة
+STR_5780    :تكاليف التشغيل: {CURRENCY2DP} في الساعة
+STR_5781    :تكاليف التشغيل: غير معروف
+STR_5782    :أنت الأن متصل. إضغط '{STRING}' لكي تتحدث.
 STR_5783    :{WINDOW_COLOUR_2}Scenario Locked
 STR_5784    :{BLACK}Complete earlier scenarios to unlock this scenario.
 STR_5785    :لا يمكن تسمية المجموعة...
@@ -4108,28 +3261,26 @@ STR_5798    :{SMALLFONT}{BLACK}Allows building actions in pause mode
 STR_5799    :{SMALLFONT}{BLACK}Disables ride breakdowns and crashes due to brake failure
 STR_5800    :{SMALLFONT}{BLACK}Prevents rides from breaking down
 STR_5801    :Disable littering
-STR_5802    :{SMALLFONT}{BLACK}Stops guests from littering and vomiting
+STR_5802    :{SMALLFONT}{BLACK}يوقف الزوار عن رمي القمامة والقئ
 STR_5803    :{SMALLFONT}{BLACK}Rotate selected map element
 STR_5804    :Mute sound
 STR_5805    :{SMALLFONT}{BLACK}If checked, your server will be added to the{NEWLINE}public server list so everyone can find it
 STR_5806    :تفعيل وضع النافذة
-STR_5807    :{WINDOW_COLOUR_2}Number of rides: {BLACK}{COMMA16}
+STR_5807    :{WINDOW_COLOUR_2}عدد الرحلات: {BLACK}{COMMA16}
 STR_5808    :{WINDOW_COLOUR_2}Number of shops and stalls: {BLACK}{COMMA16}
 STR_5809    :{WINDOW_COLOUR_2}Number of information kiosks and other facilities: {BLACK}{COMMA16}
 STR_5810    :Disable vehicle limits
 STR_5811    :{SMALLFONT}{BLACK}If checked, you can have up to{NEWLINE}255 cars per train and 31{NEWLINE}trains per ride
 STR_5812    :أظهر نافذة اللعب الجماعي
-STR_5813    :{OPENQUOTES}{STRING}{ENDQUOTES}
-STR_5814    :{WINDOW_COLOUR_1}{OPENQUOTES}{STRING}{ENDQUOTES}
+STR_5813    :“{STRING}”
+STR_5814    :{WINDOW_COLOUR_1}“{STRING}”
 
 #tooltips
-STR_5815    :{SMALLFONT}{BLACK}Display FPS counter in-game
+STR_5815    :{SMALLFONT}{BLACK}أظهر عداد معدل الإطارات بداخل اللعبة
 STR_5816    :{SMALLFONT}{BLACK}Sets ratio to scale the game by.{NEWLINE}Most useful when playing in{NEWLINE}high resolutions
-STR_5817    :{SMALLFONT}{BLACK}[Requires hardware display]{NEWLINE}Sets UI scaling type
-STR_5818    :{SMALLFONT}{BLACK}[Requires hardware display]{NEWLINE}Use nearest neighbour scaling{NEWLINE}when window scaling factor set{NEWLINE}to integer values (1, 2, 3, etc)
+STR_5817    :{SMALLFONT}{BLACK}Sets UI scaling type. Requires hardware display to be used.{NEWLINE}Linear scaling is smooth, but blurry. Smooth Nearest Neighbour scaling is sharp, but can cause a minor performance hit.
 STR_5819    :{SMALLFONT}{BLACK}[Requires hardware display]{NEWLINE}Pause the game if Steam{NEWLINE}in-game overlay is opened
 STR_5820    :{SMALLFONT}{BLACK}Minimise the game if focus is{NEWLINE}lost while in fullscreen mode
-STR_5821    :{SMALLFONT}{BLACK}Changes the colour of the construction marker when building rides,{NEWLINE}paths, shops, scenery, etc.
 STR_5822    :{SMALLFONT}{BLACK}Cycle between day and night.{NEWLINE}Full cycle takes one in-game month
 STR_5823    :{SMALLFONT}{BLACK}Display banners in uppercase (RCT1 behaviour)
 STR_5824    :{SMALLFONT}{BLACK}Disables lightning effect{NEWLINE}during a thunderstorm
@@ -4151,14 +3302,14 @@ STR_5839    :{SMALLFONT}{BLACK}Show a separate button for the research and devel
 STR_5840    :{SMALLFONT}{BLACK}Show a separate button for the cheats window in the toolbar
 STR_5841    :{SMALLFONT}{BLACK}Show a separate button for the recent news window in the toolbar
 STR_5842    :{SMALLFONT}{BLACK}Sort scenarios into tabs by their difficulty (RCT2 behaviour) or their source game (RCT1 behaviour)
-STR_5843    :{SMALLFONT}{BLACK}Enable scenario unlocking (RCT1 behaviour)
+STR_5843    :{SMALLFONT}{BLACK}تفعيل الإفراج التدريجي عن السيناريوهات (RCT1 مثل)
 STR_5844    :{SMALLFONT}{BLACK}Stay connected to a multiplayer server{NEWLINE}even if a desync or error occurs
 STR_5845    :{SMALLFONT}{BLACK}Adds a button for{NEWLINE}debugging tools to the toolbar.{NEWLINE}Enables keyboard shortcut for developer console
 STR_5846    :{SMALLFONT}{BLACK}Set often OpenRCT2 automatically saves
 STR_5847    :{SMALLFONT}{BLACK}Select park sequence used on the title screen.{NEWLINE}Title sequences from RCT1/2 require imported scenarios to function
 STR_5848    :{SMALLFONT}{BLACK}Create and manage custom title sequences
 STR_5849    :{SMALLFONT}{BLACK}Automatically place{NEWLINE}newly hired staff members
-STR_5850    :{SMALLFONT}{BLACK}Newly hired handymen mow{NEWLINE}grass by default (RCT1 behaviour)
+STR_5850    :<removed string - do not use>
 STR_5851    :{SMALLFONT}{BLACK}Sets the default inspection interval{NEWLINE}on newly built rides
 STR_5852    :{SMALLFONT}{BLACK}Set the name of the TwitchTV channel that will be used for Twitch integration
 STR_5853    :{SMALLFONT}{BLACK}Toggle sound effects on/off
@@ -4183,34 +3334,33 @@ STR_5871    :Plants don't age
 STR_5872    :{SMALLFONT}{BLACK}Disable plant ageing such that they don't wilt.
 STR_5873    :Allow chain lifts on all track pieces
 STR_5874    :{SMALLFONT}{BLACK}Allows any piece of track to be made into a chain lift
-STR_5875    :Drawing Engine:
-STR_5876    :{SMALLFONT}{BLACK}The engine to use for drawing the game.
-STR_5877    :Software
-STR_5878    :Software (hardware display)
-STR_5879    :OpenGL (experimental)
+STR_5875    :محرك الرسم:
+STR_5876    :{SMALLFONT}{BLACK}المحرك المُستخدم في رسم اللعبة.
+STR_5877    :البرمجيات
+STR_5878    :البرمجيات (عرض الأجهزة)
+STR_5879    :أوبن جي إل (تجريبي)
 STR_5880    :المحدد فقط
 STR_5881    :الغير محدد فقط
-STR_5882    :Custom currency
-STR_5883    :Custom currency configuration
-STR_5884    :{WINDOW_COLOUR_2}Exchange rate:
-STR_5885    :{WINDOW_COLOUR_2}is equivalent to {COMMA32} GBP (£)
+STR_5882    :العملة المخصصة
+STR_5883    :تكوين العملة المخصصة
+STR_5884    :{WINDOW_COLOUR_2}سعر الصرف:
+STR_5885    :{WINDOW_COLOUR_2}ما يعادل {COMMA32} GBP (£)
 STR_5886    :{WINDOW_COLOUR_2}علامة الميزانية:
-STR_5887    :Prefix
-STR_5888    :Suffix
-STR_5889    :Custom currency symbol
-STR_5890    :Enter the currency symbol to display
-STR_5891    :Default
-STR_5892    :{SMALLFONT}{BLACK}Go to the default directory
-STR_5893    :Exchange Rate
-STR_5894    :Enter the exchange rate
-STR_5895    :Save Track
-STR_5896    :Track save failed!
-STR_5897    :حدود النافذة:
+STR_5887    :السابقة
+STR_5888    :اللاحقة
+STR_5889    :رمز العملة المخصص
+STR_5890    :أدخل رمز العملة لعرضها
+STR_5891    :الإفتراضي
+STR_5892    :{SMALLFONT}{BLACK}اذهب إلى الوجهة الافتراضية
+STR_5893    :سعر الصرف
+STR_5894    :أدخل سعر الصرف
+STR_5895    :حفظ المسار
+STR_5896    :تعذّر حفظ المسار!
 STR_5898    :{BLACK}Can't load the track, the file might be {newline}corrupted, broken or missing!
 STR_5899    :Toggle paint debug window
-STR_5900    :Use original drawing code
-STR_5901    :Show segment heights
-STR_5902    :Show bounding boxes
+STR_5900    :استخدم رمز الرسم الأصلي
+STR_5901    :إظهار ارتفاع المقطع
+STR_5902    :إظهار الصناديق المحيطة
 STR_5903    :Show paint debug window
 STR_5904    :إرجاع التاريخ
 STR_5905    :{SMALLFONT}{BLACK}A map generation tool that automatically creates a custom landscape
@@ -4219,7 +3369,7 @@ STR_5907    :{SMALLFONT}{BLACK}When enabled, zooming in will centre around the c
 STR_5908    :Allow arbitrary ride type changes
 STR_5909    :{SMALLFONT}{BLACK}Allows changing ride type freely. May cause crashes.
 STR_5910    :تطبيق
-STR_5911    :See-Through Paths
+STR_5911    :انظر من خلال المسارات
 STR_5912    :See-through paths toggle
 STR_5913    :الشات
 STR_5914    :رحلة غير معروفة
@@ -4232,15 +3382,15 @@ STR_5920    :تصيير مؤثرات الطقس
 STR_5921    :{SMALLFONT}{BLACK}If enabled, rain and gloomy colours will be rendered during storms.
 STR_5922    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{SMALLFONT}{BLACK}Max {STRINGID}
 STR_5923    :{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{POP16}{SMALLFONT}{BLACK}Max {COMMA16} {STRINGID} per train
-STR_5924    :Surface details
+STR_5924    :تفاصيل السطح
 STR_5925    :تفاصيل المسار
 STR_5926    :تفاصيل المسار
-STR_5927    :Scenery details
+STR_5927    :تفاصيل المشهد
 STR_5928    :تفاصيل المدخل
 STR_5929    :خصائص الحائط
-STR_5930    :Large scenery details
+STR_5930    :تفاصيل المشهد الكبير
 STR_5931    :تفاصيل اليافطة
-STR_5932    :Corrupt element details
+STR_5932    :تفاصيل العناصر الفاسدة
 STR_5933    :الخصائص
 STR_5934    :{WINDOW_COLOUR_2}Terrain texture: {BLACK}{STRINGID}
 STR_5935    :{WINDOW_COLOUR_2}Terrain edge: {BLACK}{STRINGID}
@@ -4249,10 +3399,10 @@ STR_5937    :Not owned and not for sale
 STR_5938    :{WINDOW_COLOUR_2}Water level: {BLACK}{COMMA16}
 STR_5939    :Remove park fences
 STR_5940    :Restore park fences
-STR_5941    :{WINDOW_COLOUR_2}Base height:
+STR_5941    :{WINDOW_COLOUR_2}ارتفاع القاعدة:
 STR_5942    :{WINDOW_COLOUR_2}أسم المسار: {BLACK}{STRINGID}
-STR_5943    :{WINDOW_COLOUR_2}Additions: {BLACK}{STRINGID}
-STR_5944    :{WINDOW_COLOUR_2}Additions: {BLACK}None
+STR_5943    :{WINDOW_COLOUR_2}الإضافات: {BLACK}{STRINGID}
+STR_5944    :{WINDOW_COLOUR_2}الإضافات: {BLACK}لا شئ
 STR_5945    :{WINDOW_COLOUR_2}حواف متصلة:
 STR_5946    :{WINDOW_COLOUR_2}نوع الرحلة: {BLACK}{STRINGID}
 STR_5947    :{WINDOW_COLOUR_2}معرف الرحلة: {BLACK}{COMMA16}
@@ -4263,46 +3413,46 @@ STR_5951    :{WINDOW_COLOUR_2}Track piece ID: {BLACK}{COMMA16}
 STR_5952    :{WINDOW_COLOUR_2}Sequence number: {BLACK}{COMMA16}
 STR_5953    :{SMALLFONT}{BLACK}Sort the map elements on the current tile based on their base height.
 STR_5954    :{WINDOW_COLOUR_2}Scenery age: {BLACK}{COMMA16}
-STR_5955    :{WINDOW_COLOUR_2}Quadrant placement: {BLACK}{STRINGID}
-STR_5956    :Southwest
-STR_5957    :Northwest
-STR_5958    :Northeast
-STR_5959    :Southeast
-STR_5960    :{WINDOW_COLOUR_2}Quadrant placement:
-STR_5961    :{WINDOW_COLOUR_2}Entry index: {BLACK}{COMMA16}
-STR_5962    :{WINDOW_COLOUR_2}Collision detection:
-STR_5963    :{WINDOW_COLOUR_2}Raised Corners:
-STR_5964    :{WINDOW_COLOUR_2}Diagonal
+STR_5955    :{WINDOW_COLOUR_2}وضع حالة رباعي: {BLACK}{STRINGID}
+STR_5956    :جنوب غرب
+STR_5957    :الشمال الغربي
+STR_5958    :شمالي شرقي
+STR_5959    :الجنوب الشرقي
+STR_5960    :{WINDOW_COLOUR_2}وضع حالة رباعي:
+STR_5961    :{WINDOW_COLOUR_2}فهرس المدخل: {BLACK}{COMMA16}
+STR_5962    :{WINDOW_COLOUR_2}كشف التصادم:
+STR_5963    :{WINDOW_COLOUR_2}زوايا مرتفعة:
+STR_5964    :{WINDOW_COLOUR_2}مائل
 STR_5965    :{WINDOW_COLOUR_2}نوع المدخل: {BLACK}{STRINGID}
 STR_5966    :{WINDOW_COLOUR_2}جزء مدخل الحديقة: {BLACK}{STRINGID}
 STR_5967    :وسط
 STR_5968    :شمال
 STR_5969    :يمين
-STR_5970    :{WINDOW_COLOUR_2}Entrance ID: {BLACK}{COMMA16}
-STR_5971    :{WINDOW_COLOUR_2}Exit ID: {BLACK}{COMMA16}
-STR_5972    :{WINDOW_COLOUR_2}Ride ID: {BLACK}{COMMA16}
+STR_5970    :{WINDOW_COLOUR_2}مُعرف المدخل: {BLACK}{COMMA16}
+STR_5971    :{WINDOW_COLOUR_2}مُعرف المخرج: {BLACK}{COMMA16}
+STR_5972    :{WINDOW_COLOUR_2}مُعرف الرحلة: {BLACK}{COMMA16}
 STR_5973    :تسلق إلي الأعلي
 STR_5974    :{SMALLFONT}{BLACK}Changes the base- and clearance height so that it's at the same as the next element on the current tile. Doing this makes it easier to build on this tile.
 STR_5975    :إنحدار:
 STR_5976    :مستوي
-STR_5977    :Right side up
-STR_5978    :Left side up
+STR_5977    :الجانب الأيمن الأعلى
+STR_5978    :الجانب الأيسر لأعلى
 STR_5979    :{WINDOW_COLOUR_2}نوع الحائط: {BLACK}{COMMA16}
 STR_5980    :{WINDOW_COLOUR_2}كتابة اليافطة: {BLACK}{STRINGID}
 STR_5981    :{WINDOW_COLOUR_2}ليست يافطة
-STR_5982    :{WINDOW_COLOUR_2}Large scenery type: {BLACK}{COMMA16}
-STR_5983    :{WINDOW_COLOUR_2}Large scenery piece ID: {BLACK}{COMMA16}
-STR_5984    :المسارات المقفلة:
+STR_5982    :{WINDOW_COLOUR_2}نوع المشهد الكبير: {BLACK}{COMMA16}
+STR_5983    :{WINDOW_COLOUR_2}معرّف قطعة المشاهد الكبيرة: {BLACK}{COMMA16}
+STR_5984    ::المسارات المقفلة
 STR_5985    :مجلد جديد
-STR_5986    :أدخل الأسم للمجلد الجديد.
+STR_5986    :.أدخل الأسم للمجلد الجديد
 STR_5987    :غير قادر علي إنشاء المجلد
-STR_5988    :{SMALLFONT}{BLACK}لا حقوق أرض إضافية للبيع
-STR_5989    :{SMALLFONT}{BLACK}لا حقوق بناء إضافية متبقية للبيع
-STR_5990    :{SMALLFONT}{BLACK}لا حقوق أرض أو أبنية إضافية متبقية للبيع
-STR_5991    :لا يمكن لصق العنصر...
-STR_5992    :حد العناصر في الخريطة قد وُصل
-STR_5993    :{SMALLFONT}{BLACK}نسخ العنصر المحدد
-STR_5994    :{SMALLFONT}{BLACK}لصق العنصر المنسوخ
+STR_5988    :{SMALLFONT}{BLACK} لا حقوق أرض إضافية للبيع
+STR_5989    :{SMALLFONT}{BLACK} لا حقوق بناء إضافية متبقية للبيع
+STR_5990    :{SMALLFONT}{BLACK} لا حقوق أرض أو أبنية إضافية متبقية للبيع
+STR_5991    :...لا يمكن لصق العنصر
+STR_5992    :تم الوصول إلي حد العناصر في الخريطة
+STR_5993    :{SMALLFONT}{BLACK} نسخ العنصر المحدد
+STR_5994    :{SMALLFONT}{BLACK} لصق العنصر المنسوخ
 STR_5995    :المُسرع
 STR_5996    :سرعة المُسرع
 STR_5997    :أضف/حدد النقود
@@ -4311,13 +3461,13 @@ STR_5999    :حدد النقود
 STR_6000    :أدخل قيمة جديدة
 STR_6001    :تفعيل تأثيرات الضوء (تجريبي)
 STR_6002    :{SMALLFONT}{BLACK}Lamps and rides will be lit up at night.{NEWLINE}Requires rendering engine to be set to hardware display.
-STR_6003    :Cut-away View
-STR_6004    :Cut-away View
-STR_6005    :Enable cut-away view
-STR_6006    :{SMALLFONT}{BLACK}Cut-away view only displays map elements at or below the cut height
-STR_6007    :Cut height
+STR_6003    :عرض كوتاواي
+STR_6004    :عرض كوتاواي
+STR_6005    :تفعيل عرض كوتاواي
+STR_6006    :{SMALLFONT}{BLACK}Cut-away view only displays map elements at or below the cut height (vertical clipping) and in the selected area (horizontal clipping).
+STR_6007    :علو القطع
 STR_6008    :{SMALLFONT}{BLACK}Click to toggle raw value<->value in measurement units
-STR_6009    :{SMALLFONT}{BLACK}Select cut height
+STR_6009    :{SMALLFONT}{BLACK}حدد علو القطع
 STR_6010    :{COMMA2DP32}متر
 STR_6011    :{COMMA1DP16}قدم
 STR_6012    :{COMMA1DP16}
@@ -4326,21 +3476,21 @@ STR_6014    :{SMALLFONT}{BLACK}Guests will only pay entrance tickets for rides a
 STR_6015    :منحدر
 STR_6016    :عدل المُربع
 STR_6017    :من فضلك أبطئ
-STR_6018    :Ride construction - Turn left
-STR_6019    :Ride construction - Turn right
-STR_6020    :Ride construction - Use default track
-STR_6021    :Ride construction - Slope down
-STR_6022    :Ride construction - Slope up
-STR_6023    :Ride construction - Toggle chain lift
-STR_6024    :Ride construction - Bank left
-STR_6025    :Ride construction - Bank right
-STR_6026    :Ride construction - Previous track
-STR_6027    :Ride construction - Next track
-STR_6028    :Ride construction - Build current
-STR_6029    :Ride construction - Demolish current
+STR_6018    :بناء الرحلة - أستدر شمالاً
+STR_6019    :بناء الرحلة - أستدر يميناً
+STR_6020    :بناء الرحلة - أستخدم المسار الإفتراضي
+STR_6021    :بنال الرحلة - أنحدر للآسفل
+STR_6022    :بناء الرحلة - أصعد للأعلي
+STR_6023    :بناء الرحلة - Toggle chain lift
+STR_6024    :بناء الرحلة - ميلان لليسار
+STR_6025    :بناء الرحلة - ميلان لليمين
+STR_6026    :بناء الرحلة - المسار السابق
+STR_6027    :بناء الرحلة - المسار التالي
+STR_6028    :بناء الرحلة - بناء المحدد
+STR_6029    :بناء الرحلة - إهدم المحدد
 STR_6030    :{SMALLFONT}{BLACK}Scenery picker. Click any scenery on the map to select the same piece for construction.
-STR_6031    :وصف السرفر:
-STR_6032    :Server Greeting:
+STR_6031    ::وصف السرفر
+STR_6032    :ترحيب السرفر:
 STR_6033    :Path to RCT1 installation:
 STR_6034    :{SMALLFONT}{BLACK}{STRING}
 STR_6035    :Please select your RCT1 directory
@@ -4349,7 +3499,7 @@ STR_6037    :Please select a valid RCT1 directory
 STR_6038    :{SMALLFONT}{BLACK}If you have RCT1 installed, set this option to its directory to load scenarios, music, etc.
 STR_6039    :{SMALLFONT}{BLACK}Quick demolish ride
 STR_6040    :تغيير إعدادات المشهد
-STR_6041    :{BLACK}لا ميكانيكي مُؤجر!
+STR_6041    :{BLACK}!لا ميكانيكي مُؤجر
 STR_6042    :Load height map
 STR_6043    :Select height map
 STR_6044    :Smooth height map
@@ -4357,7 +3507,7 @@ STR_6045    :Strength
 STR_6046    :Normalise height map
 STR_6047    :Smooth tiles
 STR_6048    :Height map error
-STR_6049    :خطأ في قراءة PNG
+STR_6049    :PNG خطأ في قراءة ملف
 STR_6050    :Error reading bitmap
 STR_6051    :The width and height need to match
 STR_6052    :The heightmap is too big, and will be cut off
@@ -4367,18 +3517,18 @@ STR_6055    :OpenRCT2 Heightmap File
 STR_6056    :{SMALLFONT}{BLACK}تصميت
 STR_6057    :{SMALLFONT}{BLACK}Show a separate button for the Mute Option in the toolbar
 STR_6058    :تصميت
-STR_6059    :{RIGHTGUILLEMET}
-STR_6060    :Show guest purchases as animation
-STR_6061    :{SMALLFONT}{BLACK}Show animated money effect{NEWLINE}when guests make purchases.
+STR_6059    :»
+STR_6060    :أظهر مشتريات الزوار كإنميشن
+STR_6061    :{SMALLFONT}{BLACK}أظهر تأثيرات النقود المتحركة{NEWLINE}عندما يقوم الزوار بمشتريات.
 STR_6062    :{OUTLINE}{GREEN}+ {CURRENCY2DP}
 STR_6063    :{OUTLINE}{RED}- {CURRENCY2DP}
 STR_6064    :إمتلك كل الأراضي
 STR_6065    :تسجيل أفعال اللاعب
-STR_6066    :{SMALLFONT}{BLACK}يُسجل أفعال اللاعب بالكامل إلي ملف سجل في المستندات علي جهازك.
-STR_6067    :السرفر بدء.
-STR_6068    :السرفر أغلق.
-STR_6069    :{STRING} was kicked from the server by {STRING}.
-STR_6070    :{STRING} was set to group '{STRING}' by {STRING}.
+STR_6066    :{SMALLFONT}{BLACK} تُسجل أفعال اللاعب بالكامل إلي ملف سجل في المستندات علي جهازك
+STR_6067    :.بدء السرفر
+STR_6068    :.اغلق السرفر
+STR_6069    :{STRING} .{STRING} طُرد من السرفر بواسطة
+STR_6070    :{STRING} حُدد مع المجموعة '{STRING}' بواسطة {STRING}.
 STR_6071    :{STRING} created new player group '{STRING}'.
 STR_6072    :{STRING} deleted player group '{String}'.
 STR_6073    :{STRING} edited permissions for player group '{String}'.
@@ -4386,20 +3536,20 @@ STR_6074    :{STRING} changed player group name from '{String}' to '{String}'.
 STR_6075    :{STRING} changed the default player group to '{String}'.
 STR_6076    :{STRING} used/toggled cheat '{STRING}'.
 STR_6077    :أضف نقود
-STR_6078    :{STRING} إصنع رحلة '{STRING}'.
-STR_6079    :{STRING} دمر الرحلة '{STRING}'.
-STR_6080    :{STRING} changed the appearance of ride '{STRING}'.
-STR_6081    :{STRING} changed the status of ride '{STRING}' to closed.
-STR_6082    :{STRING} changed the status of ride '{STRING}' to open.
-STR_6083    :{STRING} changed the status of ride '{STRING}' to testing.
-STR_6084    :{STRING} changed the vehicle settings of ride '{STRING}'.
-STR_6085    :{STRING} changed the ride settings of ride '{STRING}'.
-STR_6086    :{STRING} renamed the ride '{STRING}' to '{STRING}'.
-STR_6087    :{STRING} changed the price of ride '{STRING}' to {STRING}
+STR_6078    :{STRING} .'{STRING}' إصنع اللعبة
+STR_6079    :{STRING} .'{STRING}' دمر الرحلة
+STR_6080    :{STRING} تم تغيير مظهر الرحلة '{STRING}'.
+STR_6081    :{STRING} تم تغيير حالة الرحلة '{STRING}' إلي مغلقة.
+STR_6082    :{STRING} تم تغيير حالة الرحلة '{STRING}' إلي مفتوحة.
+STR_6083    :{STRING} تم تغيير حالة الرحلة '{STRING}' إلي تُختبر.
+STR_6084    :{STRING} تم تغيير إعدادات الشاحنة في الرحلة '{STRING}'.
+STR_6085    :{STRING} تم تغيير إعدادات الرحلة للرحلة '{STRING}'.
+STR_6086    :{STRING} تم إعادة تسمية الرحلة من '{STRING}' إلي '{STRING}'.
+STR_6087    :{STRING} تم تغيير سعر الرحلة '{STRING}' إلي {STRING}
 STR_6088    :{STRING} تم تغيير سعر الرحلة الثانوي من '{STRING}' إلي {STRING}
 STR_6089    :{STRING} تم تغيير أسم الحديقة من '{STRING}'إلي '{STRING}'.
-STR_6090    :{STRING} إفتح الحديقة.
-STR_6091    :{STRING} إغلاق الحديقة.
+STR_6090    :{STRING} .فتح الحديقة
+STR_6091    :{STRING} .إغلاق الحديقة
 STR_6092    :{STRING} تم تغيير رسول دخول الحديقة إلي {STRING}
 STR_6093    :{STRING} placed new scenery.
 STR_6094    :{STRING} removed scenery.
@@ -4407,15 +3557,15 @@ STR_6095    :{STRING} edited scenery.
 STR_6096    :{STRING} set sign name to '{STRING}'.
 STR_6097    :{STRING} placed a track of ride '{STRING}'.
 STR_6098    :{STRING} removed a track of ride.
-STR_6099    :أنت متصل مع السرفر.
-STR_6100    :أنت إنفصلت عن السرفر.
+STR_6099    :.أنت متصل مع السرفر
+STR_6100    :.أنت إنفصلت عن السرفر
 STR_6101    :Rides don't decrease in value over time
 STR_6102    :{SMALLFONT}{BLACK}The value of a ride won't decrease over time, so guests will not suddenly think that a ride is too expensive.
 STR_6103    :{SMALLFONT}{BLACK}This option is disabled during network play.
 STR_6104    :Corkscrew Roller Coaster
 STR_6105    :Hypercoaster
 STR_6106    :رحلة سيارة
-STR_6107    :Monster Trucks
+STR_6107    :شاحنات الوحش
 STR_6108    :Steel Twister
 STR_6109    :Hyper-Twister
 STR_6110    :Junior Roller Coaster
@@ -4429,14 +3579,14 @@ STR_6117    :Sitting in comfortable trains with only simple lap restraints rider
 STR_6118    :A gentle roller coaster for people who haven't yet got the courage to face the larger rides
 STR_6119    :A cheap and easy to build roller coaster, but with a limited height
 STR_6120    :{BABYBLUE}New vehicle now available for {STRINGID}:{NEWLINE}{STRINGID}
-STR_6121    :{SMALLFONT}{BLACK}توسيع حدود الحديقة إلي اليسار بالكامل حتي حدود الخريطة
-STR_6122    :ليس هناك أفعوانيات وملاهي كافية في هذا المشهد!
+STR_6121    :{SMALLFONT}{BLACK} توسيع حدود الحديقة إلي اليسار بالكامل حتي حدود الخريطة
+STR_6122    :!ليس هناك أفعوانيات وملاهي كافية في هذا المشهد
 STR_6123    :خطأ في تحميل العناصر للحديقة
 STR_6124    :أسم العنصر
 STR_6125    :نوع العنصر
 STR_6126    :نوع غير معروف
-STR_6127    :الملف: {STRING}
-STR_6128    :The file could not be loaded as some of the objects referenced in it are missing or corrupt. A list of these objects is given below.
+STR_6127    :{STRING}:الملف
+STR_6128    :.الملف لا يمكن تحملية لأن هناك بعض العناصر المُشار إليها فيه مفقودة أو ربما تكون متضررة. قائمة بهذه العناصر معروضة في الأسفل
 STR_6129    :إنسخ المحدد إلي الحافظة
 STR_6130    :إنسخ القائمة كاملة إلي الحافظة
 STR_6131    :مصدر العنصر
@@ -4446,7 +3596,7 @@ STR_6134    :إخلاء المشهد
 STR_6135    :العميل أرسل طلب خاطئ
 STR_6136    :السرفر أرسل طلب خاطئ
 STR_6137    :OpenRCT2, a free and open source clone of Roller Coaster Tycoon 2.
-STR_6138    :OpenRCT2 is the work of many authors, a full list can be found in {OPENQUOTES}contributors.md{ENDQUOTES}. For more information, visit http://github.com/OpenRCT2/OpenRCT2
+STR_6138    :OpenRCT2 is the work of many authors, a full list can be found in “contributors.md”. For more information, visit http://github.com/OpenRCT2/OpenRCT2
 STR_6139    :All product and company names belong to their respective holders. Use of them does not imply any affiliation with or endorsement by them.
 STR_6140    :سجل التغيير...
 STR_6141    :RCT1 Bottom Toolbar
@@ -4458,42 +3608,161 @@ STR_6146    :Enable all drawable track pieces
 STR_6147    :{SMALLFONT}{BLACK}Enables all track pieces the ride type is capable of in the construction window, regardless of whether the vehicle supports them.
 STR_6148    :يتصل إلي السرفر الأساسي...
 STR_6149    :غير قادر علي الإتصال بالسرفر الأساسي
-STR_6150    :رد خاطئ من السرفر الأساسي (JSON لا رقم)
+STR_6150    :رد خاطئ من السرفر الأساسي (لا رقم جسون)
 STR_6151    :السرفر الأساسي فشل في إرجاع السرفرات
-STR_6152    :رد خاطئ من السرفر الأساسي(JSON لا طبقات)
+STR_6152    :رد خاطئ من السرفر الأساسي(لا طبقات جسون )
 STR_6153    :دُفع لدخول الحديقة / دُفع لكل رحلة
-STR_6154    :لا يٌفضل تشغيل اللعبة مع هذه الأذون المرتفعة
+STR_6154    :لا يٌفضل تشغيل اللعبة مع هذه الأذون المرتفعة. لأسباب  أمنية لا يُفضل هذا.
 STR_6155    :ليس هناك KDialog أو Zenity مثبت. الرجاء تثبيت إحداهما، أو إعداده من سطر الأوامر.
 STR_6156    :الأسم محجوز
 STR_6157    :وحدة التحكم
+STR_6158    :فشل في تحميل هذا الملف...{NEWLINE}نسخة الملف غير متوافقة: {COMMA16}
+STR_6159    :تنعيم الجار الأقرب
+STR_6160    :{WINDOW_COLOUR_2}المركبات المتوفرة: {BLACK}{STRING}
+STR_6161    :إظهار/إخفاء شبكة الإرشاد
+STR_6162    :الفأر البري الدوار
+STR_6163    :سيارات بشكل فأر تسرع في اللفات الضيقة والنزلات الصغيرة، تدور بشكل لطيف لإرباك الراكبين
+STR_6164    :{WHITE}❌
+STR_6165    :إستخدام المزامنة العمودية
+STR_6166    :{SMALLFONT}{BLACK}مزامنة كل فريم إلي معدل تحديث الشاشة، مما يمنع تمزيق وتمييع الشاشة.
+STR_6167    :{SMALLFONT}{BLACK}متقدم
+STR_6168    :تسلسل العنوان
+STR_6169    :تحديد السيناريو
+STR_6170    :ضبط الواجهة
+STR_6171    :البحث
+STR_6172    :{SMALLFONT}{BLACK}بحث
+STR_6173    :من فضلك وفر الأسم للبحث:
+STR_6174    :تحميل الحفظ
+STR_6175    :تحميل المشهد
+STR_6176    :المشهد للتحميل:
+STR_6177    :تحميل{MOVE_X}{87}لا مشهدد محدد
+STR_6178    :تحميل{MOVE_X}{87}{RED}مشهد مفقود
+STR_6179    :تحديد
+STR_6180    :لا مشهد محدد
+STR_6181    :{RED}مشهد مفقود
+STR_6182    :متابعة{MOVE_X}{87}{STRING}
+STR_6183    :مابعة{MOVE_X}{87}لا نقطة محددة
+STR_6184    :متابعة النقطة
+STR_6185    :تحديد النقطة
+STR_6186    :لا نقطة متابعة
+STR_6187    :{MEDIUMFONT}{OUTLINE}{WINDOW_COLOUR_2}{STRING}
+STR_6188    :إخراج
+STR_6189    :إدخال
+STR_6190    :{SMALLFONT}{BLACK}لا يمكنك تحديد نقطة في حين أن القائمة الرئيسية مفعلة.
+STR_6191    :السطح
+STR_6192    :الحائط
+STR_6193    :{COMMA16} زائر
+STR_6194    :{INLINE_SPRITE}{11}{20}{00}{00}{COMMA16} زائر
+STR_6195    :{INLINE_SPRITE}{10}{20}{00}{00}{COMMA16} زائر
+STR_6196    :{BLACK}سنة:
+STR_6197    :{BLACK}شهر:
+STR_6198    :{BLACK}يوم:
+STR_6199    :حدد التاريخ
+STR_6200    :إسترجاع التاريخ
+STR_6201    :{MONTH}
+STR_6202    :نمط الأرض الإفتراضية
+STR_6203    :{SMALLFONT}{BLACK}حينما يتم تفعيلة، سوف يتم إظهار أرضية إفتراضية لكل تساعدك في وضع الأشكال عمودياً بشكل صحيح.
+STR_6204    :حجر
+STR_6205    :حديد
+STR_6206    :جص رمادي
+STR_6207    :جص أصفر
+STR_6208    :جص أحمر
+STR_6209    :جص بنفسجي
+STR_6210    :جص أخضر
+STR_6211    :حجر رملي بني
+STR_6212    :حجر رملي رمادي
+STR_6213    :ناطحة السحاب أ
+STR_6214    :ناطحة السحاب ب
+STR_6215    :الإنشاء
+STR_6216    :العملية
+STR_6217    :توافرية المسار \الرحلة
+STR_6218    :محاكاة الأفعوانيات المفتوحة 2 الرسمية
+STR_6219    :تعليم مشاكل المسار
+STR_6220    :أجعله مُستخدم
+STR_6221    :{SMALLFONT}{BLACK هذا سوف يحدد المدخل والمخرج المعروف للرحلة للمنطقة هذه. فقط مدخل ومخرج واحد يمكن إسخدامة لكل  محطة.
+STR_6222    :لا يمكن وضع نقطة دخول الزوار هنا...
+STR_6223    :يجب أن يكون خارج حدود الحديقة!
+STR_6224    :{STRING} تم وضع نقطة دخول الزوار.
+STR_6225    :غير مدعومة من تصيير أوبن جي إل
+STR_6226    :تمكين استكمال السيناريو المبكر
+STR_6227    :{SMALLFONT}{BLACK}يتم إطلاق إستكمال السيناريو عندما يتم استيفاء جميع أهداف السيناريو قبل الموعد المحدد.
+STR_6228    :إعدادات السيناريو
+STR_6229    :{WINDOW_COLOUR_2}{STRINGID}: {STRINGID}
+STR_6230    :{STRINGID}:
+STR_6231    :{WINDOW_COLOUR_2}{STRINGID}: {MOVE_X}{185}{STRINGID}
+STR_6232    :مُجمد
+STR_6233    :عرض كوتاواي
+STR_6234    :قم بتمييز مشاكل المسار
+STR_6235    :معلومات السرفر
+STR_6236    :اللاعبين
+STR_6237    :المجموعات
+STR_6238    :إعدادات اللعب المتعدد
+STR_6239    :لقطة عمودية
+STR_6240    :لقطة أفقية
+STR_6241    :حدد منطقة
+STR_6242    :إخلاء المُحدد
+STR_6243    :{SMALLFONT}{BLACK}تجديد الرحلة،{NEWLINE}إجعلها كالجديدة
+STR_6244    :لايمكن تجديد الرحلة...
+STR_6245    :{SMALLFONT}{BLACK}الرحلة لا تحتاج إلي التجديد
+STR_6246    :تجديد
+STR_6247    :تجديد الرحلة/الجذب
+STR_6248    :{WINDOW_COLOUR_1}هل تود تجديد {STRINGID} بقيمة {CURRENCY}?
+STR_6249    :{WINDOW_COLOUR_1}هل تود تجديد {STRINGID}?
+STR_6250    :{WINDOW_COLOUR_1}هل تود تدمير {STRINGID} بالكامل و إسترجاع {CURRENCY}?
+STR_6251    :الرحلة ليس ممتلئة بعد
+STR_6252    :رابط واجهة تطبيق تويتش
+STR_6253    :{SMALLFONT}{BLACK}وفر الرابط لواجهة تطبيق تويتش. مطلوبة من أجل .
+STR_6254    :الرابط لواجهة برمجة تطبيق تويتش:
+STR_6255    :رابط غير صالح
+STR_6260    :Show blocked tiles
+STR_6261    :أظهر المسارات الواسعة
+STR_6262    :الصوت الرئيسي
+STR_6263    :{SMALLFONT}{BLACK}إجعل كل الأصوات مفتوحة أو مغلقة
+STR_6264    :إستخدم متصفح ملفات النظام دائماً
+STR_6265    :{SMALLFONT}{BLACK}عندما يكون مُفعل، سيتم إستخدام متصفح الملفات الخاص بنظام التشغيل بدلاً من متصفح الملفات الخاص باللعبة.
+STR_6266    :إفتح مجلد المحتويات المخصصة
+STR_6267    :إفتح عارض المربع
+STR_6268    :إنتقل إلي الجزئية التالية
+STR_6269    :معرف طقس غير صحيح
+STR_6270    :أسطح التضاريس
+STR_6271    :حواف التضاريس
+STR_6272    :المحطات
+STR_6273    :الموسيقي
+STR_6274    :لا يمكن تحديد مخطط اللون...
+STR_6275    :{WINDOW_COLOUR_2}نمط المحطة
+STR_6276    :{RED}{STRINGID} هل علق الزوار؟ ربما يكون هذا بسبب أفعوانية غير صالحة أو وضع تشغيل غير صالح.
+STR_6277    :{WINDOW_COLOUR_2}فهرسة المحطة: {BLACK}{COMMA16}
+STR_6278    :عدد ملفات الحفظ التلقائي
+STR_6279    :{SMALLFONT}{BLACK}عدد ملفات الحفظ التلقائي التي يجب إبقائها في المرة الواحدة
+
 #############
 # Scenarios #
 #############
 
 ## RCT Original
 <Forest Frontiers>
-STR_SCNR    :Forest Frontiers
-STR_PARK    :Forest Frontiers
-STR_DTLS    :Deep in the forest, build a thriving theme park in a large cleared area
+STR_SCNR    :حدود الغابات
+STR_PARK    :حدود الغابات
+STR_DTLS    :عميقا في الغابة، أبني متنزه مزدهر في منطقة خالية كبيرة
 
 <Dynamite Dunes>
-STR_SCNR    :Dynamite Dunes
-STR_PARK    :Dynamite Dunes
-STR_DTLS    :Built in the middle of the desert, this theme park contains just one roller coaster but has space for expansion
+STR_SCNR    :كثبان الديناميت
+STR_PARK    :كثبان الديناميت
+STR_DTLS    :بُني في وسط الصحراء، هذا المتنزه يحتوي على أفعوانية دوارة واحدة فقط ولكن لديه مساحة للتوسع
 
 <Leafy Lake>
-STR_SCNR    :Leafy Lake
-STR_PARK    :Leafy Lake
-STR_DTLS    :Starting from scratch, build a theme park around a large lake
+STR_SCNR    :بحيرة ليفي
+STR_PARK    :بحيرة ليفي
+STR_DTLS    :إبدء من لاشئ، إبني حديقة مزدهرة حول بركة كبيرة
 
 <Diamond Heights>
-STR_SCNR    :Diamond Heights
-STR_PARK    :Diamond Heights
+STR_SCNR    :المرتفعات الألماسية
+STR_PARK    :المرتفعات الألماسية
 STR_DTLS    :Diamond Heights is already a successful theme park with great rides - develop it to double its value
 
 <Evergreen Gardens>
-STR_SCNR    :Evergreen Gardens
-STR_PARK    :Evergreen Gardens
+STR_SCNR    :الحدائق الخضراء دائماً
+STR_PARK    :الحدائق الخضراء دائماً
 STR_DTLS    :Convert the beautiful Evergreen Gardens into a thriving theme park
 
 <Bumbly Beach>
@@ -4502,9 +3771,9 @@ STR_PARK    :Bumbly Beach
 STR_DTLS    :Develop Bumbly Beach's small amusement park into a thriving theme park
 
 <Trinity Islands>
-STR_SCNR    :Trinity Islands
-STR_PARK    :Trinity Islands
-STR_DTLS    :Several islands form the basis for this new park
+STR_SCNR    :الجزيرة الثلاثية
+STR_PARK    :الجزيرة الثلاثية
+STR_DTLS    :عدة جزر تشكل الأساس لهذه الحديقة
 
 <Katie's Dreamland>
 STR_SCNR    :Katie's Dreamland
@@ -4517,14 +3786,14 @@ STR_PARK    :Pokey Park
 STR_DTLS    :A small, cramped amusement park which requires major expansion
 
 <White Water Park>
-STR_SCNR    :White Water Park
-STR_PARK    :White Water Park
-STR_DTLS    :A park with some excellent water-based rides requires expansion
+STR_SCNR    :حديقة المياه البيضاء
+STR_PARK    :حديقة المياه البيضاء
+STR_DTLS    :حديقة مع أفعوانيات بحرية ممتازة تتطلب التوسيع
 
 <Millennium Mines>
-STR_SCNR    :Millennium Mines
-STR_PARK    :Millennium Mines
-STR_DTLS    :Convert a large abandoned mine from a tourist attraction into a theme park
+STR_SCNR    :منجم الألفية
+STR_PARK    :منجم الألفية
+STR_DTLS    :حول منجم مهجور كبير من جازب للسياح إلي حديقة ترفيهية
 
 <Karts & Coasters>
 STR_SCNR    :Karts & Coasters
@@ -4537,13 +3806,13 @@ STR_PARK    :Mel's World
 STR_DTLS    :This theme park has some well-designed modern rides, but plenty of space for expansion
 
 <Mystic Mountain>
-STR_SCNR    :Mystic Mountain
-STR_PARK    :Mystic Mountain
+STR_SCNR    :الجبل السحري
+STR_PARK    :الجبل السحري
 STR_DTLS    :In the hilly forests of Mystic Mountain, build a theme park from scratch
 
 <Pacific Pyramids>
-STR_SCNR    :Pacific Pyramids
-STR_PARK    :Pacific Pyramids
+STR_SCNR    :جبال المحيط الهادئ
+STR_PARK    :جبال المحيط الهادئ
 STR_DTLS    :Convert the Egyptian Ruins tourist attraction into a thriving theme park
 
 <Crumbly Woods>
@@ -4557,8 +3826,8 @@ STR_PARK    :Paradise Pier
 STR_DTLS    :Convert this sleepy town's pier into a thriving attraction
 
 <Lightning Peaks>
-STR_SCNR    :Lightning Peaks
-STR_PARK    :Lightning Peaks
+STR_SCNR    :قمم الضوء
+STR_PARK    :قمم الضوء
 STR_DTLS    :The beautiful mountains of Lightning Peaks are popular with walkers and sightseers - Use the available land to attract a new thrill-seeking clientele
 
 <Ivory Towers>
@@ -4567,13 +3836,13 @@ STR_PARK    :Ivory Towers
 STR_DTLS    :A well-established park, which has a few problems
 
 <Rainbow Valley>
-STR_SCNR    :Rainbow Valley
-STR_PARK    :Rainbow Valley
+STR_SCNR    :وادي قوس القزح
+STR_PARK    :وادي قوس القزح
 STR_DTLS    :Rainbow Valley's local authority won't allow any landscape changes or large tree removal, but you must develop the area into a large theme park
 
 <Thunder Rock>
-STR_SCNR    :Thunder Rock
-STR_PARK    :Thunder Rock
+STR_SCNR    :صخرة الرعد
+STR_PARK    :صخرة الرعد
 STR_DTLS    :Thunder Rock stands in the middle of a desert and attracts many tourists - Use the available space to build rides to attract more people
 
 <Mega Park>
@@ -4588,8 +3857,8 @@ STR_PARK    :Whispering Cliffs
 STR_DTLS    :Develop the seaside cliffs into a thriving amusement park
 
 <Three Monkeys Park>
-STR_SCNR    :Three Monkeys Park
-STR_PARK    :Three Monkeys Park
+STR_SCNR    :حديقة القرود الثلاثة
+STR_PARK    :حديقة القرود الثلاثة
 STR_DTLS    :Central to this large developing park is a giant triple-track racing/duelling steel coaster
 
 <Canary Mines>
@@ -4603,24 +3872,24 @@ STR_PARK    :Barony Bridge
 STR_DTLS    :An old redundant bridge is yours to develop into an amusement park
 
 <Funtopia>
-STR_SCNR    :Funtopia
-STR_PARK    :Funtopia
+STR_SCNR    :فينتوبيا
+STR_PARK    :فينتوبيا
 STR_DTLS    :Covering land both sides of a highway, this park has several rides already operating
 
 <Haunted Harbour>
-STR_SCNR    :Haunted Harbour
-STR_PARK    :Haunted Harbour
+STR_SCNR    :الميناء المسكون
+STR_PARK    :الميناء المسكون
 STR_DTLS    :The local authority has agreed to sell nearby land cheaply to this small seaside park, on the condition that certain rides are preserved
 
 <Fun Fortress>
 STR_SCNR    :قلعة المرح
 STR_PARK    :قلعة المرح
-STR_DTLS    :This castle is all yours to turn into a theme park
+STR_DTLS    :هذه الحديقة كلها لك لكي تحولها إلي حديقة ترفيهية
 
 <Future World>
-STR_SCNR    :Future World
-STR_PARK    :Future World
-STR_DTLS    :This futuristic park has plenty of space for new rides on its alien landscape
+STR_SCNR    :عالم المستقبل
+STR_PARK    :عالم المستقبل
+STR_DTLS    :هذه الحديقة المستقبلية لديها الكثير من المساحة لتبني العديد من الإفعوانيات علي أرضها الفضائية
 
 <Gentle Glen>
 STR_SCNR    :Gentle Glen
@@ -4643,39 +3912,39 @@ STR_PARK    :Sprightly Park
 STR_DTLS    :This elderly park has many historical rides but is badly in debt
 
 <Magic Quarters>
-STR_SCNR    :Magic Quarters
-STR_PARK    :Magic Quarters
+STR_SCNR    :مقر السحر الرئيسي
+STR_PARK    :مقر السحر الرئيسي
 STR_DTLS    :A large area of land has been cleared and partially themed ready for you to develop into a landscaped theme park
 
 <Fruit Farm>
-STR_SCNR    :Fruit Farm
-STR_PARK    :Fruit Farm
+STR_SCNR    :مزرعة الفواكه
+STR_PARK    :مزرعة الفواكه
 STR_DTLS    :A thriving fruit farm has built a railroad to boost its income, your job is to develop it into a full-blown amusement park
 
 <Butterfly Dam>
-STR_SCNR    :Butterfly Dam
-STR_PARK    :Butterfly Dam
-STR_DTLS    :The area around a dam is available for you to develop into an amusement park
+STR_SCNR    :سد الفراشات
+STR_PARK    :سد الفراشات
+STR_DTLS    :المنطقة حول السد متوفرة لكي تطورها إلي حديقة ترفيهية
 
 <Coaster Canyon>
-STR_SCNR    :Coaster Canyon
-STR_PARK    :Coaster Canyon
-STR_DTLS    :A vast canyon is yours to turn into a theme park
+STR_SCNR    :وادي الإفعوانيات
+STR_PARK    :وادي الإفعوانيات
+STR_DTLS    :وادي كبير متوفر لك لكي تطورة إلي حديقة أفعوانيات
 
 <Thunderstorm Park>
-STR_SCNR    :Thunderstorm Park
-STR_PARK    :Thunderstorm Park
+STR_SCNR    :حديقة العاصفة البرقية
+STR_PARK    :حديقة العاصفة البرقية
 STR_DTLS    :The weather is so wet here that a giant pyramid has been built to allow some rides to be built under cover
 
 <Harmonic Hills>
-STR_SCNR    :Harmonic Hills
-STR_PARK    :Harmonic Hills
-STR_DTLS    :The local authority won't allow you to build above tree height in this park
+STR_SCNR    :السهول المتناغمة
+STR_PARK    :السهول المتناغمة
+STR_DTLS    :لن تسمح لك السلطة المحلية بالبناء فوق ارتفاع الشجر في هذه الحديقة
 
 <Roman Village>
-STR_SCNR    :Roman Village
-STR_PARK    :Roman Village
-STR_DTLS    :Develop this Roman-themed park by adding rides and roller coasters
+STR_SCNR    :القرية الرومانية
+STR_PARK    :القرية الرومانية
+STR_DTLS    :طور هذه الحديقة المثيرة علي النمط اليوناني، بالمزيد من الأفعوانيات والرحلات
 
 <Swamp Cove>
 STR_SCNR    :Swamp Cove
@@ -4688,9 +3957,9 @@ STR_PARK    :Adrenaline Heights
 STR_DTLS    :Build a park to appeal to the high-intensity thrill-seeking local people
 
 <Utopia Park>
-STR_SCNR    :Utopia Park
-STR_PARK    :Utopia Park
-STR_DTLS    :An oasis in the middle of the desert provides an unusual opportunity to build an amusement park
+STR_SCNR    :حديقة يوتوبيا
+STR_PARK    :يوتوبيا
+STR_DTLS    :واحة في وسط الصحراء تُعطي فرصة غير عادية لبناء حديقة ترفيهية
 
 <Rotting Heights>
 STR_SCNR    :Rotting Heights
@@ -4713,19 +3982,19 @@ STR_PARK    :Giggle Downs
 STR_DTLS    :A four lane steeplechase ride is the centrepiece of this expanding park
 
 <Mineral Park>
-STR_SCNR    :Mineral Park
-STR_PARK    :Mineral Park
+STR_SCNR    :حديقة المعادن
+STR_PARK    :حديقة المعادن
 STR_DTLS    :Turn this abandoned stone quarry into a place to attract thrill-seeking tourists
 
 <Coaster Crazy>
-STR_SCNR    :Coaster Crazy
-STR_PARK    :Coaster Crazy
+STR_SCNR    :جنون الأفعوانيات
+STR_PARK    :جنون الأفعوانيات
 STR_DTLS    :You have limited funds but unlimited time to turn this mountainside area into a vast roller coaster park
 
 <Urban Park>
-STR_SCNR    :Urban Park
-STR_PARK    :Urban Park
-STR_DTLS    :A tiny park has done a deal with the nearby town to allow expansion through the town itself
+STR_SCNR    :الحديقة الحضرية
+STR_PARK    :الحديقة الحضرية
+STR_DTLS    :حديقة صغيرة قد عقدت عقداً مع المدينة القريبة لكي تتوسع في المدينة نفسها
 
 <Geoffrey Gardens>
 STR_SCNR    :Geoffrey Gardens
@@ -4795,49 +4064,49 @@ STR_PARK    :Crazy Craters
 STR_DTLS    :In a far-off world where money is not needed, you must build an entertainment centre to keep the people happy
 
 <Dusty Desert>
-STR_SCNR    :Dusty Desert
-STR_PARK    :Dusty Desert
-STR_DTLS    :Five coasters require completion in this desert park
+STR_SCNR    :الصحراء المغبرة
+STR_PARK    :الصحراء المغبرة
+STR_DTLS    :خمسة أفعوانيات تحتاج الإكمال
 
 <Woodworm Park>
-STR_SCNR    :Woodworm Park
-STR_PARK    :Woodworm Park
-STR_DTLS    :This historical park is only allowed to build older-styled rides
+STR_SCNR    :حديقة دودة الخشب
+STR_PARK    :حديقة دودة الخشب
+STR_DTLS    :هذه الحديقة التاريخية يُسمح فيها فقط ببناء الرحلات القديمة
 
 <Icarus Park>
-STR_SCNR    :Icarus Park
-STR_PARK    :Icarus Park
-STR_DTLS    :Develop this alien park to maximise its profit
+STR_SCNR    :حديقة إيكاروس
+STR_PARK    :حديقة إيكاروس
+STR_DTLS    :يجب تطوير هذه الحديقة الغريبة لتعظيم ربحها
 
 <Sunny Swamps>
-STR_SCNR    :Sunny Swamps
-STR_PARK    :Sunny Swamps
-STR_DTLS    :This well-themed amusement park already has several rides, but has plenty of space for expansion
+STR_SCNR    :المستنقع المُشمس
+STR_PARK    :المستنقع المُشمس
+STR_DTLS    :هذا المنتزه الترفيهي يحتوي على العديد من الألعاب، لكنه يحتوي على الكثير من المساحة للتوسع
 
 <Frightmare Hills>
-STR_SCNR    :Frightmare Hills
-STR_PARK    :Frightmare Hills
-STR_DTLS    :A scary park with a giant centrepiece coaster
+STR_SCNR    :سهول الرعب
+STR_PARK    :سهول الرعب
+STR_DTLS    :حديقة مرعبة مع أفعوانية المركزية العملاقة
 
 <Thunder Rocks>
-STR_SCNR    :Thunder Rocks
-STR_PARK    :Thunder Rocks
-STR_DTLS    :Two large hunks of rock stick out of the sand, upon which the beginnings of a theme park are constructed
+STR_SCNR    :صخور الرعد
+STR_PARK    :صخور الرعد
+STR_DTLS    :اثنين من الكتل الكبيرة من الصخور تبرز من الرمال، والتي يتم بناء عليها بدايات حديقة الملاهي
 
 <Octagon Park>
-STR_SCNR    :Octagon Park
-STR_PARK    :Octagon Park
-STR_DTLS    :In this large park you must design and build ten large coasters
+STR_SCNR    :الحديقة الثمانية
+STR_PARK    :الحديقة الثمانية
+STR_DTLS    :في هذه الحديقة الكبيرة، يجب تصميم وبناء عشرة أفعوانيات كبيرة
 
 <Pleasure Island>
-STR_SCNR    :Pleasure Island
-STR_PARK    :Pleasure Island
-STR_DTLS    :A long thin island makes a challenging setting to build a selection of coasters
+STR_SCNR    :جزيرة المتعة
+STR_PARK    :جزيرة المتعة
+STR_DTLS    :جزيرة رفيعة طويلة تشكل بيئة صعبة لبناء مجموعة من الأفعوانيات
 
 <Icicle Worlds>
 STR_SCNR    :العالم الجليدي
 STR_PARK    :العالم الجليدي
-STR_DTLS    :An icy landscape needs turning into a thriving theme park
+STR_DTLS    :قطعة أرض جليدية تحتاج إلي من يحولها إلي حديقة ملاهي ممتعة
 
 <Southern Sands>
 STR_SCNR    :الرمال الجنوبية
@@ -4867,7 +4136,7 @@ STR_DTLS    :ناطحة سحاب مهجورة عملاقة هي فرصة فري�
 <Terror Town>
 STR_SCNR    :مدينة الرعب
 STR_PARK    :مدينة الرعب
-STR_DTLS    :هذه المنطقة الحضارية هي لك كلياًلتحولها إلي حديقة للمتعة
+STR_DTLS    :هذه المنطقة الحضارية هي لك كلياً لتحولها إلي حديقة للمتعة
 
 <Megaworld Park>
 STR_SCNR    :حديقة عملاقة
@@ -4877,7 +4146,7 @@ STR_DTLS    :حديقة عملاقة مليئة بالرحلات تحتاج فق
 <Venus Ponds>
 STR_SCNR    :برك فينوس
 STR_PARK    :برك فينوس
-STR_DTLS    :علي كوكب بعيد جداً ،قطعة الأرض هذه تحتاج أن تحول إلي حديقة ملاهي
+STR_DTLS    :علي كوكب بعيد جداً، قطعة الأرض هذه تحتاج أن تحول إلي حديقة ملاهي
 
 <Micro Park>
 STR_SCNR    :ميكرو بارك
@@ -4907,33 +4176,3 @@ STR_DTLS    :
 STR_SCNR    :حصن مفارقة تاريخية
 STR_PARK    :حصن مفارقة تاريخية
 STR_DTLS    :
-
-#####################
-# Rides/attractions #
-#####################
-
-#RCT2
-[TOPSP1]
-STR_NAME    :اللفة العالية
-STR_DESC    :Passengers ride in a gondola suspended by large rotating arms, rotating forwards and backwards head-over-heels
-STR_CPTY    :8 راكبين
-
-#WW
-[CONDORRD]
-STR_NAME    :ركوب الكندور
-STR_DESC    :Riding in special harnesses below the track, riders experience the feeling of flight as they swoop through the air in Condor-shaped trains
-STR_CPTY    :4 راكبين لكل عربة
-
-#WW
-[CONGAEEL]
-STR_NAME    :Conger Eel Coaster
-STR_DESC    :A compact steel-tracked roller coaster where the Eel-shaped train travels through corkscrews and loops
-STR_CPTY    :4 راكبين لكل عربة
-
-###########
-# Scenery #
-###########
-
-#Bulrushes
-[TBR]
-STR_NAME    :اعشاب البرك

@@ -1,215 +1,295 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
 #ifndef DISABLE_NETWORK
 
-#include <string>
-#include "../core/Console.hpp"
-#include "../core/String.hpp"
-#include "../core/Util.hpp"
-#include "network.h"
-#include "NetworkServerAdvertiser.h"
+#    include "NetworkServerAdvertiser.h"
 
-#include "../config/Config.h"
-#include "../localisation/date.h"
-#include "../management/Finance.h"
-#include "../peep/Peep.h"
-#include "../platform/platform.h"
-#include "../util/util.h"
-#include "../world/map.h"
-#include "../world/park.h"
-#include "http.h"
+#    include "../config/Config.h"
+#    include "../core/Console.hpp"
+#    include "../core/Json.hpp"
+#    include "../core/String.hpp"
+#    include "../localisation/Date.h"
+#    include "../management/Finance.h"
+#    include "../peep/Peep.h"
+#    include "../platform/Platform2.h"
+#    include "../platform/platform.h"
+#    include "../util/Util.h"
+#    include "../world/Map.h"
+#    include "../world/Park.h"
+#    include "Http.h"
+#    include "Socket.h"
+#    include "network.h"
+
+#    include <cstring>
+#    include <iterator>
+#    include <memory>
+#    include <random>
+#    include <string>
 
 enum MASTER_SERVER_STATUS
 {
-    MASTER_SERVER_STATUS_OK                 = 200,
-    MASTER_SERVER_STATUS_INVALID_TOKEN      = 401,
-    MASTER_SERVER_STATUS_SERVER_NOT_FOUND   = 404,
-    MASTER_SERVER_STATUS_INTERNAL_ERROR     = 500
+    MASTER_SERVER_STATUS_OK = 200,
+    MASTER_SERVER_STATUS_INVALID_TOKEN = 401,
+    MASTER_SERVER_STATUS_SERVER_NOT_FOUND = 404,
+    MASTER_SERVER_STATUS_INTERNAL_ERROR = 500
 };
 
-constexpr sint32 MASTER_SERVER_REGISTER_TIME = 120 * 1000; // 2 minutes
-constexpr sint32 MASTER_SERVER_HEARTBEAT_TIME = 60 * 1000; // 1 minute
+#    ifndef DISABLE_HTTP
+constexpr int32_t MASTER_SERVER_REGISTER_TIME = 120 * 1000; // 2 minutes
+constexpr int32_t MASTER_SERVER_HEARTBEAT_TIME = 60 * 1000; // 1 minute
+#    endif
 
-class NetworkServerAdvertiser : public INetworkServerAdvertiser
+class NetworkServerAdvertiser final : public INetworkServerAdvertiser
 {
 private:
-    uint16 _port;
+    uint16_t _port;
 
-    ADVERTISE_STATUS    _status = ADVERTISE_STATUS_UNREGISTERED;
-    uint32              _lastAdvertiseTime = 0;
-    uint32              _lastHeartbeatTime = 0;
+    std::unique_ptr<IUdpSocket> _lanListener;
+    uint32_t _lastListenTime{};
+
+    ADVERTISE_STATUS _status = ADVERTISE_STATUS::UNREGISTERED;
+
+#    ifndef DISABLE_HTTP
+    uint32_t _lastAdvertiseTime = 0;
+    uint32_t _lastHeartbeatTime = 0;
 
     // Our unique token for this server
-    std::string         _token;
+    std::string _token;
 
     // Key received from the master server
-    std::string         _key;
+    std::string _key;
+
+    // See https://github.com/OpenRCT2/OpenRCT2/issues/6277 and 4953
+    bool _forceIPv4 = false;
+#    endif
 
 public:
-    explicit NetworkServerAdvertiser(uint16 port)
+    explicit NetworkServerAdvertiser(uint16_t port)
     {
         _port = port;
+        _lanListener = CreateUdpSocket();
+#    ifndef DISABLE_HTTP
         _key = GenerateAdvertiseKey();
+#    endif
     }
 
-    ADVERTISE_STATUS GetStatus() override
+    ADVERTISE_STATUS GetStatus() const override
     {
         return _status;
     }
 
     void Update() override
     {
-        switch (_status) {
-        case ADVERTISE_STATUS_UNREGISTERED:
-            if (_lastAdvertiseTime == 0 || platform_get_ticks() > _lastAdvertiseTime + MASTER_SERVER_REGISTER_TIME)
-            {
-                SendRegistration();
-            }
-            break;
-        case ADVERTISE_STATUS_REGISTERED:
-            if (platform_get_ticks() > _lastHeartbeatTime + MASTER_SERVER_HEARTBEAT_TIME)
-            {
-                SendHeartbeat();
-            }
-            break;
-        // exhaust enum values to satisfy clang
-        case ADVERTISE_STATUS_DISABLED:
-            break;
+        UpdateLAN();
+#    ifndef DISABLE_HTTP
+        if (gConfigNetwork.advertise)
+        {
+            UpdateWAN();
         }
+#    endif
     }
 
 private:
-    void SendRegistration()
+    void UpdateLAN()
     {
-        _lastAdvertiseTime = platform_get_ticks();
-
-        // Send the registration request
-        http_request_t request = {};
-        request.tag = this;
-        request.url = GetMasterServerUrl();
-        request.method = HTTP_METHOD_POST;
-
-        json_t *body = json_object();
-        json_object_set_new(body, "key", json_string(_key.c_str()));
-        json_object_set_new(body, "port", json_integer(_port));
-        request.root = body;
-        request.type = HTTP_DATA_JSON;
-
-        http_request_async(&request, [](http_response_t * response) -> void
+        auto ticks = Platform::GetTicks();
+        if (ticks > _lastListenTime + 500)
         {
-            if (response == nullptr)
+            if (_lanListener->GetStatus() != SOCKET_STATUS_LISTENING)
             {
-                Console::WriteLine("Unable to connect to master server");
+                _lanListener->Listen(NETWORK_LAN_BROADCAST_PORT);
             }
             else
             {
-                auto advertiser = static_cast<NetworkServerAdvertiser*>(response->tag);
-                advertiser->OnRegistrationResponse(response->root);
-                http_request_dispose(response);
+                char buffer[256]{};
+                size_t recievedBytes{};
+                std::unique_ptr<INetworkEndpoint> endpoint;
+                auto p = _lanListener->ReceiveData(buffer, sizeof(buffer) - 1, &recievedBytes, &endpoint);
+                if (p == NETWORK_READPACKET_SUCCESS)
+                {
+                    std::string sender = endpoint->GetHostname();
+                    log_verbose("Received %zu bytes from %s on LAN broadcast port", recievedBytes, sender.c_str());
+                    if (String::Equals(buffer, NETWORK_LAN_BROADCAST_MSG))
+                    {
+                        auto body = GetBroadcastJson();
+                        auto bodyDump = json_dumps(body, JSON_COMPACT);
+                        size_t sendLen = strlen(bodyDump) + 1;
+                        log_verbose("Sending %zu bytes back to %s", sendLen, sender.c_str());
+                        _lanListener->SendData(*endpoint, bodyDump, sendLen);
+                        free(bodyDump);
+                        json_decref(body);
+                    }
+                }
             }
-        });
+            _lastListenTime = ticks;
+        }
+    }
 
+    json_t* GetBroadcastJson()
+    {
+        auto root = network_get_server_info_as_json();
+        json_object_set(root, "port", json_integer(_port));
+        return root;
+    }
+
+#    ifndef DISABLE_HTTP
+    void UpdateWAN()
+    {
+        switch (_status)
+        {
+            case ADVERTISE_STATUS::UNREGISTERED:
+                if (_lastAdvertiseTime == 0 || platform_get_ticks() > _lastAdvertiseTime + MASTER_SERVER_REGISTER_TIME)
+                {
+                    SendRegistration(_forceIPv4);
+                }
+                break;
+            case ADVERTISE_STATUS::REGISTERED:
+                if (platform_get_ticks() > _lastHeartbeatTime + MASTER_SERVER_HEARTBEAT_TIME)
+                {
+                    SendHeartbeat();
+                }
+                break;
+            // exhaust enum values to satisfy clang
+            case ADVERTISE_STATUS::DISABLED:
+                break;
+        }
+    }
+
+    void SendRegistration(bool forceIPv4)
+    {
+        using namespace OpenRCT2::Network;
+
+        _lastAdvertiseTime = platform_get_ticks();
+
+        // Send the registration request
+        Http::Request request;
+        request.url = GetMasterServerUrl();
+        request.method = Http::Method::POST;
+        request.forceIPv4 = forceIPv4;
+
+        json_t* body = json_object();
+        json_object_set_new(body, "key", json_string(_key.c_str()));
+        json_object_set_new(body, "port", json_integer(_port));
+
+        char* bodyDump = json_dumps(body, JSON_COMPACT);
+        request.body = bodyDump;
+        request.header["Content-Type"] = "application/json";
+        free(bodyDump);
         json_decref(body);
+
+        Http::DoAsync(request, [&](Http::Response response) -> void {
+            if (response.status != Http::Status::OK)
+            {
+                Console::WriteLine("Unable to connect to master server");
+                return;
+            }
+
+            json_t* root = Json::FromString(response.body);
+            this->OnRegistrationResponse(root);
+            json_decref(root);
+        });
     }
 
     void SendHeartbeat()
     {
-        http_request_t request = {};
-        request.tag = this;
-        request.url = GetMasterServerUrl();
-        request.method = HTTP_METHOD_PUT;
+        using namespace OpenRCT2::Network;
 
-        json_t * jsonBody = GetHeartbeatJson();
-        request.root = jsonBody;
-        request.type = HTTP_DATA_JSON;
+        Http::Request request;
+        request.url = GetMasterServerUrl();
+        request.method = Http::Method::PUT;
+
+        json_t* body = GetHeartbeatJson();
+        char* bodyDump = json_dumps(body, JSON_COMPACT);
+        request.body = bodyDump;
+        request.header["Content-Type"] = "application/json";
+        free(bodyDump);
+        json_decref(body);
 
         _lastHeartbeatTime = platform_get_ticks();
-        http_request_async(&request, [](http_response_t *response) -> void
-        {
-            if (response == nullptr)
+        Http::DoAsync(request, [&](Http::Response response) -> void {
+            if (response.status != Http::Status::OK)
             {
-                log_warning("Unable to connect to master server");
+                Console::WriteLine("Unable to connect to master server");
+                return;
             }
-            else
-            {
-                auto advertiser = static_cast<NetworkServerAdvertiser*>(response->tag);
-                advertiser->OnHeartbeatResponse(response->root);
-                http_request_dispose(response);
-            }
-        });
 
-        json_decref(jsonBody);
+            json_t* root = Json::FromString(response.body);
+            this->OnHeartbeatResponse(root);
+            json_decref(root);
+        });
     }
 
-    void OnRegistrationResponse(json_t * jsonRoot)
+    void OnRegistrationResponse(json_t* jsonRoot)
     {
-        json_t *jsonStatus = json_object_get(jsonRoot, "status");
+        json_t* jsonStatus = json_object_get(jsonRoot, "status");
         if (json_is_integer(jsonStatus))
         {
-            sint32 status = (sint32)json_integer_value(jsonStatus);
+            int32_t status = (int32_t)json_integer_value(jsonStatus);
             if (status == MASTER_SERVER_STATUS_OK)
             {
-                json_t * jsonToken = json_object_get(jsonRoot, "token");
+                json_t* jsonToken = json_object_get(jsonRoot, "token");
                 if (json_is_string(jsonToken))
                 {
                     _token = std::string(json_string_value(jsonToken));
-                    _status = ADVERTISE_STATUS_REGISTERED;
+                    _status = ADVERTISE_STATUS::REGISTERED;
                 }
             }
             else
             {
-                const char * message = "Invalid response from server";
-                json_t * jsonMessage = json_object_get(jsonRoot, "message");
+                const char* message = "Invalid response from server";
+                json_t* jsonMessage = json_object_get(jsonRoot, "message");
                 if (json_is_string(jsonMessage))
                 {
                     message = json_string_value(jsonMessage);
                 }
-                Console::Error::WriteLine("Unable to advertise: %s", message);
+                Console::Error::WriteLine("Unable to advertise (%d): %s", status, message);
+                // Hack for https://github.com/OpenRCT2/OpenRCT2/issues/6277
+                // Master server may not reply correctly if using IPv6, retry forcing IPv4,
+                // don't wait the full timeout.
+                if (!_forceIPv4 && status == 500)
+                {
+                    _forceIPv4 = true;
+                    _lastAdvertiseTime = 0;
+                    log_info("Retry with ipv4 only");
+                }
             }
         }
     }
 
-    void OnHeartbeatResponse(json_t * jsonRoot)
+    void OnHeartbeatResponse(json_t* jsonRoot)
     {
-        json_t *jsonStatus = json_object_get(jsonRoot, "status");
+        json_t* jsonStatus = json_object_get(jsonRoot, "status");
         if (json_is_integer(jsonStatus))
         {
-            sint32 status = (sint32)json_integer_value(jsonStatus);
+            int32_t status = (int32_t)json_integer_value(jsonStatus);
             if (status == MASTER_SERVER_STATUS_OK)
             {
                 // Master server has successfully updated our server status
             }
             else if (status == MASTER_SERVER_STATUS_INVALID_TOKEN)
             {
-                _status = ADVERTISE_STATUS_UNREGISTERED;
+                _status = ADVERTISE_STATUS::UNREGISTERED;
                 Console::WriteLine("Master server heartbeat failed: Invalid Token");
             }
         }
     }
 
-    json_t * GetHeartbeatJson()
+    json_t* GetHeartbeatJson()
     {
-        uint32 numPlayers = network_get_num_players();
+        uint32_t numPlayers = network_get_num_players();
 
-        json_t * root = json_object();
+        json_t* root = json_object();
         json_object_set_new(root, "token", json_string(_token.c_str()));
         json_object_set_new(root, "players", json_integer(numPlayers));
 
-        json_t * gameInfo = json_object();
+        json_t* gameInfo = json_object();
         json_object_set_new(gameInfo, "mapSize", json_integer(gMapSize - 2));
         json_object_set_new(gameInfo, "day", json_integer(gDateMonthTicks));
         json_object_set_new(gameInfo, "month", json_integer(gDateMonthsElapsed));
@@ -217,8 +297,7 @@ private:
         json_object_set_new(gameInfo, "parkValue", json_integer(gParkValue));
         if (!(gParkFlags & PARK_FLAGS_NO_MONEY))
         {
-            money32 cash = DECRYPT_MONEY(gCashEncrypted);
-            json_object_set_new(gameInfo, "cash", json_integer(cash));
+            json_object_set_new(gameInfo, "cash", json_integer(gCash));
         }
         json_object_set_new(root, "gameInfo", gameInfo);
 
@@ -228,31 +307,38 @@ private:
     static std::string GenerateAdvertiseKey()
     {
         // Generate a string of 16 random hex characters (64-integer key as a hex formatted string)
-        static const char hexChars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+        static constexpr char hexChars[] = {
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f',
+        };
+
+        std::random_device rd;
+        std::uniform_int_distribution<int32_t> dist(0, static_cast<int32_t>(std::size(hexChars) - 1));
+
         char key[17];
-        for (sint32 i = 0; i < 16; i++)
+        for (int32_t i = 0; i < 16; i++)
         {
-            sint32 hexCharIndex = util_rand() % Util::CountOf(hexChars);
+            int32_t hexCharIndex = dist(rd);
             key[i] = hexChars[hexCharIndex];
         }
-        key[Util::CountOf(key) - 1] = 0;
+        key[std::size(key) - 1] = 0;
         return key;
     }
 
-    static const char * GetMasterServerUrl()
+    static std::string GetMasterServerUrl()
     {
-        const char * result = OPENRCT2_MASTER_SERVER_URL;
-        if (!String::IsNullOrEmpty(gConfigNetwork.master_server_url))
+        std::string result = OPENRCT2_MASTER_SERVER_URL;
+        if (!gConfigNetwork.master_server_url.empty())
         {
             result = gConfigNetwork.master_server_url;
         }
         return result;
     }
+#    endif
 };
 
-INetworkServerAdvertiser * CreateServerAdvertiser(uint16 port)
+std::unique_ptr<INetworkServerAdvertiser> CreateServerAdvertiser(uint16_t port)
 {
-    return new NetworkServerAdvertiser(port);
+    return std::make_unique<NetworkServerAdvertiser>(port);
 }
 
 #endif // DISABLE_NETWORK

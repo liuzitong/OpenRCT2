@@ -1,44 +1,39 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
+
+#include "ScenarioSources.h"
 
 #include "../core/Guard.hpp"
 #include "../core/String.hpp"
-#include "../core/Util.hpp"
-#include "ScenarioSources.h"
+#include "Scenario.h"
 
-#include "scenario.h"
+#include <iterator>
 
 namespace ScenarioSources
 {
     struct ScenarioAlias
     {
-        const utf8 * Original;
-        const utf8 * Alternative;
+        const utf8* Original;
+        const utf8* Alternative;
     };
 
     struct ScenarioTitleDescriptor
     {
-        const uint8  Id;
-        const utf8 * Title;
-        const uint8  Category;
+        const uint8_t Id;
+        const utf8* Title;
+        const uint8_t Category;
     };
 
-    #pragma region Scenario Data
+#pragma region Scenario Data
 
-    static const ScenarioAlias ScenarioAliases[] =
+    // clang-format off
+    static constexpr const ScenarioAlias ScenarioAliases[] =
     {
         // UK - US differences:
         { "Katie's Dreamland",                      "Katie's World"                             },
@@ -52,10 +47,75 @@ namespace ScenarioSources
 
         // RCT1 pack by RCTScenarioLover has a mistake:
         { "Geoffrey Gardens",                       "Geoffery Gardens"                          },
+        // RCT1 pack by Crappage uses park name to identify Utopia Park, instead of scenario list name:
+        { "Utopia Park",                            "Utopia"                                    },
+
+        // CD Projekt Polish Edition
+        { "Alpine Adventures",                          "Górska przygoda"                           },
+        { "Amity Airfield",                             "Lotnisko Pogięcie"                         },
+        { "Botany Breakers",                            "Wyspa Odludna"                             },
+        { "Bumbly Bazaar",                              "Gwarne targowisko"                         },
+        { "Crazy Castle",                               "Zwariowany zamek"                          },
+        { "Dusty Greens",                               "Zapiaszczone Dołki"                        },
+        { "Electric Fields",                            "Pola elektryczne"                          },
+        { "Extreme Heights",                            "Ekstremalne wysokości"                     },
+        { "Factory Capers",                             "300% normy"                                },
+        { "Fungus Woods",                               "Grzybowe Lasy"                             },
+        { "Ghost Town",                                 "Miasto-widmo"                              },
+        { "Gravity Gardens",                            "Ogrody Grawitacji"                         },
+        { "Infernal Views",                             "Piekielny widok"                           },
+        { "Lucky Lake",                                 "Jezioro Szczęściarzy"                      },
+        { "Rainbow Summit",                             "Tęczowy Szczyt"                            },
+
+        { "Six Flags Belgium",                          "\"Sześć Flag\" - Belgia"                   },
+        { "Six Flags Holland",                          "\"Sześć Flag\" - Holandia"                 },
+        { "Six Flags Magic Mountain",                   "Czarodziejska góra \"Sześciu Flag\""       },
+        { "Six Flags Great Adventure",                  "\"Sześć Flag\" - wielka przygoda"          },
+        { "Six Flags over Texas",                       "\"Sześć Flag nad Teksasem\""             },
+        { "Build your own Six Flags Belgium",           "Wybuduj własny park \"Sześć Flag\" - Belgia" },
+        { "Build your own Six Flags Holland",           "Wybuduj własny park \"Sześć Flag\" - Holandia" },
+        { "Build your own Six Flags Magic Mountain",    "Wybuduj własny park czarodziejska góra \"Sześciu Flag\"" },
+        { "Build your own Six Flags Great Adventure",   "Wybuduj własny park \"Sześć Flag\" - wielka przygoda" },
+        { "Build your own Six Flags over Texas",        "Wybuduj własny park \"Sześć Flag nad Teksasem\"" },
+        { "Build your own Six Flags Park",              "Wybuduj własny park \"Sześć Flag\""        },
+
+        { "Africa - African Diamond Mine",              "Afryka - kopalnia diamentów"               },
+        { "Africa - Oasis",                             "Afryka - oaza"                             },
+        { "Africa - Victoria Falls",                    "Afryka - Wodospad Wiktorii"                },
+        { "Antarctic - Ecological Salvage",             "Antarktyka - utylizacja"                   },
+        { "Asia - Great Wall of China Tourism Enhancement", "Azja - rozwój turystyki wokół Wielkiego Muru Chińskiego" },
+        { "Asia - Japanese Coastal Reclaim",            "Azja - odzysk japońskiego wybrzeża"        },
+        { "Asia - Maharaja Palace",                     "Azja - pałac maharadży"                    },
+        { "Australasia - Ayers Rock",                   "Australazja - Ayers Rock"                  },
+        { "Australasia - Fun at the beach",             "Australazja - zabawa na plaży"             },
+        { "Europe - European Cultural Festival",        "Europa - Europejski Festiwal Kulturalny"   },
+        { "Europe - Renovation",                        "Europa - odbudowa"                         },
+        { "N. America - Extreme Hawaiian Island",       "Ameryka Płn. - ekstremalne Hawaje"         },
+        { "North America - Grand Canyon",               "Ameryka Płn. - Wielki Kanion"              },
+        { "North America - Rollercoaster Heaven",       "Ameryka Płn. - raj kolejek górskich"       },
+        { "South America - Inca Lost City",             "Ameryka Płd. - zaginione miasto Inków"     },
+        { "South America - Rain Forest Plateau",        "Ameryka Płd. - tropikalny płaskowyż"       },
+        { "South America - Rio Carnival",               "Ameryka Płd. - karnawał w Rio"             },
+
+        { "Dark Age - Castle",                          "Mroczne Wieki - zamek"                     },
+        { "Dark Age - Robin Hood",                      "Mroczne Wieki - Robin Hood"                },
+        { "Future - First Encounters",                  "Przyszłość - pierwsze spotkania"           },
+        { "Future - Future World",                      "Przyszłość - świat przyszłości"            },
+        { "Mythological - Animatronic Film Set",        "Mitologia - mechaniczny plan filmowy"      },
+        { "Mythological - Cradle of Civilisation",      "Mitologia - kołyska cywilizacji"           },
+        { "Prehistoric - After the Asteroid",           "Prehistoria - po asteroidzie"              },
+        { "Prehistoric - Jurassic Safari",              "Prehistoria - jurajskie safari"            },
+        { "Prehistoric - Stone Age",                    "Prehistoria - epoka kamienna"              },
+        { "Roaring Twenties - Prison Island",           "Ryczące Dwudziestki - wyspa więzienna"     },
+        { "Roaring Twenties - Schneider Cup",           "Ryczące Dwudziestki - puchar Schneidera"   },
+        { "Roaring Twenties - Skyscrapers",             "Ryczące Dwudziestki - drapacze chmur"      },
+        { "Rock 'n' Roll - Flower Power",               "Rock 'n' Roll - dzieci kwiaty"             },
+        // Skipping Rock 'n' Roll - Rock 'n' Roll as that name matches exactly.
+
     };
 
     // RCT
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT1[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT1[] =
     {
         { SC_FOREST_FRONTIERS,          "Forest Frontiers",     SCENARIO_CATEGORY_BEGINNER      },
         { SC_DYNAMITE_DUNES,            "Dynamite Dunes",       SCENARIO_CATEGORY_BEGINNER      },
@@ -82,7 +142,7 @@ namespace ScenarioSources
     };
 
     // RCT: Added Attractions
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT1AA[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT1AA[] =
     {
         { SC_WHISPERING_CLIFFS,         "Whispering Cliffs",    SCENARIO_CATEGORY_BEGINNER      },
         { SC_THREE_MONKEYS_PARK,        "Three Monkeys Park",   SCENARIO_CATEGORY_BEGINNER      },
@@ -105,7 +165,7 @@ namespace ScenarioSources
         { SC_ROMAN_VILLAGE,             "Roman Village",        SCENARIO_CATEGORY_CHALLENGING   },
         { SC_SWAMP_COVE,                "Swamp Cove",           SCENARIO_CATEGORY_CHALLENGING   },
         { SC_ADRENALINE_HEIGHTS,        "Adrenaline Heights",   SCENARIO_CATEGORY_CHALLENGING   },
-        { SC_UTOPIA,                    "Utopia",               SCENARIO_CATEGORY_CHALLENGING   },
+        { SC_UTOPIA_PARK,               "Utopia Park",          SCENARIO_CATEGORY_CHALLENGING   },
         { SC_ROTTING_HEIGHTS,           "Rotting Heights",      SCENARIO_CATEGORY_EXPERT        },
         { SC_FIASCO_FOREST,             "Fiasco Forest",        SCENARIO_CATEGORY_EXPERT        },
         { SC_PICKLE_PARK,               "Pickle Park",          SCENARIO_CATEGORY_EXPERT        },
@@ -117,7 +177,7 @@ namespace ScenarioSources
     };
 
     // RCT: Loopy Landscapes
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT1LL[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT1LL[] =
     {
         {   SC_ICEBERG_ISLANDS,         "Iceberg Islands",      SCENARIO_CATEGORY_BEGINNER      },
         {   SC_VOLCANIA,                "Volcania",             SCENARIO_CATEGORY_BEGINNER      },
@@ -152,7 +212,7 @@ namespace ScenarioSources
     };
 
     // RCT2
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT2[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT2[] =
     {
         { SC_UNIDENTIFIED,              "Crazy Castle",         SCENARIO_CATEGORY_BEGINNER      },
         { SC_UNIDENTIFIED,              "Electric Fields",      SCENARIO_CATEGORY_BEGINNER      },
@@ -172,7 +232,7 @@ namespace ScenarioSources
     };
 
     // RCT2: Wacky Worlds
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT2WW[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT2WW[] =
     {
         { SC_UNIDENTIFIED,              "Africa - Victoria Falls",                          SCENARIO_CATEGORY_BEGINNER      },
         { SC_UNIDENTIFIED,              "Asia - Great Wall of China Tourism Enhancement",   SCENARIO_CATEGORY_BEGINNER      },
@@ -194,7 +254,7 @@ namespace ScenarioSources
     };
 
     // RCT2: Time Twister
-    static const ScenarioTitleDescriptor ScenarioTitlesRCT2TT[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRCT2TT[] =
     {
         { SC_UNIDENTIFIED,              "Dark Age - Robin Hood",                            SCENARIO_CATEGORY_BEGINNER      },
         { SC_UNIDENTIFIED,              "Prehistoric - After the Asteroid",                 SCENARIO_CATEGORY_BEGINNER      },
@@ -213,7 +273,7 @@ namespace ScenarioSources
     };
 
     // Real parks
-    static const ScenarioTitleDescriptor ScenarioTitlesRealParks[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesRealParks[] =
     {
         { SC_ALTON_TOWERS,              "Alton Towers",                                     SCENARIO_CATEGORY_REAL  },
         { SC_HEIDE_PARK,                "Heide-Park",                                       SCENARIO_CATEGORY_REAL  },
@@ -226,7 +286,7 @@ namespace ScenarioSources
     };
 
     // Other parks
-    static const ScenarioTitleDescriptor ScenarioTitlesOtherParks[] =
+    static constexpr const ScenarioTitleDescriptor ScenarioTitlesOtherParks[] =
     {
         { SC_FORT_ANACHRONISM,          "Fort Anachronism",                                 SCENARIO_CATEGORY_DLC               },
         { SC_PCPLAYER,                  "PC Player",                                        SCENARIO_CATEGORY_DLC               },
@@ -243,7 +303,7 @@ namespace ScenarioSources
         { SC_UNIDENTIFIED,              "Build your own Six Flags over Texas",              SCENARIO_CATEGORY_BUILD_YOUR_OWN    },
     };
 
-    #define DEFINE_SCENARIO_TITLE_DESC_GROUP(x) { Util::CountOf(x), x }
+    #define DEFINE_SCENARIO_TITLE_DESC_GROUP(x) { std::size(x), x }
     const struct {
         size_t count;
         const ScenarioTitleDescriptor * const titles;
@@ -257,24 +317,25 @@ namespace ScenarioSources
         DEFINE_SCENARIO_TITLE_DESC_GROUP(ScenarioTitlesRealParks),
         DEFINE_SCENARIO_TITLE_DESC_GROUP(ScenarioTitlesOtherParks),
     };
+    // clang-format on
 
-    #pragma endregion
+#pragma endregion
 
-    bool TryGetByName(const utf8 * name, source_desc * outDesc)
+    bool TryGetByName(const utf8* name, source_desc* outDesc)
     {
         Guard::ArgumentNotNull(outDesc, GUARD_LINE);
 
-        sint32 currentIndex = 0;
-        for (size_t i = 0; i < Util::CountOf(ScenarioTitlesBySource); i++)
+        int32_t currentIndex = 0;
+        for (size_t i = 0; i < std::size(ScenarioTitlesBySource); i++)
         {
             for (size_t j = 0; j < ScenarioTitlesBySource[i].count; j++)
             {
-                const ScenarioTitleDescriptor *desc = &ScenarioTitlesBySource[i].titles[j];
+                const ScenarioTitleDescriptor* desc = &ScenarioTitlesBySource[i].titles[j];
                 if (String::Equals(name, desc->Title, true))
                 {
                     outDesc->title = desc->Title;
                     outDesc->id = desc->Id;
-                    outDesc->source = (uint8)i;
+                    outDesc->source = (uint8_t)i;
                     outDesc->index = currentIndex;
                     outDesc->category = desc->Category;
                     return true;
@@ -291,21 +352,21 @@ namespace ScenarioSources
         return false;
     }
 
-    bool TryGetById(uint8 id, source_desc * outDesc)
+    bool TryGetById(uint8_t id, source_desc* outDesc)
     {
         Guard::ArgumentNotNull(outDesc, GUARD_LINE);
 
-        sint32 currentIndex = 0;
-        for (size_t i = 0; i < Util::CountOf(ScenarioTitlesBySource); i++)
+        int32_t currentIndex = 0;
+        for (size_t i = 0; i < std::size(ScenarioTitlesBySource); i++)
         {
             for (size_t j = 0; j < ScenarioTitlesBySource[i].count; j++)
             {
-                const ScenarioTitleDescriptor * desc = &ScenarioTitlesBySource[i].titles[j];
+                const ScenarioTitleDescriptor* desc = &ScenarioTitlesBySource[i].titles[j];
                 if (id == desc->Id)
                 {
                     outDesc->title = desc->Title;
                     outDesc->id = desc->Id;
-                    outDesc->source = (uint8)i;
+                    outDesc->source = (uint8_t)i;
                     outDesc->index = currentIndex;
                     outDesc->category = desc->Category;
                     return true;
@@ -314,7 +375,7 @@ namespace ScenarioSources
             }
         }
 
-        outDesc->title = nullptr;
+        outDesc->title = "";
         outDesc->id = SC_UNIDENTIFIED;
         outDesc->source = SCENARIO_SOURCE_OTHER;
         outDesc->index = -1;
@@ -322,7 +383,7 @@ namespace ScenarioSources
         return false;
     }
 
-    void NormaliseName(utf8 * buffer, size_t bufferSize, const utf8 * name)
+    void NormaliseName(utf8* buffer, size_t bufferSize, const utf8* name)
     {
         size_t nameLength = String::LengthOf(name);
 
@@ -345,7 +406,7 @@ namespace ScenarioSources
 
         // American scenario titles should be converted to British name
         // Don't worry, names will be translated using language packs later
-        for (const ScenarioAlias &alias : ScenarioAliases)
+        for (const ScenarioAlias& alias : ScenarioAliases)
         {
             if (String::Equals(alias.Alternative, name))
             {
@@ -354,22 +415,19 @@ namespace ScenarioSources
             }
         }
     }
+} // namespace ScenarioSources
+
+bool scenario_get_source_desc(const utf8* name, source_desc* outDesc)
+{
+    return ScenarioSources::TryGetByName(name, outDesc);
 }
 
-extern "C"
+bool scenario_get_source_desc_by_id(uint8_t id, source_desc* outDesc)
 {
-    bool scenario_get_source_desc(const utf8 * name, source_desc * outDesc)
-    {
-        return ScenarioSources::TryGetByName(name, outDesc);
-    }
+    return ScenarioSources::TryGetById(id, outDesc);
+}
 
-    bool scenario_get_source_desc_by_id(uint8 id, source_desc * outDesc)
-    {
-        return ScenarioSources::TryGetById(id, outDesc);
-    }
-
-    void scenario_normalise_name(utf8 * buffer, size_t bufferSize, utf8 * name)
-    {
-        ScenarioSources::NormaliseName(buffer, bufferSize, name);
-    }
+void scenario_normalise_name(utf8* buffer, size_t bufferSize, utf8* name)
+{
+    ScenarioSources::NormaliseName(buffer, bufferSize, name);
 }

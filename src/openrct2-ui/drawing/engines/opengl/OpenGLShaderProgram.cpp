@@ -1,44 +1,36 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
 #ifndef DISABLE_OPENGL
 
-#include <openrct2/core/Console.hpp>
-#include <openrct2/core/Exception.hpp>
-#include <openrct2/core/FileStream.hpp>
-#include <openrct2/core/Memory.hpp>
-#include <openrct2/core/Path.hpp>
-#include <openrct2/core/String.hpp>
-#include "OpenGLShaderProgram.h"
+#    include "OpenGLShaderProgram.h"
 
-#include <openrct2/platform/platform.h>
+#    include <openrct2/Context.h>
+#    include <openrct2/PlatformEnvironment.h>
+#    include <openrct2/core/Console.hpp>
+#    include <openrct2/core/FileStream.hpp>
+#    include <openrct2/core/Path.hpp>
+#    include <openrct2/core/String.hpp>
 
-OpenGLShader::OpenGLShader(const char * name, GLenum type)
+using namespace OpenRCT2;
+
+OpenGLShader::OpenGLShader(const char* name, GLenum type)
 {
     _type = type;
 
-    utf8 path[MAX_PATH];
-    GetPath(path, sizeof(path), name);
-    char * sourceCode = ReadSourceCode(path);
+    auto path = GetPath(name);
+    auto sourceCode = ReadSourceCode(path);
+    auto sourceCodeStr = sourceCode.c_str();
 
     _id = glCreateShader(type);
-    glShaderSource(_id, 1, (const GLchar**)&sourceCode, nullptr);
+    glShaderSource(_id, 1, (const GLchar**)&sourceCodeStr, nullptr);
     glCompileShader(_id);
-
-    Memory::Free(sourceCode);
 
     GLint status;
     glGetShaderiv(_id, GL_COMPILE_STATUS, &status);
@@ -48,10 +40,10 @@ OpenGLShader::OpenGLShader(const char * name, GLenum type)
         glGetShaderInfoLog(_id, sizeof(buffer), nullptr, buffer);
         glDeleteShader(_id);
 
-        Console::Error::WriteLine("Error compiling %s", path);
+        Console::Error::WriteLine("Error compiling %s", path.c_str());
         Console::Error::WriteLine(buffer);
 
-        throw Exception("Error compiling shader.");
+        throw std::runtime_error("Error compiling shader.");
     }
 }
 
@@ -65,38 +57,38 @@ GLuint OpenGLShader::GetShaderId()
     return _id;
 }
 
-void OpenGLShader::GetPath(char * buffer, size_t bufferSize, const char * name)
+std::string OpenGLShader::GetPath(const std::string& name)
 {
-    platform_get_openrct_data_path(buffer, bufferSize);
-    Path::Append(buffer, bufferSize, "shaders");
-    Path::Append(buffer, bufferSize, name);
+    auto env = GetContext()->GetPlatformEnvironment();
+    auto shadersPath = env->GetDirectoryPath(DIRBASE::OPENRCT2, DIRID::SHADER);
+    auto path = Path::Combine(shadersPath, name);
     if (_type == GL_VERTEX_SHADER)
     {
-        String::Append(buffer, bufferSize, ".vert");
+        path += ".vert";
     }
     else
     {
-        String::Append(buffer, bufferSize, ".frag");
+        path += ".frag";
     }
+    return path;
 }
 
-char * OpenGLShader::ReadSourceCode(const utf8 * path)
+std::string OpenGLShader::ReadSourceCode(const std::string& path)
 {
     auto fs = FileStream(path, FILE_MODE_OPEN);
 
-    uint64 fileLength = fs.GetLength();
+    uint64_t fileLength = fs.GetLength();
     if (fileLength > MaxSourceSize)
     {
         throw IOException("Shader source too large.");
     }
 
-    utf8 * fileData = Memory::Allocate<utf8>((size_t)fileLength + 1);
-    fs.Read(fileData, fileLength);
-    fileData[fileLength] = '\0';
+    auto fileData = std::string((size_t)fileLength + 1, '\0');
+    fs.Read((void*)fileData.data(), fileLength);
     return fileData;
 }
 
-OpenGLShaderProgram::OpenGLShaderProgram(const char * name)
+OpenGLShaderProgram::OpenGLShaderProgram(const char* name)
 {
     _vertexShader = new OpenGLShader(name, GL_VERTEX_SHADER);
     _fragmentShader = new OpenGLShader(name, GL_FRAGMENT_SHADER);
@@ -115,7 +107,7 @@ OpenGLShaderProgram::OpenGLShaderProgram(const char * name)
         Console::Error::WriteLine("Error linking %s", name);
         Console::Error::WriteLine(buffer);
 
-        throw Exception("Failed to link OpenGL shader.");
+        throw std::runtime_error("Failed to link OpenGL shader.");
     }
 }
 
@@ -134,12 +126,12 @@ OpenGLShaderProgram::~OpenGLShaderProgram()
     glDeleteProgram(_id);
 }
 
-GLuint OpenGLShaderProgram::GetAttributeLocation(const char * name)
+GLuint OpenGLShaderProgram::GetAttributeLocation(const char* name)
 {
     return glGetAttribLocation(_id, name);
 }
 
-GLuint OpenGLShaderProgram::GetUniformLocation(const char * name)
+GLuint OpenGLShaderProgram::GetUniformLocation(const char* name)
 {
     return glGetUniformLocation(_id, name);
 }

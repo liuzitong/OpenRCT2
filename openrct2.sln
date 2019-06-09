@@ -29,6 +29,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libopenrct2ui", "src\openrc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openrct2-cli", "src\openrct2-cli\openrct2-cli.vcxproj", "{B6808F71-30B4-4499-8FF6-0B1C86391842}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7B8DB129-79EF-417E-B372-8A18E009D261} = {7B8DB129-79EF-417E-B372-8A18E009D261}
 		{D24D94F6-2A74-480C-B512-629C306CE92F} = {D24D94F6-2A74-480C-B512-629C306CE92F}
 	EndProjectSection
 EndProject
@@ -102,5 +103,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9779E585-A12B-4D7E-846F-19AE93C75EB8}
+		SolutionGuid = {AE225595-70B7-4580-92EF-6F2B461EBFC7}
 	EndGlobalSection
 EndGlobal

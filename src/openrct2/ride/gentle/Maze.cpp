@@ -1,34 +1,27 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
-#include "../../interface/viewport.h"
-#include "../../paint/tile_element/surface.h"
-#include "../../paint/paint.h"
-#include "../../paint/supports.h"
+#include "../../interface/Viewport.h"
+#include "../../paint/Paint.h"
+#include "../../paint/Supports.h"
+#include "../../paint/tile_element/Paint.Surface.h"
 #include "../../sprites.h"
-#include "../../world/map.h"
+#include "../../world/Map.h"
 #include "../Track.h"
-#include "../track_paint.h"
+#include "../TrackPaint.h"
 
 enum
 {
     SPR_MAZE_BASE_HEDGE = 21938,
     SPR_MAZE_BASE_BRICK = 21951,
-    SPR_MAZE_BASE_ICE   = 21964,
-    SPR_MAZE_BASE_WOOD  = 21977,
+    SPR_MAZE_BASE_ICE = 21964,
+    SPR_MAZE_BASE_WOOD = 21977,
 };
 
 enum
@@ -51,128 +44,124 @@ enum
 /**
  * rct: 0x004ACF4A
  */
-static void maze_paint_setup(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
-                             rct_tile_element * tileElement)
+static void maze_paint_setup(
+    paint_session* session, ride_id_t rideIndex, uint8_t trackSequence, uint8_t direction, int32_t height,
+    const TileElement* tileElement)
 {
-    uint16 maze_entry = tileElement->properties.track.maze_entry;
-    maze_entry        = rol16(maze_entry, direction * 4);
+    uint16_t maze_entry = tileElement->AsTrack()->GetMazeEntry();
+    maze_entry = rol16(maze_entry, direction * 4);
 
-    uint32 rotation = get_current_rotation();
+    uint32_t rotation = session->CurrentRotation;
     // draw ground
-    sint32 image_id = SPR_TERRAIN_DIRT | session->TrackColours[SCHEME_MISC];
-    sub_98196C(session, image_id, 0, 0, 32, 32, 0, height, rotation);
+    int32_t image_id = SPR_TERRAIN_DIRT | session->TrackColours[SCHEME_MISC];
+    sub_98196C(session, image_id, 0, 0, 32, 32, 0, height);
 
-    wooden_a_supports_paint_setup(session, (rotation & 1) ? 0 : 1, 0, height, session->TrackColours[SCHEME_3], NULL);
+    wooden_a_supports_paint_setup(session, (rotation & 1) ? 0 : 1, 0, height, session->TrackColours[SCHEME_3], nullptr);
 
     paint_util_set_segment_support_height(session, SEGMENTS_ALL & ~SEGMENT_C4, 0xFFFF, 0);
 
-    sint32 base_image_id = 0;
-    switch (get_ride(rideIndex)->track_colour_supports[0])
+    int32_t base_image_id = 0;
+    switch (get_ride(rideIndex)->track_colour[0].supports)
     {
-    case 0:
-        base_image_id = SPR_MAZE_BASE_BRICK;
-        break;
-    case 1:
-        base_image_id = SPR_MAZE_BASE_HEDGE;
-        break;
-    case 2:
-        base_image_id = SPR_MAZE_BASE_ICE;
-        break;
-    case 3:
-        base_image_id = SPR_MAZE_BASE_WOOD;
-        break;
+        case 0:
+            base_image_id = SPR_MAZE_BASE_BRICK;
+            break;
+        case 1:
+            base_image_id = SPR_MAZE_BASE_HEDGE;
+            break;
+        case 2:
+            base_image_id = SPR_MAZE_BASE_ICE;
+            break;
+        case 3:
+            base_image_id = SPR_MAZE_BASE_WOOD;
+            break;
     }
 
     base_image_id |= session->TrackColours[SCHEME_MISC];
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_CENTRE;
-    if (maze_entry & (1 << 3))
-        sub_98197C(session, image_id, 2, 2, 10, 10, 9, height, 3, 3, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_3)
+        sub_98197C(session, image_id, 2, 2, 10, 10, 9, height, 3, 3, height + 2);
 
-    if (maze_entry & (1 << 7))
-        sub_98197C(session, image_id, 2, 18, 10, 10, 9, height, 3, 19, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_7)
+        sub_98197C(session, image_id, 2, 18, 10, 10, 9, height, 3, 19, height + 2);
 
-    if (maze_entry & (1 << 11))
-        sub_98197C(session, image_id, 18, 18, 10, 10, 9, height, 19, 19, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_11)
+        sub_98197C(session, image_id, 18, 18, 10, 10, 9, height, 19, 19, height + 2);
 
-    if (maze_entry & (1 << 15))
-        sub_98197C(session, image_id, 18, 2, 10, 10, 9, height, 19, 3, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_15)
+        sub_98197C(session, image_id, 18, 2, 10, 10, 9, height, 19, 3, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_TOP_LEFT;
-    if (maze_entry & (1 << 0))
-        sub_98197C(session, image_id, 2, 0, 10, 1, 9, height, 3, 1, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_0)
+        sub_98197C(session, image_id, 2, 0, 10, 1, 9, height, 3, 1, height + 2);
 
-    if (maze_entry & (1 << 13))
-        sub_98197C(session, image_id, 18, 0, 10, 1, 9, height, 19, 1, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_13)
+        sub_98197C(session, image_id, 18, 0, 10, 1, 9, height, 19, 1, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_BOTTOM_RIGHT;
-    if (maze_entry & (1 << 5))
-        sub_98197C(session, image_id, 2, 30, 10, 1, 9, height, 3, 30, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_5)
+        sub_98197C(session, image_id, 2, 30, 10, 1, 9, height, 3, 30, height + 2);
 
-    if (maze_entry & (1 << 8))
-        sub_98197C(session, image_id, 18, 30, 10, 1, 9, height, 19, 30, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_8)
+        sub_98197C(session, image_id, 18, 30, 10, 1, 9, height, 19, 30, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_TOP_RIGHT;
-    if (maze_entry & (1 << 1))
-        sub_98197C(session, image_id, 0, 2, 1, 10, 9, height, 1, 3, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_1)
+        sub_98197C(session, image_id, 0, 2, 1, 10, 9, height, 1, 3, height + 2);
 
-    if (maze_entry & (1 << 4))
-        sub_98197C(session, image_id, 0, 18, 1, 10, 9, height, 1, 19, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_4)
+        sub_98197C(session, image_id, 0, 18, 1, 10, 9, height, 1, 19, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_BOTTOM_LEFT;
-    if (maze_entry & (1 << 12))
-        sub_98197C(session, image_id, 30, 2, 1, 10, 9, height, 30, 3, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_12)
+        sub_98197C(session, image_id, 30, 2, 1, 10, 9, height, 30, 3, height + 2);
 
-    if (maze_entry & (1 << 9))
-        sub_98197C(session, image_id, 30, 18, 1, 10, 9, height, 30, 19, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_9)
+        sub_98197C(session, image_id, 30, 18, 1, 10, 9, height, 30, 19, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_INNER_NE_SW;
-    if (maze_entry & (1 << 2))
-        sub_98197C(session, image_id, 2, 14, 10, 4, 9, height, 3, 14, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_2)
+        sub_98197C(session, image_id, 2, 14, 10, 4, 9, height, 3, 14, height + 2);
 
-    if (maze_entry & (1 << 10))
-        sub_98197C(session, image_id, 18, 14, 10, 4, 9, height, 19, 14, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_10)
+        sub_98197C(session, image_id, 18, 14, 10, 4, 9, height, 19, 14, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_WALL_INNER_NW_SE;
-    if (maze_entry & (1 << 14))
-        sub_98197C(session, image_id, 14, 2, 4, 10, 9, height, 14, 3, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_14)
+        sub_98197C(session, image_id, 14, 2, 4, 10, 9, height, 14, 3, height + 2);
 
-    if (maze_entry & (1 << 6))
-        sub_98197C(session, image_id, 14, 18, 4, 10, 9, height, 14, 19, height + 2, rotation);
+    if (maze_entry & MAZE_ENTRY_FLAG_6)
+        sub_98197C(session, image_id, 14, 18, 4, 10, 9, height, 14, 19, height + 2);
 
     image_id = base_image_id + SPR_MAZE_OFFSET_COLUMN_CORNER;
-    if (maze_entry & (1 << 0 | 1 << 1))
-        sub_98197C(session, image_id, 0, 0, 1, 1, 9, height, 1, 1, height + 2, rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_0 | MAZE_ENTRY_FLAG_1))
+        sub_98197C(session, image_id, 0, 0, 1, 1, 9, height, 1, 1, height + 2);
 
-    if (maze_entry & (1 << 4 | 1 << 5))
-        sub_98197C(session, image_id, 0, 30, 1, 1, 9, height, 1, 30, height + 2, rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_4 | MAZE_ENTRY_FLAG_5))
+        sub_98197C(session, image_id, 0, 30, 1, 1, 9, height, 1, 30, height + 2);
 
-    if (maze_entry & (1 << 8 | 1 << 9))
-        sub_98197C(session, image_id, 30, 30, 1, 1, 9, height, 30, 30, height + 2, rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_8 | MAZE_ENTRY_FLAG_9))
+        sub_98197C(session, image_id, 30, 30, 1, 1, 9, height, 30, 30, height + 2);
 
-    if (maze_entry & (1 << 12 | 1 << 13))
-        sub_98197C(session, image_id, 30, 0, 1, 1, 9, height, 30, 1, height + 2, rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_12 | MAZE_ENTRY_FLAG_13))
+        sub_98197C(session, image_id, 30, 0, 1, 1, 9, height, 30, 1, height + 2);
 
-    if (maze_entry & (1 << 0 | 1 << 13 | 1 << 14))
-        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_TOP_LEFT, 14, 0, 2, 1, 9, height, 15, 1, height + 2,
-                   rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_0 | MAZE_ENTRY_FLAG_13 | MAZE_ENTRY_FLAG_14))
+        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_TOP_LEFT, 14, 0, 2, 1, 9, height, 15, 1, height + 2);
 
-    if (maze_entry & (1 << 5 | 1 << 6 | 1 << 8))
-        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_BOTTOM_RIGHT, 14, 30, 2, 1, 9, height, 15, 30, height + 2,
-                   rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_5 | MAZE_ENTRY_FLAG_6 | MAZE_ENTRY_FLAG_8))
+        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_BOTTOM_RIGHT, 14, 30, 2, 1, 9, height, 15, 30, height + 2);
 
-    if (maze_entry & (1 << 1 | 1 << 2 | 1 << 4))
-        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_TOP_RIGHT, 0, 14, 1, 2, 9, height, 1, 15, height + 2,
-                   rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_1 | MAZE_ENTRY_FLAG_2 | MAZE_ENTRY_FLAG_4))
+        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_TOP_RIGHT, 0, 14, 1, 2, 9, height, 1, 15, height + 2);
 
-    if (maze_entry & (1 << 9 | 1 << 10 | 1 << 12))
-        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_BOTTOM_LEFT, 30, 14, 1, 2, 9, height, 30, 15, height + 2,
-                   rotation);
+    if (maze_entry & (MAZE_ENTRY_FLAG_9 | MAZE_ENTRY_FLAG_10 | MAZE_ENTRY_FLAG_12))
+        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_BOTTOM_LEFT, 30, 14, 1, 2, 9, height, 30, 15, height + 2);
 
-    if (maze_entry & (1 << 2 | 1 << 6 | 1 << 10 | 1 << 14))
+    if (maze_entry & (MAZE_ENTRY_FLAG_2 | MAZE_ENTRY_FLAG_6 | MAZE_ENTRY_FLAG_10 | MAZE_ENTRY_FLAG_14))
     {
-        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_CENTRE, 14, 14, 2, 2, 8, height, 15, 15, height + 2,
-                   rotation);
+        sub_98197C(session, base_image_id + SPR_MAZE_OFFSET_COLUMN_CENTRE, 14, 14, 2, 2, 8, height, 15, 15, height + 2);
 
         paint_util_set_segment_support_height(session, SEGMENT_C4, height + 12, 0x20);
     }
@@ -183,11 +172,11 @@ static void maze_paint_setup(paint_session * session, uint8 rideIndex, uint8 tra
 /**
  * rct2: 0x008A81E8
  */
-TRACK_PAINT_FUNCTION get_track_paint_function_maze(sint32 trackType, sint32 direction)
+TRACK_PAINT_FUNCTION get_track_paint_function_maze(int32_t trackType, int32_t direction)
 {
     if (trackType != TRACK_ELEM_MAZE)
     {
-        return NULL;
+        return nullptr;
     }
 
     return maze_paint_setup;

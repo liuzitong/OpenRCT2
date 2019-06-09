@@ -1,41 +1,35 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
-#include "../../interface/viewport.h"
-#include "../../paint/paint.h"
-#include "../../paint/supports.h"
+#include "../../interface/Viewport.h"
+#include "../../paint/Paint.h"
+#include "../../paint/Supports.h"
+#include "../../world/Sprite.h"
 #include "../Track.h"
-#include "../track_paint.h"
+#include "../TrackPaint.h"
 
 /** rct2: 0x01428010 */
-static const uint32 swinging_inverter_ship_base_sprite_offset[] = { 0, 16, 0, 16 };
+static constexpr const uint32_t swinging_inverter_ship_base_sprite_offset[] = { 0, 16, 0, 16 };
 
 /** rct2: 0x01428020 */
-static const uint32 swinging_inverter_ship_animating_base_sprite_offset[] = { 32, 33, 32, 33 };
+static constexpr const uint32_t swinging_inverter_ship_animating_base_sprite_offset[] = { 32, 33, 32, 33 };
 
-typedef struct swinging_inverter_ship_bound_box
+struct swinging_inverter_ship_bound_box
 {
-    sint16 length_x;
-    sint16 length_y;
-    sint16 offset_x;
-    sint16 offset_y;
-} swinging_inverter_ship_bound_box;
+    int16_t length_x;
+    int16_t length_y;
+    int16_t offset_x;
+    int16_t offset_y;
+};
 
 /** rct2: 0x01428020 */
-static const swinging_inverter_ship_bound_box swinging_inverter_ship_bounds[] = {
+static constexpr const swinging_inverter_ship_bound_box swinging_inverter_ship_bounds[] = {
     { 32, 16, 0, 8 }, { 16, 32, 8, 0 }, { 32, 16, 0, 8 }, { 16, 32, 8, 0 }
 };
 
@@ -47,38 +41,38 @@ enum
     SPR_SWINGING_INVERTER_SHIP_FRAME_3 = 22001,
 };
 
-static const uint32 swinging_inverter_ship_frame_sprites[] = { SPR_SWINGING_INVERTER_SHIP_FRAME_0,
-                                                               SPR_SWINGING_INVERTER_SHIP_FRAME_1,
-                                                               SPR_SWINGING_INVERTER_SHIP_FRAME_2,
-                                                               SPR_SWINGING_INVERTER_SHIP_FRAME_3 };
+static constexpr const uint32_t swinging_inverter_ship_frame_sprites[] = { SPR_SWINGING_INVERTER_SHIP_FRAME_0,
+                                                                           SPR_SWINGING_INVERTER_SHIP_FRAME_1,
+                                                                           SPR_SWINGING_INVERTER_SHIP_FRAME_2,
+                                                                           SPR_SWINGING_INVERTER_SHIP_FRAME_3 };
 
-static void paint_swinging_inverter_ship_structure(paint_session * session, Ride * ride, uint8 direction, sint8 axisOffset,
-                                                   uint16 height)
+static void paint_swinging_inverter_ship_structure(
+    paint_session* session, Ride* ride, uint8_t direction, int8_t axisOffset, uint16_t height)
 {
-    rct_tile_element * savedTileElement = static_cast<rct_tile_element *>(session->CurrentlyDrawnItem);
+    const TileElement* savedTileElement = static_cast<const TileElement*>(session->CurrentlyDrawnItem);
 
-    rct_ride_entry * rideEntry = get_ride_entry(ride->subtype);
-    rct_vehicle *    vehicle  = NULL;
+    rct_ride_entry* rideEntry = get_ride_entry(ride->subtype);
+    rct_vehicle* vehicle = nullptr;
 
-    sint8 xOffset = !(direction & 1) ? axisOffset : 0;
-    sint8 yOffset = (direction & 1) ? axisOffset : 0;
+    int8_t xOffset = !(direction & 1) ? axisOffset : 0;
+    int8_t yOffset = (direction & 1) ? axisOffset : 0;
 
     if (ride->lifecycle_flags & RIDE_LIFECYCLE_ON_TRACK && ride->vehicles[0] != SPRITE_INDEX_NULL)
     {
         vehicle = GET_VEHICLE(ride->vehicles[0]);
 
-        session->InteractionType    = VIEWPORT_INTERACTION_ITEM_SPRITE;
+        session->InteractionType = VIEWPORT_INTERACTION_ITEM_SPRITE;
         session->CurrentlyDrawnItem = vehicle;
     }
 
-    uint32 vehicleImageId = rideEntry->vehicles[0].base_image_id + swinging_inverter_ship_base_sprite_offset[direction];
-    if (vehicle != NULL)
+    uint32_t vehicleImageId = rideEntry->vehicles[0].base_image_id + swinging_inverter_ship_base_sprite_offset[direction];
+    if (vehicle != nullptr)
     {
-        sint32 rotation = (sint8)vehicle->vehicle_sprite_type;
+        int32_t rotation = (int8_t)vehicle->vehicle_sprite_type;
         if (rotation != 0)
         {
-            vehicleImageId =
-                rideEntry->vehicles[0].base_image_id + swinging_inverter_ship_animating_base_sprite_offset[direction];
+            vehicleImageId = rideEntry->vehicles[0].base_image_id
+                + swinging_inverter_ship_animating_base_sprite_offset[direction];
 
             if (direction & 2)
             {
@@ -93,44 +87,49 @@ static void paint_swinging_inverter_ship_structure(paint_session * session, Ride
         }
     }
 
-    uint32 colourFlags = session->TrackColours[SCHEME_MISC];
+    uint32_t colourFlags = session->TrackColours[SCHEME_MISC];
     if (colourFlags == IMAGE_TYPE_REMAP)
     {
-        colourFlags = SPRITE_ID_PALETTE_COLOUR_2(ride->vehicle_colours[0].body_colour, ride->vehicle_colours[0].trim_colour);
+        colourFlags = SPRITE_ID_PALETTE_COLOUR_2(ride->vehicle_colours[0].Body, ride->vehicle_colours[0].Trim);
     }
 
     swinging_inverter_ship_bound_box boundBox = swinging_inverter_ship_bounds[direction];
-    vehicleImageId                            = vehicleImageId | colourFlags;
-    uint32 frameImageId = swinging_inverter_ship_frame_sprites[direction] | session->TrackColours[SCHEME_TRACK];
+    vehicleImageId = vehicleImageId | colourFlags;
+    uint32_t frameImageId = swinging_inverter_ship_frame_sprites[direction] | session->TrackColours[SCHEME_TRACK];
 
     if (direction & 2)
     {
-        sub_98197C(session, vehicleImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height,
-                   boundBox.offset_x, boundBox.offset_y, height, get_current_rotation());
-        sub_98199C(session, frameImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height,
-                   boundBox.offset_x, boundBox.offset_y, height, get_current_rotation());
+        sub_98197C(
+            session, vehicleImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height, boundBox.offset_x,
+            boundBox.offset_y, height);
+        sub_98199C(
+            session, frameImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height, boundBox.offset_x,
+            boundBox.offset_y, height);
     }
     else
     {
-        sub_98197C(session, frameImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height,
-                   boundBox.offset_x, boundBox.offset_y, height, get_current_rotation());
-        sub_98199C(session, vehicleImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height,
-                   boundBox.offset_x, boundBox.offset_y, height, get_current_rotation());
+        sub_98197C(
+            session, frameImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height, boundBox.offset_x,
+            boundBox.offset_y, height);
+        sub_98199C(
+            session, vehicleImageId, xOffset, yOffset, boundBox.length_x, boundBox.length_y, 127, height, boundBox.offset_x,
+            boundBox.offset_y, height);
     }
 
     session->CurrentlyDrawnItem = savedTileElement;
-    session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
+    session->InteractionType = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 
 /** rct2: 0x00760260 */
-static void paint_swinging_inverter_ship(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
-                                         sint32 height, rct_tile_element * tileElement)
+static void paint_swinging_inverter_ship(
+    paint_session* session, ride_id_t rideIndex, uint8_t trackSequence, uint8_t direction, int32_t height,
+    const TileElement* tileElement)
 {
-    uint8 relativeTrackSequence = track_map_1x4[direction][trackSequence];
+    uint8_t relativeTrackSequence = track_map_1x4[direction][trackSequence];
 
-    Ride * ride = get_ride(rideIndex);
+    Ride* ride = get_ride(rideIndex);
 
-    uint32 imageId;
+    uint32_t imageId;
 
     if (relativeTrackSequence != 1 && relativeTrackSequence != 3)
     {
@@ -146,43 +145,43 @@ static void paint_swinging_inverter_ship(paint_session * session, uint8 rideInde
         }
 
         imageId = SPR_STATION_BASE_D | session->TrackColours[SCHEME_SUPPORTS];
-        sub_98196C(session, imageId, 0, 0, 32, 32, 1, height, get_current_rotation());
+        sub_98196C(session, imageId, 0, 0, 32, 32, 1, height);
 
         switch (direction)
         {
-        case 0:
-            imageId = SPR_STATION_PLATFORM_SW_NE | session->TrackColours[SCHEME_TRACK];
-            sub_98196C(session, imageId, 0, 24, 32, 8, 1, height + 9, get_current_rotation());
-            break;
-        case 1:
-            imageId = SPR_STATION_PLATFORM_NW_SE | session->TrackColours[SCHEME_TRACK];
-            sub_98196C(session, imageId, 24, 0, 8, 32, 1, height + 9, get_current_rotation());
-            break;
-        case 2:
-            imageId = SPR_STATION_PLATFORM_SW_NE | session->TrackColours[SCHEME_TRACK];
-            sub_98199C(session, imageId, 0, 0, 32, 8, 1, height + 9, -2, 0, height, get_current_rotation());
-            break;
-        case 3:
-            imageId = SPR_STATION_PLATFORM_NW_SE | session->TrackColours[SCHEME_TRACK];
-            sub_98199C(session, imageId, 0, 0, 8, 32, 1, height + 9, 0, -2, height, get_current_rotation());
-            break;
+            case 0:
+                imageId = SPR_STATION_PLATFORM_SW_NE | session->TrackColours[SCHEME_TRACK];
+                sub_98196C(session, imageId, 0, 24, 32, 8, 1, height + 9);
+                break;
+            case 1:
+                imageId = SPR_STATION_PLATFORM_NW_SE | session->TrackColours[SCHEME_TRACK];
+                sub_98196C(session, imageId, 24, 0, 8, 32, 1, height + 9);
+                break;
+            case 2:
+                imageId = SPR_STATION_PLATFORM_SW_NE | session->TrackColours[SCHEME_TRACK];
+                sub_98199C(session, imageId, 0, 0, 32, 8, 1, height + 9, -2, 0, height);
+                break;
+            case 3:
+                imageId = SPR_STATION_PLATFORM_NW_SE | session->TrackColours[SCHEME_TRACK];
+                sub_98199C(session, imageId, 0, 0, 8, 32, 1, height + 9, 0, -2, height);
+                break;
         }
     }
 
     switch (relativeTrackSequence)
     {
-    case 1:
-        paint_swinging_inverter_ship_structure(session, ride, direction, 48, height + 7);
-        break;
-    case 2:
-        paint_swinging_inverter_ship_structure(session, ride, direction, 16, height + 7);
-        break;
-    case 0:
-        paint_swinging_inverter_ship_structure(session, ride, direction, -16, height + 7);
-        break;
-    case 3:
-        paint_swinging_inverter_ship_structure(session, ride, direction, -48, height + 7);
-        break;
+        case 1:
+            paint_swinging_inverter_ship_structure(session, ride, direction, 48, height + 7);
+            break;
+        case 2:
+            paint_swinging_inverter_ship_structure(session, ride, direction, 16, height + 7);
+            break;
+        case 0:
+            paint_swinging_inverter_ship_structure(session, ride, direction, -16, height + 7);
+            break;
+        case 3:
+            paint_swinging_inverter_ship_structure(session, ride, direction, -48, height + 7);
+            break;
     }
 
     paint_util_set_segment_support_height(session, SEGMENTS_ALL, 0xFFFF, 0);
@@ -192,11 +191,11 @@ static void paint_swinging_inverter_ship(paint_session * session, uint8 rideInde
 /**
  * rct2: 0x00760070
  */
-TRACK_PAINT_FUNCTION get_track_paint_function_swinging_inverter_ship(sint32 trackType, sint32 direction)
+TRACK_PAINT_FUNCTION get_track_paint_function_swinging_inverter_ship(int32_t trackType, int32_t direction)
 {
     if (trackType != FLAT_TRACK_ELEM_1_X_4_B)
     {
-        return NULL;
+        return nullptr;
     }
 
     return paint_swinging_inverter_ship;

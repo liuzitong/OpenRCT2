@@ -1,38 +1,37 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
-* OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
-*
-* OpenRCT2 is the work of many authors, a full list can be found in contributors.md
-* For more information, visit https://github.com/OpenRCT2/OpenRCT2
-*
-* OpenRCT2 is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* A full copy of the GNU General Public License can be found in licence.txt
-*****************************************************************************/
-#pragma endregion
+ * Copyright (c) 2014-2019 OpenRCT2 developers
+ *
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
+ *
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
+ *****************************************************************************/
 
 #pragma once
 
-#include <type_traits>
 #include "DataSerialiserTraits.h"
+
+#include <type_traits>
 
 class DataSerialiser
 {
 private:
     MemoryStream _stream;
-    MemoryStream *_activeStream;
-    bool _isSaving;
+    IStream* _activeStream = nullptr;
+    bool _isSaving = false;
+    bool _isLogging = false;
 
 public:
-    DataSerialiser(bool isSaving) : _isSaving(isSaving)
+    DataSerialiser(bool isSaving)
+        : _isSaving(isSaving)
+        , _isLogging(false)
     {
         _activeStream = &_stream;
     }
 
-    DataSerialiser(bool isSaving, MemoryStream& stream) : _isSaving(isSaving)
+    DataSerialiser(bool isSaving, IStream& stream, bool isLogging = false)
+        : _isSaving(isSaving)
+        , _isLogging(isLogging)
     {
         _activeStream = &stream;
     }
@@ -52,13 +51,37 @@ public:
         return _stream;
     }
 
-    template<typename T>
-    DataSerialiser& operator<<(T& data)
+    template<typename T> DataSerialiser& operator<<(const T& data)
     {
-        if (_isSaving)
-            DataSerializerTraits<T>::encode(_activeStream, data);
-        else 
-            DataSerializerTraits<T>::decode(_activeStream, data);
+        if (!_isLogging)
+        {
+            if (_isSaving)
+                DataSerializerTraits<T>::encode(_activeStream, data);
+            else
+                DataSerializerTraits<T>::decode(_activeStream, const_cast<T&>(data));
+        }
+        else
+        {
+            DataSerializerTraits<T>::log(_activeStream, data);
+        }
+
+        return *this;
+    }
+
+    template<typename T> DataSerialiser& operator<<(DataSerialiserTag<T> data)
+    {
+        if (!_isLogging)
+        {
+            if (_isSaving)
+                DataSerializerTraits<DataSerialiserTag<T>>::encode(_activeStream, data);
+            else
+                DataSerializerTraits<DataSerialiserTag<T>>::decode(_activeStream, data);
+        }
+        else
+        {
+            DataSerializerTraits<DataSerialiserTag<T>>::log(_activeStream, data);
+        }
+
         return *this;
     }
 };

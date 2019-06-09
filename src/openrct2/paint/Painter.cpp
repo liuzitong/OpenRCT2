@@ -1,58 +1,52 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
-#include "../config/Config.h"
-#include "../drawing/IDrawingEngine.h"
-#include "../OpenRCT2.h"
-#include "../title/TitleScreen.h"
-#include "../ui/UiContext.h"
 #include "Painter.h"
 
-#include "../drawing/drawing.h"
-#include "../game.h"
-#include "../interface/chat.h"
-#include "../interface/console.h"
-#include "../intro.h"
-#include "../localisation/language.h"
-#include "../localisation/format_codes.h"
+#include "../Game.h"
+#include "../Intro.h"
+#include "../OpenRCT2.h"
+#include "../ReplayManager.h"
+#include "../config/Config.h"
+#include "../drawing/Drawing.h"
+#include "../drawing/IDrawingEngine.h"
+#include "../interface/Chat.h"
+#include "../interface/InteractiveConsole.h"
+#include "../localisation/FormatCodes.h"
+#include "../localisation/Language.h"
+#include "../paint/Paint.h"
+#include "../title/TitleScreen.h"
+#include "../ui/UiContext.h"
 
 using namespace OpenRCT2;
 using namespace OpenRCT2::Drawing;
 using namespace OpenRCT2::Paint;
 using namespace OpenRCT2::Ui;
 
-Painter::Painter(IUiContext * uiContext)
+Painter::Painter(const std::shared_ptr<IUiContext>& uiContext)
     : _uiContext(uiContext)
 {
 }
 
-void Painter::Paint(IDrawingEngine * de)
+void Painter::Paint(IDrawingEngine& de)
 {
-    auto dpi = de->GetDrawingPixelInfo();
+    auto dpi = de.GetDrawingPixelInfo();
     if (gIntroState != INTRO_STATE_NONE)
     {
         intro_draw(dpi);
     }
     else
     {
-        de->PaintWindows();
+        de.PaintWindows();
 
         update_palette_effects();
-        chat_draw(dpi);
-        console_draw(dpi);
+        _uiContext->Draw(dpi);
 
         if ((gScreenFlags & SCREEN_FLAGS_TITLE_DEMO) && !title_should_hide_version_info())
         {
@@ -62,8 +56,21 @@ void Painter::Paint(IDrawingEngine * de)
         gfx_draw_pickedup_peep(dpi);
         gfx_invalidate_pickedup_peep();
 
-        de->PaintRain();
+        de.PaintRain();
     }
+
+    auto* replayManager = GetContext()->GetReplayManager();
+    const char* text = nullptr;
+
+    if (replayManager->IsReplaying())
+        text = "Replaying...";
+    else if (replayManager->IsRecording())
+        text = "Recording...";
+    else if (replayManager->IsNormalising())
+        text = "Normalising...";
+
+    if (text != nullptr)
+        PaintReplayNotice(dpi, text);
 
     if (gConfigGeneral.show_fps)
     {
@@ -72,17 +79,41 @@ void Painter::Paint(IDrawingEngine * de)
     gCurrentDrawCount++;
 }
 
-void Painter::PaintFPS(rct_drawpixelinfo * dpi)
+void Painter::PaintReplayNotice(rct_drawpixelinfo* dpi, const char* text)
 {
-    sint32 x = _uiContext->GetWidth() / 2;
-    sint32 y = 2;
+    int32_t x = _uiContext->GetWidth() / 2;
+    int32_t y = _uiContext->GetHeight() - 44;
+
+    // Format string
+    utf8 buffer[64] = { 0 };
+    utf8* ch = buffer;
+    ch = utf8_write_codepoint(ch, FORMAT_MEDIUMFONT);
+    ch = utf8_write_codepoint(ch, FORMAT_OUTLINE);
+    ch = utf8_write_codepoint(ch, FORMAT_RED);
+
+    snprintf(ch, 64 - (ch - buffer), "%s", text);
+
+    int32_t stringWidth = gfx_get_string_width(buffer);
+    x = x - stringWidth;
+
+    if (((gCurrentTicks >> 1) & 0xF) > 4)
+        gfx_draw_string(dpi, buffer, COLOUR_SATURATED_RED, x, y);
+
+    // Make area dirty so the text doesn't get drawn over the last
+    gfx_set_dirty_blocks(x, y, x + stringWidth, y + 16);
+}
+
+void Painter::PaintFPS(rct_drawpixelinfo* dpi)
+{
+    int32_t x = _uiContext->GetWidth() / 2;
+    int32_t y = 2;
 
     // Measure FPS
     MeasureFPS();
 
     // Format string
     utf8 buffer[64] = { 0 };
-    utf8 * ch = buffer;
+    utf8* ch = buffer;
     ch = utf8_write_codepoint(ch, FORMAT_MEDIUMFONT);
     ch = utf8_write_codepoint(ch, FORMAT_OUTLINE);
     ch = utf8_write_codepoint(ch, FORMAT_WHITE);
@@ -90,7 +121,7 @@ void Painter::PaintFPS(rct_drawpixelinfo * dpi)
     snprintf(ch, 64 - (ch - buffer), "%d", _currentFPS);
 
     // Draw Text
-    sint32 stringWidth = gfx_get_string_width(buffer);
+    int32_t stringWidth = gfx_get_string_width(buffer);
     x = x - (stringWidth / 2);
     gfx_draw_string(dpi, buffer, 0, x, y);
 
@@ -109,4 +140,50 @@ void Painter::MeasureFPS()
         _frames = 0;
     }
     _lastSecond = currentTime;
+}
+
+paint_session* Painter::CreateSession(rct_drawpixelinfo* dpi, uint32_t viewFlags)
+{
+    paint_session* session = nullptr;
+
+    if (_freePaintSessions.empty() == false)
+    {
+        // Re-use.
+        const size_t idx = _freePaintSessions.size() - 1;
+        session = _freePaintSessions[idx];
+
+        // Shrink by one.
+        _freePaintSessions.pop_back();
+    }
+    else
+    {
+        // Create new one in pool.
+        _paintSessionPool.emplace_back(std::make_unique<paint_session>());
+        session = _paintSessionPool.back().get();
+    }
+
+    session->DPI = *dpi;
+    session->EndOfPaintStructArray = &session->PaintStructs[4000 - 1];
+    session->NextFreePaintStruct = session->PaintStructs;
+    session->LastRootPS = nullptr;
+    session->UnkF1AD2C = nullptr;
+    session->ViewFlags = viewFlags;
+    for (auto& quadrant : session->Quadrants)
+    {
+        quadrant = nullptr;
+    }
+    session->QuadrantBackIndex = std::numeric_limits<uint32_t>::max();
+    session->QuadrantFrontIndex = 0;
+    session->PSStringHead = nullptr;
+    session->LastPSString = nullptr;
+    session->WoodenSupportsPrependTo = nullptr;
+    session->CurrentlyDrawnItem = nullptr;
+    session->SurfaceElement = nullptr;
+
+    return session;
+}
+
+void Painter::ReleaseSession(paint_session* session)
+{
+    _freePaintSessions.push_back(session);
 }

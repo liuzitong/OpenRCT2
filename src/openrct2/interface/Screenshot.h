@@ -1,39 +1,41 @@
-#pragma region Copyright (c) 2014-2017 OpenRCT2 Developers
 /*****************************************************************************
- * OpenRCT2, an open source clone of Roller Coaster Tycoon 2.
+ * Copyright (c) 2014-2019 OpenRCT2 developers
  *
- * OpenRCT2 is the work of many authors, a full list can be found in contributors.md
- * For more information, visit https://github.com/OpenRCT2/OpenRCT2
+ * For a complete list of all authors, please refer to contributors.md
+ * Interested in contributing? Visit https://github.com/OpenRCT2/OpenRCT2
  *
- * OpenRCT2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * A full copy of the GNU General Public License can be found in licence.txt
+ * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
-#pragma endregion
 
 #pragma once
 
 #include "../common.h"
 
-typedef struct rct_drawpixelinfo rct_drawpixelinfo;
+#include <string>
 
-#ifdef __cplusplus
-extern "C"
+struct rct_drawpixelinfo;
+
+extern uint8_t gScreenshotCountdown;
+
+struct ScreenshotOptions
 {
-#endif
-    extern uint8 gScreenshotCountdown;
+    int32_t weather = 0;
+    bool hide_guests = false;
+    bool hide_sprites = false;
+    bool clear_grass = false;
+    bool mowed_grass = false;
+    bool water_plants = false;
+    bool fix_vandalism = false;
+    bool remove_litter = false;
+    bool tidy_up_park = false;
+    bool transparent = false;
+};
 
-    void screenshot_check();
-    sint32 screenshot_dump();
-    sint32 screenshot_dump_png(rct_drawpixelinfo *dpi);
-    sint32 screenshot_dump_png_32bpp(sint32 width, sint32 height, const void *pixels);
+void screenshot_check();
+std::string screenshot_dump();
+std::string screenshot_dump_png(rct_drawpixelinfo* dpi);
+std::string screenshot_dump_png_32bpp(int32_t width, int32_t height, const void* pixels);
 
-    void screenshot_giant();
-    sint32 cmdline_for_screenshot(const char **argv, sint32 argc);
-    sint32 cmdline_for_gfxbench(const char **argv, sint32 argc);
-#ifdef __cplusplus
-}
-#endif
+void screenshot_giant();
+int32_t cmdline_for_screenshot(const char** argv, int32_t argc, ScreenshotOptions* options);
+int32_t cmdline_for_gfxbench(const char** argv, int32_t argc);
